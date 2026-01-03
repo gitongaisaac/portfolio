@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer base {}
+
+@theme {
+  --font-nunito: "Nunito", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
