@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 90 90">
+
+  <!-- Centering group (computed from bounding box 12→54 horizontally, 12→44 vertically) -->
+  <!-- Bounding box width = 42, height = 32 -->
+  <!-- Center of viewBox = (45, 45) -->
+  <!-- Needed shift = (45 - (12 + 42/2), 45 - (12 + 32/2)) = (45 - 33, 45 - 28) = (12, 17) -->
+  <g transform="translate(12, 17)">
+
+    <!-- Row 1 -->
+    <circle cx="12" cy="12" r="5" fill="#555" />
+    <circle cx="26" cy="12" r="5" fill="#00ffff" />
+    <circle cx="40" cy="12" r="5" fill="#555" />
+    <circle cx="54" cy="12" r="5" fill="#555" />
+
+    <!-- Row 2 -->
+    <circle cx="26" cy="28" r="5" fill="#555" />
+    <circle cx="40" cy="28" r="5" fill="#00ffff" />
+
+    <!-- Row 3 -->
+    <circle cx="12" cy="44" r="5" fill="#00ffff" />
+    <circle cx="26" cy="44" r="5" fill="#00ffff" />
+
+  </g>
+
+</svg>
+
