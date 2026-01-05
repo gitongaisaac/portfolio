@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
     <title>G | Full-stack web Developer</title>
   </head>
-  <body class="bg-gray-200 text-gray-800 font-nunito">
+  <body class="no-js bg-gray-200 text-gray-800 font-nunito">
     <section id="hero" class="relative min-h-[200px] bg-neutral-950 overflow-hidden">
       <svg
           id="stars"
@@ -20,7 +20,15 @@
       ></svg>
 
       <div id="hero-container" class="max-w-6xl m-auto flex flex-row-reverse items-center justify-between gap-4 h-screen z-10">
-        <div id="logo" class="grid grid-cols-4 gap-[50px]">
+        <div id="hero-tagline" class="absolute w-full h-full flex flex-col items-center justify-center right-0 top-0">
+          <div class="tagline font-iceberg text-center space-y-14 text-8xl text-gray-300">
+            <h2 class="compile bg-linear-to-l from-orange-600 to-orange-200 bg-clip-text text-transparent">COMPILE,</h2>
+            <h2 class="debug">DEBUG,</h2>
+            <h2 class="repeat bg-linear-to-r from-sky-600 to-sky-200 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h2>
+          </div>
+        </div>
+
+        <div id="hero-logo" class="grid grid-cols-4 gap-[50px]">
           <!-- Circle -->
           <div
               class="dot bg-radial-[at_75%_50%] from-orange-600 to-orange-200 size-[70px]"
@@ -75,8 +83,7 @@
           ></div>
         </div>
 
-
-        <div class="h-full flex flex-col justify-end mb-5 my-4">
+        <div id="hero-content" class="py-4 h-[95%] flex flex-col justify-end mb-5">
           <div class="hero-container space-y-3">
             <h1 class="hero-title text-8xl font-bold font-iceberg text-gray-300 mt-4 flex gap-6 py-2"></h1>
             <p class="hero-text max-w-[600px] text-gray-300 overflow-y-hidden">
@@ -84,14 +91,6 @@
               Facilis ipsa soluta temporibus! Cum nihil odio similique soluta tenetur vitae voluptatibus?
             </p>
           </div>
-        </div>
-      </div>
-
-      <div id="hero-tagline" class="relative max-w-5xl m-auto h-screen py-8 my-8 flex flex-col justify-center items-center z-10">
-        <div class="tagline font-iceberg text-center space-y-14 text-8xl text-gray-300">
-          <h2 class="compile bg-linear-to-l from-orange-600 to-orange-200 bg-clip-text text-transparent">COMPILE,</h2>
-          <h2 class="debug">DEBUG,</h2>
-          <h2 class="repeat bg-linear-to-r from-sky-600 to-sky-200 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h2>
         </div>
       </div>
     </section>

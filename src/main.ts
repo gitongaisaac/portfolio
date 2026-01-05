@@ -4,6 +4,8 @@ import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
 import {SplitText} from "gsap/SplitText";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
+document.documentElement.classList.remove("no-js");
+
 gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
@@ -28,15 +30,109 @@ for (let i = 0; i < STAR_COUNT; i++) {
   svg.appendChild(star);
 }
 
-const dots = document.querySelectorAll<HTMLElement>("#logo .dot");
+ScrollTrigger.create({
+  trigger: "#hero",
+  start: "top top",
+  end: "bottom bottom",
+  pin: "#stars",
+  pinSpacing: false,
+});
 
-const tl = gsap.timeline({
+// SVG parallax
+gsap.to("#stars", {
+  y: "-8%",
+  scrollTrigger: {
+    trigger: "#hero",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
+gsap.set("#hero-content", { opacity: 0, y: 20 });
+
+const tl = gsap.timeline();
+
+const taglineTL = gsap.timeline();
+
+gsap.set(".compile", { y: 60, opacity: 0 });
+gsap.set(".debug", { x: -80, opacity: 0 });
+gsap.set(".repeat", { y: -60, opacity: 0 });
+gsap.set(".full-stop", { y: -20, opacity: 0, scale: 0 });
+
+taglineTL.to("#hero-tagline", { duration: 0.5, opacity: 1 });
+
+// ON — entrance
+taglineTL
+  .to(".compile", {
+    y: 0,
+    x: "-60%",
+    opacity: 1,
+    duration: 0.6,
+    ease: "power3.out",
+  })
+  .to(".debug", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power3.out",
+  }, "+=0.1")
+  .to(".repeat", {
+    y: 0,
+    x: "60%",
+    opacity: 1,
+    duration: 0.7,
+    ease: "power4.out",
+  }, "+=0.15")
+  .to(".full-stop", {
+    opacity: 1,
+    scale: 1,
+    duration: 0.3,
+    ease: "power2.out",
+  }, "-=0.25")
+
+  .to({}, { duration: 0.6 })
+
+  // HOLD — let it breathe
+  .to({}, { duration: 0.6 })
+
+  // OFF — clean exit
+  .to(".compile", {
+    y: -40,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power2.in",
+  })
+  .to(".debug", {
+    x: 40,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power2.in",
+  }, "<")
+  .to(".repeat", {
+    y: 40,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power2.in",
+  }, "<")
+  .to(".full-stop", {
+    opacity: 0,
+    scale: 0,
+    duration: 0.2,
+  }, "<");
+
+const dots = document.querySelectorAll<HTMLElement>("#hero-logo .dot");
+
+const logoTl = gsap.timeline({
   defaults: { ease: "power3.out" },
 });
 
+logoTl.to("#hero-logo", { duration: 0.5, opacity: 1 });
+
 dots.forEach((dot) => {
   if (dot.dataset.shape === "diamond") {
-    tl.fromTo(
+    logoTl.fromTo(
       dot,
       {
         rotation: 45,
@@ -61,7 +157,7 @@ dots.forEach((dot) => {
   if (dot.dataset.shape === "circle") {
     const fromX = dot.dataset.side === "left" ? -120 : 120;
 
-    tl.fromTo(
+    logoTl.fromTo(
       dot,
       {
         x: fromX,
@@ -87,7 +183,7 @@ dots.forEach((dot) => {
   if (dot.dataset.shape === "pill") {
     const isHorizontal = dot.dataset.orientation === "horizontal";
 
-    tl.fromTo(
+    logoTl.fromTo(
       dot,
       {
         scaleX: isHorizontal ? 0 : 2,
@@ -106,7 +202,7 @@ dots.forEach((dot) => {
   }
 });
 
-tl.to(
+logoTl.to(
   "#logo .dot[data-shape='pill']",
   {
     scale: 1.05,
@@ -119,7 +215,7 @@ tl.to(
 
 dots.forEach((dot) => {
   if (dot.dataset.shape === "square") {
-    tl.fromTo(
+    logoTl.fromTo(
       dot,
       {
         scale: 0,
@@ -141,11 +237,15 @@ dots.forEach((dot) => {
   }
 });
 
+const contentTl = gsap.timeline();
+
+contentTl.to("#hero-content", { duration: 0.5, opacity: 1 });
+
 document.fonts.ready.then(() => {
   SplitText.create(".hero-text", {
     type: "chars words",
     onSplit: (self) => {
-      tl.from(self.chars, {
+      contentTl.from(self.chars, {
         yPercent: "random([-100, 100])",
         rotation: "random([-30, 30])",
         autoAlpha: 0,
@@ -154,21 +254,31 @@ document.fonts.ready.then(() => {
           amount: 2,
           from: "random",
         },
-      })
+      }, '-=0.8')
     }
   });
 
-  tl.to('.hero-title', {
+  contentTl.to('.hero-title', {
     duration: 3,
     scrambleText: {
-      text: "Isaac Gilbert",
-      chars: "isaac gilbert",
+      text: "Isaac Gitonga",
+      chars: "Gitonga Isaac",
       speed: 1,
     }
+  }, '-=0.8')
+    .to({}, { duration: 0.6 })
+    .to('.hero-title', {
+      duration: 3,
+      scrambleText: {
+        text: "G.",
+        chars: "Isaac Gitonga",
+      }
   })
 })
 
-const logo = qs<HTMLElement>("#logo");
+tl.add(taglineTL).add(logoTl).add(contentTl);
+
+const logo = qs<HTMLElement>("#hero-logo");
 
 const squares = logo.querySelectorAll<HTMLElement>(
   ".dot[data-shape='square']"
@@ -205,66 +315,6 @@ squares.forEach((el) => {
     repeatDelay: gsap.utils.random(5, 9),
   });
 });
-
-ScrollTrigger.create({
-  trigger: "#hero",
-  start: "top top",
-  end: "bottom bottom",
-  pin: "#stars",
-  pinSpacing: false,
-});
-
-// SVG parallax
-gsap.to("#stars", {
-  y: "-8%",
-  scrollTrigger: {
-    trigger: "#hero",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
-
-gsap.set(".compile", { y: 60, opacity: 0 });
-gsap.set(".debug", { x: -80, opacity: 0 });
-gsap.set(".repeat", { y: -60, opacity: 0 });
-gsap.set(".full-stop", { y: -60, opacity: 0, scale: 0 });
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: "#hero-tagline",
-    start: "top 50%",     // when tagline enters viewport
-    end: "top 40%",
-    toggleActions: "play none none reverse",
-  },
-})
-  .to(".compile", {
-    y: 0,
-    x: '-60%',
-    opacity: 1,
-    duration: 0.7,
-    ease: "power3.out",
-  })
-  .to(".debug", {
-    x: 0,
-    opacity: 1,
-    rotateZ: 25,
-    duration: 0.7,
-    ease: "power3.out",
-  }, "+=0.15")
-  .to(".repeat", {
-    y: 0,
-    x: "60%",
-    paddingTop: 30,
-    opacity: 1,
-    duration: 0.9,
-    ease: "power4.out",
-  }, "+=0.2")
-  .to(".full-stop", {
-    opacity: 1,
-    scale: 1,
-    duration: 0.5,
-  });
 
 
 

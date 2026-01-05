@@ -7,3 +7,9 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-iceberg: "Iceberg", sans-serif;
 }
+
+.no-js #hero-logo,
+.no-js #hero-content,
+.no-js #hero-tagline {
+  opacity: 0;
+}
