@@ -11,7 +11,9 @@ gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
 const svg = qs("#stars");
-const STAR_COUNT = 520;
+
+svg.setAttribute("viewBox", "0 0 1000 1000");
+const STAR_COUNT = 2020;
 
 const { width, height } = svg.getBoundingClientRect();
 
@@ -39,15 +41,19 @@ ScrollTrigger.create({
 });
 
 // SVG parallax
-gsap.to("#stars", {
-  y: "-8%",
-  scrollTrigger: {
-    trigger: "#hero",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
+gsap.fromTo( "#stars",
+  { yPercent: -10 },
+  {
+    yPercent: 10,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  }
+);
 
 gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
 gsap.set("#hero-content", { opacity: 0, y: 20 });
@@ -316,26 +322,51 @@ squares.forEach((el) => {
   });
 });
 
+gsap.set("#me", { opacity: 0, y: 50 });
+gsap.set("#build", { opacity: 0, y: 50 });
+gsap.set("#why", { opacity: 0, y: 50 });
 
+const aboutTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about",
+    start: "40px 90%",
+    scrub: 1,
+  },
+});
 
-
-gsap.fromTo(
-  "#skills div",
-  { opacity: 0 },
-  {
+aboutTl
+  .to(".me-title", {
+    scrambleText: {
+      text: "Who I am",
+      chars: "Who am I",
+      speed: 1,
+    }
+  }, '-=0.5')
+  .to("#me", {
+  y: -50,
+  duration: 3,
+  opacity: 1,
+  }, '-=1')
+  .to(".build-title", {
+    scrambleText: {
+      text: "What I build",
+      chars: "Architecture",
+      speed: 1,
+    }
+  }, '-=0.5')
+  .to("#build", {
+    y: -50,
+    duration: 3,
     opacity: 1,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: "#skills",
-      start: "top 80%",
-    },
-  }
-);
-
-// ScrollTrigger.create({
-//   trigger: "#skills",
-//   start: "top top",
-//   end: "bottom bottom",
-//   pin: ".skills .absolute",
-//   pinSpacing: false,
-// })
+  }, '-=1')
+  .to(".why-title", {
+    scrambleText: {
+      text: "Why I do it",
+      chars: "Importance",
+    }
+  }, '-=0.5')
+  .to("#why", {
+    y: -50,
+    duration: 3,
+    opacity: 1,
+  }, '-=1')

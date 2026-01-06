@@ -12,7 +12,7 @@
     <title>G | Full-stack web Developer</title>
   </head>
   <body class="no-js bg-gray-200 text-gray-800 font-nunito">
-    <section id="hero" class="relative min-h-[200px] bg-neutral-950 overflow-hidden">
+    <section id="hero" class="relative min-h-screen bg-neutral-950 overflow-hidden">
       <svg
           id="stars"
           class="absolute inset-0 h-full w-full z-0"
@@ -20,8 +20,8 @@
       ></svg>
 
       <div id="hero-container" class="max-w-6xl m-auto flex flex-row-reverse items-center justify-between gap-4 h-screen z-10">
-        <div id="hero-tagline" class="absolute w-full h-full flex flex-col items-center justify-center right-0 top-0">
-          <div class="tagline font-iceberg text-center space-y-14 text-8xl text-gray-300">
+        <div id="hero-tagline" class="absolute w-full h-screen flex flex-col items-center justify-center right-0 top-0 ">
+          <div class="tagline font-bold font-iceberg text-center space-y-14 text-8xl text-gray-300">
             <h2 class="compile bg-linear-to-l from-orange-600 to-orange-200 bg-clip-text text-transparent">COMPILE,</h2>
             <h2 class="debug">DEBUG,</h2>
             <h2 class="repeat bg-linear-to-r from-sky-600 to-sky-200 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h2>
@@ -84,28 +84,74 @@
         </div>
 
         <div id="hero-content" class="py-4 h-[95%] flex flex-col justify-end mb-5">
-          <div class="hero-container space-y-3">
+          <div class="space-y-3">
             <h1 class="hero-title text-8xl font-bold font-iceberg text-gray-300 mt-4 flex gap-6 py-2"></h1>
-            <p class="hero-text max-w-[600px] text-gray-300 overflow-y-hidden">
+            <p class="hero-text max-w-lg text-gray-300 overflow-y-hidden">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
               Facilis ipsa soluta temporibus! Cum nihil odio similique soluta tenetur vitae voluptatibus?
             </p>
           </div>
         </div>
       </div>
+
+      <div id="about" class="max-w-6xl m-auto min-h-[200dvh] my-4 py-4 space-y-10 grid grid-cols-2 grid-rows-3 gap-5 justify-between">
+        <div id="me" class="row-start-1 col-start-2 self-center py-2">
+          <div class="flex gap-4 items-center justify-start py-2">
+            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+            <h2 class="me-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+          </div>
+
+          <p class="text-gray-200 max-w-lg">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
+            quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
+            dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
+          </p>
+        </div>
+
+        <div id="build" class="col-start-1 row-start-2 self-center py-2">
+          <div class="flex gap-4 items-center justify-start py-2">
+            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+            <h2 class="build-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+          </div>
+
+          <p class="text-gray-200 max-w-lg">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
+            ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
+            recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
+          </p>
+        </div>
+
+        <div id="why" class="col-start-2 row-start-3 self-center py-2">
+          <div class="flex gap-4 items-center justify-start py-2">
+            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+            <h2 class="why-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+          </div>
+
+          <p class="text-gray-200 max-w-lg">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
+            eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
+            nisi obcaecati provident quia rerum sint tenetur veniam vitae?
+            Aperiam iste magnam molestias quaerat quos vero, voluptates.
+          </p>
+        </div>
+      </div>
+
+<!--      <div class="h-screen">-->
+<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus deleniti, dolor dolore doloribus ducimus esse exercitationem harum ipsam laudantium, libero maxime nihil odio quae quas quod recusandae reiciendis reprehenderit rerum sapiente suscipit, velit vitae voluptas voluptates voluptatibus? Animi delectus deleniti doloremque dolorum molestias placeat quae quia quos rem temporibus.</p>-->
+<!--      </div>-->
     </section>
 
     <section id="skills" class="relative min-h-[200px]">
-      <img
-          src="/data-center.jpg"
-          alt="image of a data center"
-          class="absolute inset-0 w-full h-full object-cover z-0"
-      />
+<!--      <img-->
+<!--          src="/data-center.jpg"-->
+<!--          alt="image of a data center"-->
+<!--          class="absolute inset-0 w-full h-full object-cover z-0"-->
+<!--      />-->
 
-      <!-- Radial dark overlay -->
-      <div
-          class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.2),rgba(0,0,0,0.85))]"
-      ></div>
+<!--      &lt;!&ndash; Radial dark overlay &ndash;&gt;-->
+<!--      <div-->
+<!--          class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.2),rgba(0,0,0,0.85))]"-->
+<!--      ></div>-->
 
       <div id="skills-container" class="relative h-screen z-20 px-16 py-16 text-gray-200">
         <div id="skill" class="bg-blue-100/80 h-full rounded-4xl text-gray-800 p-8 flex gap-5 justify-between">
