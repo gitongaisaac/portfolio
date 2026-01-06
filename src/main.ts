@@ -322,9 +322,9 @@ squares.forEach((el) => {
   });
 });
 
-gsap.set("#me", { opacity: 0, y: 50 });
-gsap.set("#build", { opacity: 0, y: 50 });
-gsap.set("#why", { opacity: 0, y: 50 });
+gsap.set("#me", { opacity: 0, y: 100 });
+gsap.set("#build", { opacity: 0, y: 100 });
+gsap.set("#why", { opacity: 0, y: 100 });
 
 const aboutTl = gsap.timeline({
   scrollTrigger: {
@@ -343,7 +343,7 @@ aboutTl
     }
   }, '-=0.5')
   .to("#me", {
-  y: -50,
+  y: -100,
   duration: 3,
   opacity: 1,
   }, '-=1')
@@ -355,7 +355,7 @@ aboutTl
     }
   }, '-=0.5')
   .to("#build", {
-    y: -50,
+    y: -100,
     duration: 3,
     opacity: 1,
   }, '-=1')
@@ -366,7 +366,7 @@ aboutTl
     }
   }, '-=0.5')
   .to("#why", {
-    y: -50,
+    y: -100,
     duration: 3,
     opacity: 1,
   }, '-=1')
