@@ -8,8 +8,26 @@
   --font-iceberg: "Iceberg", sans-serif;
 }
 
+@layer components {
+  .skill-desc {
+    @apply text-lg text-neutral-300;
+  }
+
+  .skill-tools ul {
+    @apply grid grid-cols-4 grid-rows-4 gap-2;
+  }
+
+  .tool {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .tool img {
+    @apply size-12;
+  }
+}
+
 .no-js #hero-logo,
-.no-js #hero-content,
-.no-js #hero-tagline {
+.no-js #hero-intro,
+.no-js #tagline {
   opacity: 0;
 }

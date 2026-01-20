@@ -56,7 +56,7 @@ gsap.fromTo( "#stars",
 );
 
 gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
-gsap.set("#hero-content", { opacity: 0, y: 20 });
+gsap.set("#hero-intro", { opacity: 0, y: 20 });
 
 const tl = gsap.timeline();
 
@@ -67,7 +67,7 @@ gsap.set(".debug", { x: -80, opacity: 0 });
 gsap.set(".repeat", { y: -60, opacity: 0 });
 gsap.set(".full-stop", { y: -20, opacity: 0, scale: 0 });
 
-taglineTL.to("#hero-tagline", { duration: 0.5, opacity: 1 });
+taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
 
 // ON — entrance
 taglineTL
@@ -245,7 +245,7 @@ dots.forEach((dot) => {
 
 const contentTl = gsap.timeline();
 
-contentTl.to("#hero-content", { duration: 0.5, opacity: 1 });
+contentTl.to("#hero-intro", { duration: 0.5, opacity: 1 });
 
 document.fonts.ready.then(() => {
   SplitText.create(".hero-text", {
@@ -370,3 +370,84 @@ aboutTl
     duration: 3,
     opacity: 1,
   }, '-=1')
+
+
+/**
+ * Skills Section
+ */
+const skillsTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top top",
+    end: "bottom bottom",
+    pin: "#bg-skills",
+    scrub: 1,
+  },
+})
+
+gsap.utils.toArray(".tool").forEach((el) => {})
+
+// gsap.set("#db", { y: 100 })
+// gsap.set("#back-end", { y: 100 })
+// gsap.set("#front-end", { y: 100 })
+//
+// skillsTl
+//   .to(".db-title", {
+//     duration: 2,
+//     scrambleText: {
+//       text: "Database Design",
+//       chars: "Scale Architecture",
+//       speed: 1,
+//     }
+//   })
+//   .to("#db", {
+//     y: -100,
+//     duration: 2,
+//     opacity: 1,
+//   })
+//   .to(".back-end-title", {
+//     duration: 2,
+//     scrambleText: {
+//       text: "Backend Development",
+//       chars: "Scale Architecture",
+//       speed: 1,
+//     }
+//   }, '+=0.3')
+//   .to("#back-end", {
+//     y: -100,
+//     duration: 2,
+//     opacity: 1,
+//   })
+//   .to(".front-end-title", {
+//     duration: 2,
+//     scrambleText: {
+//       text: "Front-End Development",
+//       chars: "Design Appeal",
+//       speed: 1,
+//     }
+//   }, '+=0.3')
+//   .to("#front-end", {
+//     y: -100,
+//     duration: 2,
+//     opacity: 1,
+//   })
+//
+// // gsap.set(".tool", {
+// //   x: () => gsap.utils.random(0, window.innerWidth),
+// //   y: () => gsap.utils.random(0, window.innerHeight),
+// //   rotation: () => gsap.utils.random(-8, 8),
+// // });
+//
+// gsap.to(".tool", {
+//   y: "+=15",
+//   duration: 5,
+//   ease: "sine.inOut",
+//   repeat: -1,
+//   yoyo: true,
+//   stagger: {
+//     each: 0.3,
+//     from: "random"
+//   }
+// });
+
+

@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
     <title>G | Full-stack web Developer</title>
   </head>
-  <body class="no-js bg-gray-200 text-gray-800 font-nunito">
+  <body class="no-js bg-neutral-950 text-gray-200 font-nunito">
     <section id="hero" class="relative min-h-screen bg-neutral-950 overflow-hidden">
       <svg
           id="stars"
@@ -19,265 +19,276 @@
           preserveAspectRatio="none"
       ></svg>
 
-      <div id="hero-container" class="max-w-6xl m-auto flex flex-row-reverse items-center justify-between gap-4 h-screen z-10">
-        <div id="hero-tagline" class="absolute w-full h-screen flex flex-col items-center justify-center right-0 top-0 ">
-          <div class="tagline font-bold font-iceberg text-center space-y-14 text-8xl text-gray-300">
-            <h2 class="compile bg-linear-to-l from-orange-600 to-orange-200 bg-clip-text text-transparent">COMPILE,</h2>
-            <h2 class="debug">DEBUG,</h2>
-            <h2 class="repeat bg-linear-to-r from-sky-600 to-sky-200 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h2>
+      <div id="hero-content" class="relative max-w-6xl m-auto z-10">
+        <div id="tagline" class="absolute h-screen w-full flex flex-col items-center justify-center">
+          <h2 class="font-bold font-iceberg space-y-14 text-8xl text-gray-300">
+            <span class="compile block bg-linear-to-l from-orange-600 to-orange-200 bg-clip-text text-transparent">COMPILE,</span>
+            <span class="debug block">DEBUG,</span>
+            <span class="repeat block bg-linear-to-r from-sky-600 to-sky-200 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></span>
+          </h2>
+        </div>
+
+        <div class="flex flex-row-reverse items-center justify-between gap-4 h-screen">
+          <div id="hero-logo" class="grid grid-cols-4 gap-[50px]">
+            <!-- Circle -->
+            <div
+                class="dot bg-radial-[at_75%_50%] from-orange-600 to-orange-200 size-[70px]"
+                data-shape="circle"
+                data-side="left"
+            ></div>
+
+            <!-- Square -->
+            <div
+                class="dot bg-linear-to-r from-cyan-600 to-cyan-200 rounded-xl size-[70px]"
+                data-shape="square"
+            >
+            </div>
+
+            <!-- Diamond -->
+            <div
+                class="dot bg-linear-to-b from-green-600 to-green-200 size-[70px] rotate-45"
+                data-shape="diamond"
+            ></div>
+
+            <!-- Circle -->
+            <div
+                class="dot bg-radial-[at_50%_75%] from-orange-600 to-orange-200 size-[70px]"
+                data-shape="circle"
+                data-side="right"
+            ></div>
+
+            <!-- Pill (vertical) -->
+            <div
+                class="dot bg-radial-[at_50%_75%] from-green-600 to-green-200 col-span-2 rounded-full col-start-1"
+                data-shape="pill"
+                data-orientation="vertical"
+            ></div>
+
+            <!-- Square -->
+            <div
+                class="dot bg-linear-to-l from-cyan-600 to-cyan-200 rounded-2xl size-[70px]"
+                data-shape="square"
+            ></div>
+
+            <!-- Diamond -->
+            <div
+                class="dot bg-linear-to-t from-cyan-600 to-cyan-200 size-[70px] rotate-45 col-start-2"
+                data-shape="diamond"
+            ></div>
+
+            <!-- Pill (horizontal) -->
+            <div
+                class="dot bg-radial-[at_50%_75%] from-cyan-600 to-cyan-200 col-span-2 rounded-full"
+                data-shape="pill"
+                data-orientation="horizontal"
+            ></div>
+          </div>
+
+          <div id="hero-intro" class="py-4 h-[95%] flex flex-col justify-end mb-5">
+            <div class="space-y-3">
+              <h1 class="hero-title text-8xl font-bold font-iceberg text-gray-300 mt-4 flex gap-6 py-2"></h1>
+              <p class="hero-text max-w-lg text-gray-300 overflow-y-hidden">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
+                Facilis ipsa soluta temporibus! Cum nihil odio similique soluta tenetur vitae voluptatibus?
+              </p>
+            </div>
           </div>
         </div>
 
-        <div id="hero-logo" class="grid grid-cols-4 gap-[50px]">
-          <!-- Circle -->
-          <div
-              class="dot bg-radial-[at_75%_50%] from-orange-600 to-orange-200 size-[70px]"
-              data-shape="circle"
-              data-side="left"
-          ></div>
+        <div
+            id="about"
+            class="min-h-[150dvh] my-4 py-32 space-y-10 grid grid-cols-2 grid-rows-3 gap-5 justify-between"
+        >
+          <div id="me" class="row-start-1 col-start-2 self-center py-2">
+            <div class="flex gap-4 items-center justify-start py-2">
+              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+              <h2 class="me-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+            </div>
 
-          <!-- Square -->
-          <div
-              class="dot bg-linear-to-r from-cyan-600 to-cyan-200 rounded-xl size-[70px]"
-              data-shape="square"
-          >
+            <p class="text-gray-200 max-w-lg text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
+              quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
+              dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
+            </p>
           </div>
 
-          <!-- Diamond -->
-          <div
-              class="dot bg-linear-to-b from-green-600 to-green-200 size-[70px] rotate-45"
-              data-shape="diamond"
-          ></div>
+          <div id="build" class="col-start-1 row-start-2 self-center py-2">
+            <div class="flex gap-4 items-center justify-start py-2">
+              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+              <h2 class="build-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+            </div>
 
-          <!-- Circle -->
-          <div
-              class="dot bg-radial-[at_50%_75%] from-orange-600 to-orange-200 size-[70px]"
-              data-shape="circle"
-              data-side="right"
-          ></div>
+            <p class="text-gray-200 max-w-lg text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
+              ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
+              recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
+            </p>
+          </div>
 
-          <!-- Pill (vertical) -->
-          <div
-              class="dot bg-radial-[at_50%_75%] from-green-600 to-green-200 col-span-2 rounded-full col-start-1"
-              data-shape="pill"
-              data-orientation="vertical"
-          ></div>
+          <div id="why" class="col-start-2 row-start-3 self-center py-2">
+            <div class="flex gap-4 items-center justify-start py-2">
+              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
+              <h2 class="why-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
+            </div>
 
-          <!-- Square -->
-          <div
-              class="dot bg-linear-to-l from-cyan-600 to-cyan-200 rounded-2xl size-[70px]"
-              data-shape="square"
-          ></div>
-
-          <!-- Diamond -->
-          <div
-              class="dot bg-linear-to-t from-cyan-600 to-cyan-200 size-[70px] rotate-45 col-start-2"
-              data-shape="diamond"
-          ></div>
-
-          <!-- Pill (horizontal) -->
-          <div
-              class="dot bg-radial-[at_50%_75%] from-cyan-600 to-cyan-200 col-span-2 rounded-full"
-              data-shape="pill"
-              data-orientation="horizontal"
-          ></div>
-        </div>
-
-        <div id="hero-content" class="py-4 h-[95%] flex flex-col justify-end mb-5">
-          <div class="space-y-3">
-            <h1 class="hero-title text-8xl font-bold font-iceberg text-gray-300 mt-4 flex gap-6 py-2"></h1>
-            <p class="hero-text max-w-lg text-gray-300 overflow-y-hidden">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
-              Facilis ipsa soluta temporibus! Cum nihil odio similique soluta tenetur vitae voluptatibus?
+            <p class="text-gray-200 max-w-lg text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
+              eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
+              nisi obcaecati provident quia rerum sint tenetur veniam vitae?
+              Aperiam iste magnam molestias quaerat quos vero, voluptates.
             </p>
           </div>
         </div>
       </div>
-
-      <div id="about" class="max-w-6xl m-auto min-h-[150dvh] my-4 py-4 space-y-10 grid grid-cols-2 grid-rows-3 gap-5 justify-between">
-        <div id="me" class="row-start-1 col-start-2 self-center py-2">
-          <div class="flex gap-4 items-center justify-start py-2">
-            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-            <h2 class="me-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-          </div>
-
-          <p class="text-gray-200 max-w-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
-            quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
-            dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
-          </p>
-        </div>
-
-        <div id="build" class="col-start-1 row-start-2 self-center py-2">
-          <div class="flex gap-4 items-center justify-start py-2">
-            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-            <h2 class="build-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-          </div>
-
-          <p class="text-gray-200 max-w-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
-            ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
-            recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
-          </p>
-        </div>
-
-        <div id="why" class="col-start-2 row-start-3 self-center py-2">
-          <div class="flex gap-4 items-center justify-start py-2">
-            <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-            <h2 class="why-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-          </div>
-
-          <p class="text-gray-200 max-w-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
-            eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
-            nisi obcaecati provident quia rerum sint tenetur veniam vitae?
-            Aperiam iste magnam molestias quaerat quos vero, voluptates.
-          </p>
-        </div>
-      </div>
-
-      <div class="h-30"></div>
     </section>
 
-    <section id="skills" class="relative min-h-[200px]">
-<!--      <img-->
-<!--          src="/data-center.jpg"-->
-<!--          alt="image of a data center"-->
-<!--          class="absolute inset-0 w-full h-full object-cover z-0"-->
-<!--      />-->
+    <section id="skills" class="relative min-h-[200vh] overflow-hidden">
+      <div id="bg-skills" class="absolute inset-0 h-screen">
+        <img id="data-center-img" src="/data-center-2.jpg" alt="Data Center image" class="object-cover object-center">
+        <div id="data-center-blur" class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0.85))]"></div>
+      </div>
 
-<!--      &lt;!&ndash; Radial dark overlay &ndash;&gt;-->
-<!--      <div-->
-<!--          class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.2),rgba(0,0,0,0.85))]"-->
-<!--      ></div>-->
+      <div id="skills-container" class="relative max-w-6xl m-auto z-10">
+        <div id="skills-content" class="space-y-72 py-72 text-gray-200">
+          <div id="db" class="skill text-gray-200 flex gap-5 justify-between">
+            <div id="skill-head">
+              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
+                <span class="animate-pulse">-</span>
+                <span class="db-title"></span>
+              </h4>
+              <p class="skill-desc w-lg text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+              </p>
+            </div>
 
-      <div id="skills-container" class="relative h-screen z-20 px-16 py-16 text-gray-200">
-        <div id="skill" class="bg-blue-100/80 h-full rounded-4xl text-gray-800 p-8 flex gap-5 justify-between">
-          <div id="skill-head">
-            <h4 class="font-montserrat font-bold text-4xl py-4 text-sky-400">Database Design</h4>
-            <p class="w-lg">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-              soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-              Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-              molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-            </p>
-          </div>
-
-          <div id="skill-tools">
-            <ul>
-              <li class="flex gap-4 items-center">
-                <i class="fa-solid fa-database text-sky-700"></i>
-                <p>SQL</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/postgres.png" alt="PostgreSQL logo" class="img object-cover h-4 w-4">
-                <p>PostgreSQL</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/mysql.png" alt="MySQL logo" class="img object-cover h-4 w-4">
-                <p>MySQL</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/prisma.png" alt="Prisma ORM logo" class="img object-cover h-4 w-4">
-                <p>Prisma ORM</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/redis.png" alt="Redis logo" class="img object-cover h-4 w-4">
-                <p>Redis</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/mongodb.png" alt="mongoDb logo" class="img object-cover h-4 w-4">
-                <p>MongoDB</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div id="skill" class="bg-orange-100/80 h-full rounded-4xl text-gray-800 p-8 flex gap-5 justify-between">
-          <div id="skill-head">
-            <h4 class="font-montserrat font-bold text-4xl py-4 text-sky-400">Back-End Development</h4>
-            <p class="w-lg">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-              soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-              Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-              molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-            </p>
-            <div class="flex gap-4 items-center">
-              <i class="fa-solid fa-gear"></i>
-              <p>RESTful API Design</p>
+            <div id="skill-tools" class="">
+              <ul class="space-y-4 grid grid-cols-4 grid-rows-4 gap-4">
+                <li class="tool">
+                  <img src="/logos/db.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
+                  <p>SQL</p>
+                </li>
+                <li class="tool col-start-4">
+                  <img src="/logos/postgres.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
+                  <p>PostgreSQL</p>
+                </li>
+                <li class="tool col-start-2 row-start-2">
+                  <img src="/logos/mysql-2.png" alt="MySQL logo" class="img object-cover size-6">
+                  <p>MySQL</p>
+                </li>
+                <li class="tool col-start-3 row-start-2">
+                  <img src="/logos/prisma.png" alt="Prisma ORM logo" class="img object-cover size-6">
+                  <p>Prisma</p>
+                </li>
+                <li class="tool col-start-3 row-start-3">
+                  <img src="/logos/redis.png" alt="Redis logo" class="img object-cover size-6">
+                  <p>Redis</p>
+                </li>
+                <li class="tool col-start-3 row-start-4">
+                  <img src="/logos/mongodb.png" alt="mongoDb logo" class="img object-cover size-6">
+                  <p>MongoDB</p>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div id="skill-tools">
-            <ul>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/typescript.png" alt="TypeScript logo" class="img h-4 w-4">
-                <p>TypeScript</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/node.png" alt="Node JS logo" class="img h-4 w-4">
-                <p>Node.js</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/express.png" alt="Express JS logo" class="img h-4 w-4">
-                <p>Express</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/next.png" alt="Next JS logo" class="img h-4 w-4">
-                <p>Next.js</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <p>Tsyringe (DI)</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <p>Webhooks</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <div id="back-end" class="skill text-gray-200 flex gap-5 justify-between">
+            <div id="skill-head">
+              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
+                <span class="animate-pulse">-</span>
+                <span class="back-end-title"></span>
+              </h4>
+              <p class="skill-desc w-lg text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+              </p>
+              <div class="flex gap-4 items-center py-5 my-5 text-lg text-orange-400">
+                <i class="fa-solid fa-gear"></i>
+                <p class="">RESTful API Design</p>
+              </div>
+            </div>
 
-        <div id="skill" class="bg-green-100/80 h-full rounded-4xl text-gray-800 p-8 flex gap-5 justify-between">
-          <div id="skill-head">
-            <h4 class="font-montserrat font-bold text-4xl py-4 text-sky-400">Front-End Development</h4>
-            <p class="w-lg">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-              soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-              Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-              molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-            </p>
+            <div id="skill-tools">
+              <ul>
+                <li class="tool">
+                  <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
+                  <p>TypeScript</p>
+                </li>
+                <li class="tool col-start-4">
+                  <img src="/logos/node.png" alt="Node JS logo" class="img size-6">
+                  <p>Node.js</p>
+                </li>
+                <li class="tool col-start-2 row-start-2">
+                  <img src="/logos/express.png" alt="Express JS logo" class="img size-6">
+                  <p>Express</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
+                  <p>Next.js</p>
+                </li>
+                <li class="tool col-start-3 row-start-3">
+                  <p>Tsyringe (DI)</p>
+                </li>
+                <li class="tool col-start-4 row-start-4">
+                  <p>Webhooks</p>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div id="skill-tools">
-            <ul>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/typescript.png" alt="TypeScript logo" class="img h-4 w-4">
-                <p>TypeScript</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/next.png" alt="Next JS logo" class="img h-4 w-4">
-                <p>Next.js</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/tailwind.png" alt="Tailwind logo" class="img h-4 w-4">
-                <p>Tailwind CSS</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/tanstack-query.png" alt="TanStack Query logo" class="img h-4 w-4">
-                <p>Tanstack Query</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/redux.png" alt="Redux logo" class="img h-4 w-4">
-                <p>Redux</p>
-              </li>
-              <li class="flex gap-4 items-center">
-                <img src="/logos/zod.png" alt="Zod logo" class="img h-4 w-4">
-                <p>Zod</p>
-              </li>
-            </ul>
+          <div id="front-end" class="skill text-gray-200 flex gap-5 justify-between">
+            <div id="skill-head">
+              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
+                <span class="animate-pulse">-</span>
+                <span class="front-end-title"></span>
+              </h4>
+              <p class="skill-desc w-lg text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+              </p>
+            </div>
+
+            <div id="skill-tools">
+              <ul>
+                <li class="tool">
+                  <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
+                  <p>TypeScript</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
+                  <p>Next.js</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/tailwind.png" alt="Tailwind logo" class="img size-6">
+                  <p>Tailwind CSS</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/tanstack-query.png" alt="TanStack Query logo" class="img size-6">
+                  <p>Tanstack Query</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/redux.png" alt="Redux logo" class="img size-6">
+                  <p>Redux</p>
+                </li>
+                <li class="tool">
+                  <img src="/logos/zod.png" alt="Zod logo" class="img size-6">
+                  <p>Zod</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
+    <section class="min-h-screen bg-neutral-100 text-gray-200 py-10">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, adipisci aliquid animi, aperiam ducimus excepturi harum inventore magni, maiores nisi quasi ratione rem sequi. A accusantium adipisci, architecto aut blanditiis consequuntur earum eius est eveniet excepturi facere id iusto minus nihil nostrum quasi quisquam, repellat similique tempora veniam. Officia, recusandae!</p>
     </section>
 
     <script type="module" src="/src/main.ts"></script>
