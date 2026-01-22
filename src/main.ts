@@ -10,50 +10,53 @@ gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
-const svg = qs("#stars");
-
-svg.setAttribute("viewBox", "0 0 1000 1000");
-const STAR_COUNT = 2020;
-
-const { width, height } = svg.getBoundingClientRect();
+const svg = document.getElementById('stars');
+const SVG_NS = "http://www.w3.org/2000/svg";
+const STAR_COUNT = 200;
 
 for (let i = 0; i < STAR_COUNT; i++) {
-  const star = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "circle"
-  );
+  // 1. Create the circle using the Namespace
+  const circle = document.createElementNS(SVG_NS, "circle");
 
-  star.setAttribute("cx", String(Math.random() * width));
-  star.setAttribute("cy", String(Math.random() * height));
-  star.setAttribute("r", String(Math.random() * 1.2 + 0.3));
-  star.setAttribute("fill", "rgb(220,230,255)");
-  star.setAttribute("opacity", String(Math.random() * 0.4 + 0.1));
+  // 2. Set Attributes
+  // We use percentages (%) for cx/cy so they auto-adjust on resize
+  circle.setAttribute("cx", Math.random() * 100 + "%");
+  circle.setAttribute("cy", Math.random() * 100 + "%");
 
-  svg.appendChild(star);
-}
+  // Random radius between 0.5 and 2.5
+  const radius = Math.random() * 2 + 0.5;
+  circle.setAttribute("r", String(radius));
 
-ScrollTrigger.create({
-  trigger: "#hero",
-  start: "top top",
-  end: "bottom bottom",
-  pin: "#stars",
-  pinSpacing: false,
-});
+  // Styling
+  circle.setAttribute("fill", "white");
+  circle.setAttribute("opacity", String(Math.random())); // Random initial brightness
 
-// SVG parallax
-gsap.fromTo( "#stars",
-  { yPercent: -10 },
-  {
-    yPercent: 10,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
+  // Apply the glow filter to larger stars only (optimization)
+  if (radius > 2) {
+    circle.setAttribute("filter", "url(#glow)");
   }
-);
+
+  // 3. Append to SVG
+  svg!.appendChild(circle);
+
+  // 4. GSAP Animation (Twinkle)
+  gsap.to(circle, {
+    opacity: Math.random(), // Animate to a DIFFERENT random opacity
+    duration: Math.random() * 2 + 1, // 1-3 seconds
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    delay: Math.random() * 2
+  });
+
+  gsap.to(circle, {
+    attr: { cx: `+=${Math.random() * 10 - 5}%`, cy: `+=${Math.random() * 10 - 5}%` }, // Drift randomly
+    duration: Math.random() * 10 + 10, // Very slow (10-20s)
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+}
 
 gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
 gsap.set("#hero-intro", { opacity: 0, y: 20 });
@@ -322,132 +325,75 @@ squares.forEach((el) => {
   });
 });
 
-gsap.set("#me", { opacity: 0, y: 100 });
-gsap.set("#build", { opacity: 0, y: 100 });
-gsap.set("#why", { opacity: 0, y: 100 });
-
-const aboutTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#about",
-    start: "40px 90%",
-    scrub: 1,
-  },
-});
-
-aboutTl
-  .to(".me-title", {
-    scrambleText: {
-      text: "Who I am",
-      chars: "Who am I",
-      speed: 1,
-    }
-  }, '-=0.5')
-  .to("#me", {
-  y: -100,
-  duration: 3,
-  opacity: 1,
-  }, '-=1')
-  .to(".build-title", {
-    scrambleText: {
-      text: "What I build",
-      chars: "Architecture",
-      speed: 1,
-    }
-  }, '-=0.5')
-  .to("#build", {
+gsap.utils.toArray<Element>("#about li").forEach((item) => {
+  gsap.fromTo(item, {
+    opacity: 0,
+    y: 100,
+    xPercent: item.matches(":nth-child(odd)") ? 10 : -10,
+  }, {
     y: -100,
-    duration: 3,
     opacity: 1,
-  }, '-=1')
-  .to(".why-title", {
-    scrambleText: {
-      text: "Why I do it",
-      chars: "Importance",
+    xPercent: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: item,
+      start: "top 95%",
+      end: "center center",
+      scrub: 1,
     }
-  }, '-=0.5')
-  .to("#why", {
-    y: -100,
-    duration: 3,
-    opacity: 1,
-  }, '-=1')
-
+  });
+})
 
 /**
  * Skills Section
  */
-const skillsTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#skills",
-    start: "top top",
-    end: "bottom bottom",
-    pin: "#bg-skills",
-    scrub: 1,
-  },
+gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
+  const title = skill.querySelector('.title');
+  const desc = skill.querySelector('.desc');
+  const tools = skill.querySelectorAll('.tool');
+
+  gsap.from(title, {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: skill,
+      start: 'top center',
+      end: 'bottom bottom',
+      toggleActions: 'play none none reverse',
+      scrub: 1
+    }
+  });
+
+  gsap.from(desc, {
+    x: i % 2 === 0 ? -100 : 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: skill,
+      start: 'top center',
+      end: 'bottom bottom',
+      toggleActions: 'play none none reverse',
+      scrub: 1,
+    }
+  });
+
+  gsap.from(tools, {
+    opacity: 0,
+    y: 30,
+    duration: 1.5,
+    stagger: 0.5,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: skill,
+      start: 'top 20%',
+      end: 'bottom 105%',
+      toggleActions: 'play none none reverse',
+      scrub: 1,
+    }
+  });
 })
-
-gsap.utils.toArray(".tool").forEach((el) => {})
-
-// gsap.set("#db", { y: 100 })
-// gsap.set("#back-end", { y: 100 })
-// gsap.set("#front-end", { y: 100 })
-//
-// skillsTl
-//   .to(".db-title", {
-//     duration: 2,
-//     scrambleText: {
-//       text: "Database Design",
-//       chars: "Scale Architecture",
-//       speed: 1,
-//     }
-//   })
-//   .to("#db", {
-//     y: -100,
-//     duration: 2,
-//     opacity: 1,
-//   })
-//   .to(".back-end-title", {
-//     duration: 2,
-//     scrambleText: {
-//       text: "Backend Development",
-//       chars: "Scale Architecture",
-//       speed: 1,
-//     }
-//   }, '+=0.3')
-//   .to("#back-end", {
-//     y: -100,
-//     duration: 2,
-//     opacity: 1,
-//   })
-//   .to(".front-end-title", {
-//     duration: 2,
-//     scrambleText: {
-//       text: "Front-End Development",
-//       chars: "Design Appeal",
-//       speed: 1,
-//     }
-//   }, '+=0.3')
-//   .to("#front-end", {
-//     y: -100,
-//     duration: 2,
-//     opacity: 1,
-//   })
-//
-// // gsap.set(".tool", {
-// //   x: () => gsap.utils.random(0, window.innerWidth),
-// //   y: () => gsap.utils.random(0, window.innerHeight),
-// //   rotation: () => gsap.utils.random(-8, 8),
-// // });
-//
-// gsap.to(".tool", {
-//   y: "+=15",
-//   duration: 5,
-//   ease: "sine.inOut",
-//   repeat: -1,
-//   yoyo: true,
-//   stagger: {
-//     each: 0.3,
-//     from: "random"
-//   }
-// });
-
 

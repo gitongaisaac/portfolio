@@ -11,14 +11,24 @@
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
     <title>G | Full-stack web Developer</title>
   </head>
-  <body class="no-js bg-neutral-950 text-gray-200 font-nunito">
-    <section id="hero" class="relative min-h-screen bg-neutral-950 overflow-hidden">
-      <svg
-          id="stars"
-          class="absolute inset-0 h-full w-full z-0"
-          preserveAspectRatio="none"
-      ></svg>
+  <body class="no-js relative bg-black text-gray-200 font-nunito overflow-x-hidden">
+    <svg
+        id="stars"
+        class="fixed inset-0 w-full h-full pointer-events-none -z-50"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
 
+    <section id="hero" class="relative min-h-screen overflow-hidden">
       <div id="hero-content" class="relative max-w-6xl m-auto z-10">
         <div id="tagline" class="absolute h-screen w-full flex flex-col items-center justify-center">
           <h2 class="font-bold font-iceberg space-y-14 text-8xl text-gray-300">
@@ -87,7 +97,7 @@
           <div id="hero-intro" class="py-4 h-[95%] flex flex-col justify-end mb-5">
             <div class="space-y-3">
               <h1 class="hero-title text-8xl font-bold font-iceberg text-gray-300 mt-4 flex gap-6 py-2"></h1>
-              <p class="hero-text max-w-lg text-gray-300 overflow-y-hidden">
+              <p class="hero-text max-w-lg text-gray-300 overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
                 Facilis ipsa soluta temporibus! Cum nihil odio similique soluta tenetur vitae voluptatibus?
               </p>
@@ -95,200 +105,190 @@
           </div>
         </div>
 
-        <div
+        <ul
             id="about"
-            class="min-h-[150dvh] my-4 py-32 space-y-10 grid grid-cols-2 grid-rows-3 gap-5 justify-between"
+            class="min-h-[150dvh] space-y-20 mt-4 pt-32 pb-14 grid grid-cols-2 grid-rows-3 gap-5 justify-between"
         >
-          <div id="me" class="row-start-1 col-start-2 self-center py-2">
-            <div class="flex gap-4 items-center justify-start py-2">
-              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-              <h2 class="me-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-            </div>
+          <li id="me" class="row-start-1 col-start-2 self-center py-2">
+            <h2 class="py-2 font-iceberg font-bold text-sky-400 text-4xl">
+              <span class="animate-pulse">-</span>
+              <span>Who I Am</span>
+            </h2>
 
-            <p class="text-gray-200 max-w-lg text-lg">
+            <p class="max-w-xl text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
               quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
               dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
             </p>
-          </div>
+          </li>
 
-          <div id="build" class="col-start-1 row-start-2 self-center py-2">
-            <div class="flex gap-4 items-center justify-start py-2">
-              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-              <h2 class="build-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-            </div>
+          <li id="build" class="col-start-1 row-start-2 self-center py-2">
+            <h2 class="py-2 font-iceberg font-bold text-sky-400 text-4xl">
+              <span class="animate-pulse">-</span>
+              <span>What I Do</span>
+            </h2>
 
-            <p class="text-gray-200 max-w-lg text-lg">
+            <p class="max-w-xl text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
               ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
               recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
             </p>
-          </div>
+          </li>
 
-          <div id="why" class="col-start-2 row-start-3 self-center py-2">
-            <div class="flex gap-4 items-center justify-start py-2">
-              <span class="font-iceberg font-semibold text-sky-400 text-2xl animate-pulse">-</span>
-              <h2 class="why-title font-iceberg font-semibold text-sky-400 text-2xl"></h2>
-            </div>
+          <li id="why" class="col-start-2 row-start-3 self-center py-2">
+            <h2 class="py-2 font-iceberg font-bold text-sky-400 text-4xl">
+              <span class="animate-pulse">-</span>
+              <span>Why I Do It</span>
+            </h2>
 
-            <p class="text-gray-200 max-w-lg text-lg">
+            <p class="max-w-xl text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
               eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
               nisi obcaecati provident quia rerum sint tenetur veniam vitae?
               Aperiam iste magnam molestias quaerat quos vero, voluptates.
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="skills" class="relative min-h-[200vh] overflow-hidden">
-      <div id="bg-skills" class="absolute inset-0 h-screen">
-        <img id="data-center-img" src="/data-center-2.jpg" alt="Data Center image" class="object-cover object-center">
-        <div id="data-center-blur" class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0.85))]"></div>
+    <section id="skills" class="relative max-w-7xl mx-auto min-h-[200vh]">
+      <h1 class="text-center text-[100px] font-bold font-iceberg bg-linear-to-l from-amber-600 via-sky-400 to-amber-600 bg-clip-text text-transparent">
+        Skills & Tools
+      </h1>
+
+      <div class="db skill relative">
+        <h4 class="title">Database Design</h4>
+
+        <p class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+          soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+          Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+          molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+        </p>
+
+        <ul class="tools">
+          <li class="tool">
+            <img src="/logos/db.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
+            <p>SQL</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/postgres.png" alt="PostgreSQL logo" class="img bg-cover bg-center h-6 w-8">
+            <p>PostgreSQL</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/mysql.png" alt="MySQL logo" class="img object-cover size-6">
+            <p>MySQL</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/prisma.png" alt="Prisma ORM logo" class="img object-cover rounded-sm size-6">
+            <p>Prisma</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/redis.png" alt="Redis logo" class="img object-cover size-6 rounded-sm">
+            <p>Redis</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/mongodb.png" alt="mongoDb logo" class="img object-cover size-6">
+            <p>MongoDB</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/neon.jpeg" alt="Neon logo" class="img object-cover size-6">
+            <p>Neon</p>
+          </li>
+        </ul>
       </div>
 
-      <div id="skills-container" class="relative max-w-6xl m-auto z-10">
-        <div id="skills-content" class="space-y-72 py-72 text-gray-200">
-          <div id="db" class="skill text-gray-200 flex gap-5 justify-between">
-            <div id="skill-head">
-              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
-                <span class="animate-pulse">-</span>
-                <span class="db-title"></span>
-              </h4>
-              <p class="skill-desc w-lg text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-              </p>
-            </div>
+      <div class="back-end skill relative">
+        <h4 class="title">Back-end Development</h4>
 
-            <div id="skill-tools" class="">
-              <ul class="space-y-4 grid grid-cols-4 grid-rows-4 gap-4">
-                <li class="tool">
-                  <img src="/logos/db.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
-                  <p>SQL</p>
-                </li>
-                <li class="tool col-start-4">
-                  <img src="/logos/postgres.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
-                  <p>PostgreSQL</p>
-                </li>
-                <li class="tool col-start-2 row-start-2">
-                  <img src="/logos/mysql-2.png" alt="MySQL logo" class="img object-cover size-6">
-                  <p>MySQL</p>
-                </li>
-                <li class="tool col-start-3 row-start-2">
-                  <img src="/logos/prisma.png" alt="Prisma ORM logo" class="img object-cover size-6">
-                  <p>Prisma</p>
-                </li>
-                <li class="tool col-start-3 row-start-3">
-                  <img src="/logos/redis.png" alt="Redis logo" class="img object-cover size-6">
-                  <p>Redis</p>
-                </li>
-                <li class="tool col-start-3 row-start-4">
-                  <img src="/logos/mongodb.png" alt="mongoDb logo" class="img object-cover size-6">
-                  <p>MongoDB</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="back-end" class="skill text-gray-200 flex gap-5 justify-between">
-            <div id="skill-head">
-              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
-                <span class="animate-pulse">-</span>
-                <span class="back-end-title"></span>
-              </h4>
-              <p class="skill-desc w-lg text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-              </p>
-              <div class="flex gap-4 items-center py-5 my-5 text-lg text-orange-400">
-                <i class="fa-solid fa-gear"></i>
-                <p class="">RESTful API Design</p>
-              </div>
-            </div>
-
-            <div id="skill-tools">
-              <ul>
-                <li class="tool">
-                  <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
-                  <p>TypeScript</p>
-                </li>
-                <li class="tool col-start-4">
-                  <img src="/logos/node.png" alt="Node JS logo" class="img size-6">
-                  <p>Node.js</p>
-                </li>
-                <li class="tool col-start-2 row-start-2">
-                  <img src="/logos/express.png" alt="Express JS logo" class="img size-6">
-                  <p>Express</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
-                  <p>Next.js</p>
-                </li>
-                <li class="tool col-start-3 row-start-3">
-                  <p>Tsyringe (DI)</p>
-                </li>
-                <li class="tool col-start-4 row-start-4">
-                  <p>Webhooks</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="front-end" class="skill text-gray-200 flex gap-5 justify-between">
-            <div id="skill-head">
-              <h4 class="title font-iceberg font-bold text-4xl py-4 text-sky-400">
-                <span class="animate-pulse">-</span>
-                <span class="front-end-title"></span>
-              </h4>
-              <p class="skill-desc w-lg text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-                soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-                Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-                molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-              </p>
-            </div>
-
-            <div id="skill-tools">
-              <ul>
-                <li class="tool">
-                  <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
-                  <p>TypeScript</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
-                  <p>Next.js</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/tailwind.png" alt="Tailwind logo" class="img size-6">
-                  <p>Tailwind CSS</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/tanstack-query.png" alt="TanStack Query logo" class="img size-6">
-                  <p>Tanstack Query</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/redux.png" alt="Redux logo" class="img size-6">
-                  <p>Redux</p>
-                </li>
-                <li class="tool">
-                  <img src="/logos/zod.png" alt="Zod logo" class="img size-6">
-                  <p>Zod</p>
-                </li>
-              </ul>
-            </div>
+        <div>
+          <p class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+            soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+            Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+            molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+          </p>
+          <div class="flex gap-4 items-center py-5 text-xl text-orange-400">
+            <i class="fa-solid fa-gear"></i>
+            <p class="">RESTful API Design</p>
           </div>
         </div>
+
+        <ul class="tools">
+          <li class="tool">
+            <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
+            <p>TypeScript</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/node.webp" alt="Node JS logo" class="img size-6">
+            <p>Node.js</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/express.webp" alt="Express JS logo" class="img size-6">
+            <p>Express</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
+            <p>Next.js</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/vercel.png" alt="Vercel logo" class="img size-6">
+            <p>Vercel</p>
+          </li>
+          <li class="tool">
+            <p>Tsyringe (DI)</p>
+          </li>
+          <li class="tool">
+            <p>Webhooks</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="front-end skill relative">
+        <h4 class="title">Front-end Development</h4>
+
+        <p class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
+          soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
+          Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
+          molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+        </p>
+
+        <ul class="tools">
+          <li class="tool">
+            <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
+            <p>TypeScript</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
+            <p>Next.js</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/react.png" alt="React JS logo" class="img h-5 w-6">
+            <p>React.js</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/tailwind.png" alt="Tailwind logo" class="img h-4 w-6">
+            <p>Tailwind</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/tanstack-query.png" alt="TanStack Query logo" class="img size-6">
+            <p>Tanstack Query</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/redux.png" alt="Redux logo" class="img size-6">
+            <p>Redux</p>
+          </li>
+          <li class="tool">
+            <img src="/logos/zod.png" alt="Zod logo" class="img size-6">
+            <p>Zod</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="min-h-screen bg-neutral-100 text-gray-200 py-10">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, adipisci aliquid animi, aperiam ducimus excepturi harum inventore magni, maiores nisi quasi ratione rem sequi. A accusantium adipisci, architecto aut blanditiis consequuntur earum eius est eveniet excepturi facere id iusto minus nihil nostrum quasi quisquam, repellat similique tempora veniam. Officia, recusandae!</p>
+    <section class="min-h-screen py-10">
     </section>
 
     <script type="module" src="/src/main.ts"></script>

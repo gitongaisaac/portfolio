@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@layer base {}
-
 @theme {
   --font-nunito: "Nunito", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
@@ -9,20 +7,29 @@
 }
 
 @layer components {
-  .skill-desc {
-    @apply text-lg text-neutral-300;
+
+  #skills .skill {
+    @apply max-w-6xl mx-auto min-h-screen p-4 flex flex-col gap-8 justify-center items-start;
   }
 
-  .skill-tools ul {
-    @apply grid grid-cols-4 grid-rows-4 gap-2;
+  #skills .skill .title {
+    @apply font-iceberg font-bold text-[65px] text-center text-emerald-300;
   }
 
-  .tool {
-    @apply flex flex-col items-center justify-center;
+  #skills .skill .desc {
+    @apply py-2 w-4xl text-2xl text-neutral-400;
   }
 
-  .tool img {
-    @apply size-12;
+  #skills .skill .tools {
+    @apply flex flex-wrap gap-4 py-4 rounded-lg;
+  }
+
+  #skills .skill .tool {
+    @apply bg-neutral-200 text-neutral-800 rounded-md h-fit p-2 px-4 flex gap-2 items-center justify-center;
+  }
+
+  .tool p {
+    @apply font-semibold font-montserrat;
   }
 }
 
@@ -30,4 +37,28 @@
 .no-js #hero-intro,
 .no-js #tagline {
   opacity: 0;
+}
+
+.db::before,  .front-end::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  rotate: 8deg;
+  background: var(--color-neutral-900);
+  border-radius: 100% 10px 100% 10px;
+}
+
+.back-end::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  rotate: -8deg;
+  background: var(--color-neutral-900);
+  border-radius: 10px 100% 10px 100%;
 }
