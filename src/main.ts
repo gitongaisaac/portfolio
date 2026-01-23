@@ -397,3 +397,39 @@ gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
   });
 })
 
+gsap.set("#projects .head p", { opacity: 0, x: -20 });
+
+gsap.to("#projects .head p", {
+  x: 0,
+  opacity: 1,
+  duration: 2.5,
+  ease: "power2.out",
+  scrambleText: {
+    text: 'A curated selection of my most recent projects. 4yrs+ of building & experience.',
+    chars: 'My Favourite Recent projects.',
+  },
+  scrollTrigger: {
+    trigger: "#projects .head",
+    start: "top 80%",
+    end: "bottom 20%",
+  }
+})
+
+const project = document.querySelectorAll(".project");
+
+gsap.set(project, { opacity: 0, scale: 0.8 });
+
+gsap.to(project, {
+  opacity: 1,
+  scale: 1,
+  duration: 2,
+  stagger: 0.3,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: '.project-list',
+    start: "top 90%",
+    end: "top 40%",
+    scrub: 1,
+  },
+})
+
