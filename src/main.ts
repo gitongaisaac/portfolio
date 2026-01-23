@@ -348,6 +348,20 @@ gsap.utils.toArray<Element>("#about li").forEach((item) => {
 /**
  * Skills Section
  */
+gsap.set("#skills .head h1", { y: 50, opacity: 0 });
+
+gsap.to("#skills .head h1", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 80%",
+    scrub: 1,
+  }
+});
+
 gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
   const title = skill.querySelector('.title');
   const desc = skill.querySelector('.desc');
@@ -397,7 +411,23 @@ gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
   });
 })
 
+/**
+ * Projects Section
+ */
+gsap.set("#projects .head h1", { y: 50, opacity: 0 });
 gsap.set("#projects .head p", { opacity: 0, x: -20 });
+
+gsap.to("#projects .head h1", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top 80%",
+    scrub: 1,
+  }
+});
 
 gsap.to("#projects .head p", {
   x: 0,
@@ -432,6 +462,51 @@ gsap.to(project, {
     scrub: 1,
   },
 })
+
+/**
+ * Reviews Section
+ */
+gsap.set("#reviews .head p", { opacity: 0, y: 30 });
+gsap.set("#reviews .head h1", { y: 50, opacity: 0 });
+gsap.set(".review-card", { opacity: 0, y: 40 });
+
+gsap.to("#reviews .head h1", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#reviews",
+    start: "top 80%",
+    scrub: 1,
+  }
+});
+
+gsap.to("#reviews .head p", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#reviews",
+    start: "top 80%",
+    scrub: 1,
+  }
+});
+
+gsap.to(".review-card", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".reviews-list",
+    start: "top 80%",
+    scrub: 1,
+  }
+});
 
 /**
  * Contact Section
