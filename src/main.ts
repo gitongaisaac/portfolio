@@ -433,3 +433,57 @@ gsap.to(project, {
   },
 })
 
+/**
+ * Contact Section
+ */
+gsap.set("#contact .head p", { opacity: 0, y: 50 });
+gsap.set("#contact .head h1", { y: 50 });
+gsap.set("#contact form > div, #contact form > button", { opacity: 0, y: 30 });
+
+gsap.to("#contact .head h1", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#contact",
+    start: "top 80%",
+  }
+});
+
+gsap.to("#contact .head p", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#contact",
+    start: "top 80%",
+  }
+});
+
+gsap.to("#contact form > div, #contact form > button", {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#contact-form",
+    start: "top 80%",
+  }
+});
+
+const contactForm = document.getElementById("contact-form") as HTMLFormElement;
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+    console.log("Form submitted:", data);
+    alert("Thank you for your message! (This is a demo)");
+    contactForm.reset();
+  });
+}
+

@@ -55,6 +55,10 @@
   #projects .project .learn-more {
     @apply w-fit font-medium font-iceberg shadow-xs text-neutral-200 transition-colors duration-200;
   }
+
+  #contact input, #contact textarea {
+    @apply focus:border-emerald-500/50;
+  }
 }
 
 .no-js #hero-logo,
