@@ -272,6 +272,7 @@ gsap.utils.toArray<Element>("#about li").forEach((item) => {
  * Skills Section
  */
 gsap.set("#skills .head h1", { y: 50, opacity: 0 });
+gsap.set("#skills .head p", { opacity: 0, y: 30 });
 
 gsap.to("#skills .head h1", {
   y: 0,
@@ -284,6 +285,19 @@ gsap.to("#skills .head h1", {
     scrub: 1,
   }
 });
+
+gsap.to('#skills .head p', {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 80%",
+    end: "bottom 20%",
+    scrub: 1,
+  }
+})
 
 gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
   const title = skill.querySelector('.title');
@@ -440,7 +454,7 @@ gsap.to(".review-card", {
   ease: "power3.out",
   scrollTrigger: {
     trigger: ".reviews-list",
-    start: "top 80%",
+    start: "top 90%",
     scrub: 1,
   }
 });

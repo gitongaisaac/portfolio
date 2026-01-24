@@ -77,7 +77,7 @@
   }
 
   .head {
-    @apply mb-14;
+    @apply  py-8 my-8 md:my-0;
   }
 
   .head h1 {
