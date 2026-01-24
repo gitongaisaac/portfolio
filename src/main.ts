@@ -64,36 +64,37 @@ const tl = gsap.timeline();
 
 const taglineTL = gsap.timeline();
 
-gsap.set(".compile", { y: 60, opacity: 0 });
-gsap.set(".debug", { x: -80, opacity: 0 });
-gsap.set(".repeat", { y: -60, opacity: 0 });
-gsap.set(".full-stop", { y: -20, opacity: 0, scale: 0 });
+gsap.set(".compile", { yPercent: 40, opacity: 0 });
+gsap.set(".debug", { xPercent: -70, opacity: 0 });
+gsap.set(".repeat", { yPercent: -40, opacity: 0 });
+gsap.set(".full-stop", { yPercent: -20, opacity: 0, scale: 0, transformOrigin: "50% 50%" });
 
 taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
 
-// ON — entrance
+// ON — entrance (percent-based so it scales with font-size)
 taglineTL
   .to(".compile", {
-    y: 0,
-    x: "-60%",
+    yPercent: 0,
+    xPercent: -30,
     opacity: 1,
     duration: 0.6,
     ease: "power3.out",
   })
   .to(".debug", {
-    x: 0,
+    xPercent: 0,
     opacity: 1,
     duration: 0.6,
     ease: "power3.out",
   }, "+=0.1")
   .to(".repeat", {
-    y: 0,
-    x: "60%",
+    yPercent: 0,
+    xPercent: 30,
     opacity: 1,
     duration: 0.7,
     ease: "power4.out",
   }, "+=0.15")
   .to(".full-stop", {
+    yPercent: 0,
     opacity: 1,
     scale: 1,
     duration: 0.3,
@@ -105,21 +106,21 @@ taglineTL
   // HOLD — let it breathe
   .to({}, { duration: 0.6 })
 
-  // OFF — clean exit
+  // OFF — clean exit (also percent-based)
   .to(".compile", {
-    y: -40,
+    yPercent: -60,
     opacity: 0,
     duration: 0.4,
     ease: "power2.in",
   })
   .to(".debug", {
-    x: 40,
+    xPercent: 30,
     opacity: 0,
     duration: 0.4,
     ease: "power2.in",
   }, "<")
   .to(".repeat", {
-    y: 40,
+    yPercent: 60,
     opacity: 0,
     duration: 0.4,
     ease: "power2.in",
@@ -129,6 +130,72 @@ taglineTL
     scale: 0,
     duration: 0.2,
   }, "<");
+
+// gsap.set(".compile", { y: 60, opacity: 0 });
+// gsap.set(".debug", { x: -80, opacity: 0 });
+// gsap.set(".repeat", { y: -60, opacity: 0 });
+// gsap.set(".full-stop", { y: -20, opacity: 0, scale: 0 });
+//
+// taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
+//
+// // ON — entrance
+// taglineTL
+//   .to(".compile", {
+//     y: 0,
+//     xPercent: "-60%",
+//     opacity: 1,
+//     duration: 0.6,
+//     ease: "power3.out",
+//   })
+//   .to(".debug", {
+//     x: 0,
+//     opacity: 1,
+//     duration: 0.6,
+//     ease: "power3.out",
+//   }, "+=0.1")
+//   .to(".repeat", {
+//     y: 0,
+//     x: "60%",
+//     opacity: 1,
+//     duration: 0.7,
+//     ease: "power4.out",
+//   }, "+=0.15")
+//   .to(".full-stop", {
+//     opacity: 1,
+//     scale: 1,
+//     duration: 0.3,
+//     ease: "power2.out",
+//   }, "-=0.25")
+//
+//   .to({}, { duration: 0.6 })
+//
+//   // HOLD — let it breathe
+//   .to({}, { duration: 0.6 })
+//
+//   // OFF — clean exit
+//   .to(".compile", {
+//     y: -40,
+//     opacity: 0,
+//     duration: 0.4,
+//     ease: "power2.in",
+//   })
+//   .to(".debug", {
+//     x: 40,
+//     opacity: 0,
+//     duration: 0.4,
+//     ease: "power2.in",
+//   }, "<")
+//   .to(".repeat", {
+//     y: 40,
+//     opacity: 0,
+//     duration: 0.4,
+//     ease: "power2.in",
+//   }, "<")
+//   .to(".full-stop", {
+//     opacity: 0,
+//     scale: 0,
+//     duration: 0.2,
+//   }, "<");
 
 const contentTl = gsap.timeline();
 
@@ -271,7 +338,7 @@ gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
  * Projects Section
  */
 gsap.set("#projects .head h1", { y: 50, opacity: 0 });
-gsap.set("#projects .head p", { opacity: 0, x: -20 });
+gsap.set("#projects .head p", { opacity: 0, y: 30 });
 
 gsap.to("#projects .head h1", {
   y: 0,
@@ -281,17 +348,31 @@ gsap.to("#projects .head h1", {
   scrollTrigger: {
     trigger: "#projects",
     start: "top 80%",
+    end: "bottom 20%",
     scrub: 1,
   }
 });
 
+gsap.to('#projects .head p', {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top 80%",
+    end: "bottom 20%",
+    scrub: 1,
+  }
+})
+
 gsap.to("#projects .head p", {
   x: 0,
   opacity: 1,
-  duration: 2.5,
+  duration: 1,
   ease: "power2.out",
   scrambleText: {
-    text: 'A curated selection of my most recent projects. 4yrs+ of building & experience.',
+    text: 'A curated selection of my most recent projects.',
     chars: 'My Favourite Recent projects.',
   },
   scrollTrigger: {

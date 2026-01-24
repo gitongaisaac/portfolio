@@ -8,7 +8,7 @@
 
 @layer components {
   #hero .stats li p {
-    @apply font-semibold font-montserrat text-neutral-300;
+    @apply font-semibold font-montserrat text-neutral-300 text-nowrap;
   }
 
   #hero .stats li h2 {
@@ -20,18 +20,18 @@
   }
 
   #skills .skill .title {
-    @apply font-iceberg font-bold text-[65px] text-center text-emerald-500;
+    @apply font-iceberg font-bold text-5xl lg:text-[65px] text-center text-emerald-500;
   }
 
   #skills .skill .desc {
-    @apply py-2 w-4xl text-2xl text-neutral-400;
+    @apply py-2 max-w-4xl text-2xl text-neutral-400 text-wrap;
   }
 
   #skills .skill .tools {
     @apply flex flex-wrap gap-4 py-4 rounded-lg;
   }
 
-  #skills .skill .tool {
+  #skills .skill .tool, #skills .global .tool {
     @apply bg-white/70 text-neutral-800 rounded-md h-fit p-2 px-4 flex gap-2 items-center justify-center;
   }
 
@@ -48,7 +48,7 @@
   }
 
   #projects .project h2 {
-    @apply text-6xl font-iceberg font-bold text-emerald-500 transition-colors duration-200 delay-100;
+    @apply text-4xl sm:text-6xl font-iceberg font-bold text-emerald-500 transition-colors duration-200 delay-100;
   }
 
   #projects .project p {
@@ -56,11 +56,7 @@
   }
 
   #projects .project .tech-stack {
-    @apply flex gap-4 items-center justify-start;
-  }
-
-  #projects .project .tech-stack {
-    @apply flex items-center gap-4;
+    @apply flex gap-2 sm:gap-4 flex-wrap items-center justify-start;
   }
 
   #projects .project .tech-stack li {
@@ -73,11 +69,19 @@
 
 
   #projects .project .tech-stack p {
-    @apply text-neutral-400;
+    @apply text-neutral-400 text-sm sm:text-base;
   }
 
   #contact input, #contact textarea {
     @apply focus:border-emerald-500/50;
+  }
+
+  .head h1 {
+    @apply text-6xl md:text-7xl lg:text-[85px] xl:text-[100px] py-2 font-bold font-iceberg text-center text-neutral-400;
+  }
+
+  .head p {
+    @apply py-4 text-center text-xl md:text-2xl lg:text-3xl text-neutral-400 font-semibold font-montserrat;
   }
 }
 
