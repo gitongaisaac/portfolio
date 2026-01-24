@@ -9,9 +9,11 @@ gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
+const SCREEN_MD = window.innerWidth > 768;
+
 const svg = document.getElementById('stars');
 const SVG_NS = "http://www.w3.org/2000/svg";
-const STAR_COUNT = 200;
+const STAR_COUNT = window.innerWidth > 1024 ? 200 : 100;
 
 for (let i = 0; i < STAR_COUNT; i++) {
   // 1. Create the circle using the Namespace
@@ -64,10 +66,10 @@ const tl = gsap.timeline();
 
 const taglineTL = gsap.timeline();
 
-gsap.set(".compile", { yPercent: 40, opacity: 0 });
-gsap.set(".debug", { xPercent: -70, opacity: 0 });
-gsap.set(".repeat", { yPercent: -40, opacity: 0 });
-gsap.set(".full-stop", { yPercent: -20, opacity: 0, scale: 0, transformOrigin: "50% 50%" });
+gsap.set(".compile", { yPercent: SCREEN_MD ? 40 : 20, opacity: 0 });
+gsap.set(".debug", { xPercent: SCREEN_MD ? -70 : -35, opacity: 0 });
+gsap.set(".repeat", { yPercent: SCREEN_MD ? -40 : -20, opacity: 0 });
+gsap.set(".full-stop", { yPercent: SCREEN_MD ? -20 : -10, opacity: 0, scale: 0, transformOrigin: "50% 50%" });
 
 taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
 
@@ -75,7 +77,7 @@ taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
 taglineTL
   .to(".compile", {
     yPercent: 0,
-    xPercent: -30,
+    xPercent: SCREEN_MD ? -30 : -15,
     opacity: 1,
     duration: 0.6,
     ease: "power3.out",
@@ -88,7 +90,7 @@ taglineTL
   }, "+=0.1")
   .to(".repeat", {
     yPercent: 0,
-    xPercent: 30,
+    xPercent: SCREEN_MD ? 30 : 15,
     opacity: 1,
     duration: 0.7,
     ease: "power4.out",
@@ -131,72 +133,6 @@ taglineTL
     duration: 0.2,
   }, "<");
 
-// gsap.set(".compile", { y: 60, opacity: 0 });
-// gsap.set(".debug", { x: -80, opacity: 0 });
-// gsap.set(".repeat", { y: -60, opacity: 0 });
-// gsap.set(".full-stop", { y: -20, opacity: 0, scale: 0 });
-//
-// taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
-//
-// // ON — entrance
-// taglineTL
-//   .to(".compile", {
-//     y: 0,
-//     xPercent: "-60%",
-//     opacity: 1,
-//     duration: 0.6,
-//     ease: "power3.out",
-//   })
-//   .to(".debug", {
-//     x: 0,
-//     opacity: 1,
-//     duration: 0.6,
-//     ease: "power3.out",
-//   }, "+=0.1")
-//   .to(".repeat", {
-//     y: 0,
-//     x: "60%",
-//     opacity: 1,
-//     duration: 0.7,
-//     ease: "power4.out",
-//   }, "+=0.15")
-//   .to(".full-stop", {
-//     opacity: 1,
-//     scale: 1,
-//     duration: 0.3,
-//     ease: "power2.out",
-//   }, "-=0.25")
-//
-//   .to({}, { duration: 0.6 })
-//
-//   // HOLD — let it breathe
-//   .to({}, { duration: 0.6 })
-//
-//   // OFF — clean exit
-//   .to(".compile", {
-//     y: -40,
-//     opacity: 0,
-//     duration: 0.4,
-//     ease: "power2.in",
-//   })
-//   .to(".debug", {
-//     x: 40,
-//     opacity: 0,
-//     duration: 0.4,
-//     ease: "power2.in",
-//   }, "<")
-//   .to(".repeat", {
-//     y: 40,
-//     opacity: 0,
-//     duration: 0.4,
-//     ease: "power2.in",
-//   }, "<")
-//   .to(".full-stop", {
-//     opacity: 0,
-//     scale: 0,
-//     duration: 0.2,
-//   }, "<");
-
 const contentTl = gsap.timeline();
 
 gsap.set(".stats li", { opacity: 0, x: -20 });
@@ -236,7 +172,7 @@ document.fonts.ready.then(() => {
       speed: 1,
     }
   }, '-=0.8')
-    .to({}, { duration: 0.6 })
+    .to({}, { duration: 1 })
     .to('.hero-title', {
       duration: 3,
       scrambleText: {
