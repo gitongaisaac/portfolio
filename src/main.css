@@ -20,7 +20,7 @@
   }
 
   #skills .skill .title {
-    @apply font-iceberg font-bold text-5xl lg:text-[65px] text-center text-emerald-500;
+    @apply font-iceberg font-bold text-5xl lg:text-6xl text-center text-emerald-500;
   }
 
   #skills .skill .desc {
@@ -40,11 +40,11 @@
   }
 
   #projects .project {
-    @apply border-b border-zinc-700 py-4 hover:translate-2 hover:grayscale-100 transition-all duration-300 ease-out;
+    @apply border-b border-zinc-700 py-4;
   }
 
   #projects .project a {
-    @apply w-full h-full space-y-2;
+    @apply w-full h-full space-y-2 my-2;
   }
 
   #projects .project h2 {
@@ -77,7 +77,7 @@
   }
 
   .head {
-    @apply  py-8 my-8 md:my-0;
+    @apply  py-8 md:my-0;
   }
 
   .head h1 {

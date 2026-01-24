@@ -210,7 +210,7 @@ gsap.utils.toArray<Element>("#about li").forEach((item) => {
 gsap.set("#skills .head h1", { y: 50, opacity: 0 });
 gsap.set("#skills .head p", { opacity: 0, y: 30 });
 
-gsap.to("#skills .head h1", {
+gsap.to("#skills .head h1, #skills .head p", {
   y: 0,
   opacity: 1,
   duration: 1,
@@ -221,19 +221,6 @@ gsap.to("#skills .head h1", {
     scrub: 1,
   }
 });
-
-gsap.to('#skills .head p', {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#skills",
-    start: "top 80%",
-    end: "bottom 20%",
-    scrub: 1,
-  }
-})
 
 gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
   const title = skill.querySelector('.title');
@@ -332,23 +319,71 @@ gsap.to("#projects .head p", {
   }
 })
 
-const project = document.querySelectorAll(".project");
+const projectItems = document.querySelectorAll(".project");
 
-gsap.set(project, { opacity: 0, scale: 0.8 });
+gsap.set(projectItems, { opacity: 0, y: 50 });
 
-gsap.to(project, {
+gsap.to(projectItems, {
   opacity: 1,
-  scale: 1,
-  duration: 2,
-  stagger: 0.3,
-  ease: "power2.out",
+  y: 0,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power3.out",
   scrollTrigger: {
     trigger: '.project-list',
-    start: "top 90%",
-    end: "top 40%",
-    scrub: 1,
+    start: "top 85%",
+    toggleActions: 'play none none reverse',
   },
-})
+});
+
+projectItems.forEach((item) => {
+  const title = item.querySelector('h2');
+  const techStack = item.querySelector('.tech-stack');
+
+  item.addEventListener('mouseenter', () => {
+    gsap.to(item, {
+      paddingLeft: '2rem',
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+    gsap.to(title, {
+      x: 10,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+    if (techStack) {
+      gsap.to(techStack.querySelectorAll('li'), {
+        x: 5,
+        stagger: 0.05,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    gsap.to(item, {
+      paddingLeft: '0',
+      backgroundColor: 'transparent',
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+    gsap.to(title, {
+      x: 0,
+      color: '#10b981', // Matches emerald-500 from CSS
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+    if (techStack) {
+      gsap.to(techStack.querySelectorAll('li'), {
+        x: 0,
+        stagger: 0.05,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    }
+  });
+});
 
 /**
  * Reviews Section
