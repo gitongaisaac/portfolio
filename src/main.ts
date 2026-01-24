@@ -131,124 +131,134 @@ taglineTL
     duration: 0.2,
   }, "<");
 
-const dots = document.querySelectorAll<HTMLElement>("#hero-logo .dot");
-
-const logoTl = gsap.timeline({
-  defaults: { ease: "power3.out" },
-});
-
-logoTl.to("#hero-logo", { duration: 0.5, opacity: 1 });
-
-dots.forEach((dot) => {
-  if (dot.dataset.shape === "diamond") {
-    logoTl.fromTo(
-      dot,
-      {
-        rotation: 45,
-        scale: 0,
-        opacity: 0,
-        stagger: 0.5,
-      },
-      {
-        rotation: 315,
-        scale: 1,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.5,
-        borderRadius: 4,
-      },
-      "-=0.4"
-    );
-  }
-});
-
-dots.forEach((dot) => {
-  if (dot.dataset.shape === "circle") {
-    const fromX = dot.dataset.side === "left" ? -120 : 120;
-
-    logoTl.fromTo(
-      dot,
-      {
-        x: fromX,
-        borderRadius: "0%",
-        rotation: 0,
-        scale: 0.8,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        borderRadius: "100%",
-        rotation: 180,
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-      },
-      "-=0.5"
-    );
-  }
-});
-
-dots.forEach((dot) => {
-  if (dot.dataset.shape === "pill") {
-    const isHorizontal = dot.dataset.orientation === "horizontal";
-
-    logoTl.fromTo(
-      dot,
-      {
-        scaleX: isHorizontal ? 0 : 2,
-        scaleY: isHorizontal ? 2 : 0,
-        opacity: 0,
-      },
-      {
-        scaleX: 1,
-        scaleY: 1,
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.4"
-    );
-  }
-});
-
-logoTl.to(
-  "#logo .dot[data-shape='pill']",
-  {
-    scale: 1.05,
-    duration: 0.15,
-    yoyo: true,
-    repeat: 1,
-  },
-  "-=0.2"
-);
-
-dots.forEach((dot) => {
-  if (dot.dataset.shape === "square") {
-    logoTl.fromTo(
-      dot,
-      {
-        scale: 0,
-        rotation: -45,
-        duration: 1,
-        borderRadius: "0.25rem",
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        rotation: 0,
-        borderRadius: "1rem",
-        opacity: 1,
-        duration: 0.9,
-        ease: "back.out(1.8)",
-      },
-      "-=0.5"
-    );
-  }
-});
+// const dots = document.querySelectorAll<HTMLElement>("#hero-logo .dot");
+//
+// const logoTl = gsap.timeline({
+//   defaults: { ease: "power3.out" },
+// });
+//
+// logoTl.to("#hero-logo", { duration: 0.5, opacity: 1 });
+//
+// dots.forEach((dot) => {
+//   if (dot.dataset.shape === "diamond") {
+//     logoTl.fromTo(
+//       dot,
+//       {
+//         rotation: 45,
+//         scale: 0,
+//         opacity: 0,
+//         stagger: 0.5,
+//       },
+//       {
+//         rotation: 315,
+//         scale: 1,
+//         opacity: 1,
+//         duration: 0.8,
+//         stagger: 0.5,
+//         borderRadius: 4,
+//       },
+//       "-=0.4"
+//     );
+//   }
+// });
+//
+// dots.forEach((dot) => {
+//   if (dot.dataset.shape === "circle") {
+//     const fromX = dot.dataset.side === "left" ? -120 : 120;
+//
+//     logoTl.fromTo(
+//       dot,
+//       {
+//         x: fromX,
+//         borderRadius: "0%",
+//         rotation: 0,
+//         scale: 0.8,
+//         opacity: 0,
+//       },
+//       {
+//         x: 0,
+//         borderRadius: "100%",
+//         rotation: 180,
+//         scale: 1,
+//         opacity: 1,
+//         duration: 1,
+//       },
+//       "-=0.5"
+//     );
+//   }
+// });
+//
+// dots.forEach((dot) => {
+//   if (dot.dataset.shape === "pill") {
+//     const isHorizontal = dot.dataset.orientation === "horizontal";
+//
+//     logoTl.fromTo(
+//       dot,
+//       {
+//         scaleX: isHorizontal ? 0 : 2,
+//         scaleY: isHorizontal ? 2 : 0,
+//         opacity: 0,
+//       },
+//       {
+//         scaleX: 1,
+//         scaleY: 1,
+//         opacity: 1,
+//         duration: 0.6,
+//         ease: "power2.out",
+//       },
+//       "-=0.4"
+//     );
+//   }
+// });
+//
+// logoTl.to(
+//   "#logo .dot[data-shape='pill']",
+//   {
+//     scale: 1.05,
+//     duration: 0.15,
+//     yoyo: true,
+//     repeat: 1,
+//   },
+//   "-=0.2"
+// );
+//
+// dots.forEach((dot) => {
+//   if (dot.dataset.shape === "square") {
+//     logoTl.fromTo(
+//       dot,
+//       {
+//         scale: 0,
+//         rotation: -45,
+//         duration: 1,
+//         borderRadius: "0.25rem",
+//         opacity: 0,
+//       },
+//       {
+//         scale: 1,
+//         rotation: 0,
+//         borderRadius: "1rem",
+//         opacity: 1,
+//         duration: 0.9,
+//         ease: "back.out(1.8)",
+//       },
+//       "-=0.5"
+//     );
+//   }
+// });
 
 const contentTl = gsap.timeline();
 
+gsap.set(".stats li", { opacity: 0, x: -20 });
+
 contentTl.to("#hero-intro", { duration: 0.5, opacity: 1 });
+
+contentTl.to(".stats li", {
+  opacity: 1,
+  x: 0,
+  duration: 0.8,
+  stagger: 0.1,
+  ease: "power3.out"
+}, "-=0.3");
 
 document.fonts.ready.then(() => {
   SplitText.create(".hero-text", {
@@ -285,45 +295,46 @@ document.fonts.ready.then(() => {
   })
 })
 
-tl.add(taglineTL).add(logoTl).add(contentTl);
+// tl.add(taglineTL).add(logoTl).add(contentTl);
+tl.add(taglineTL).add(contentTl);
 
-const logo = qs<HTMLElement>("#hero-logo");
-
-const squares = logo.querySelectorAll<HTMLElement>(
-  ".dot[data-shape='square']"
-);
-
-const diamonds = logo.querySelectorAll<HTMLElement>(
-  ".dot[data-shape='diamond']"
-);
-
-const tl2 = gsap.timeline({
-  defaults: { ease: "power3.out" },
-})
-
-diamonds.forEach((el) => {
-  tl2.to(el, {
-    rotation: 225,
-    duration: 1,
-    ease: "power1.inOut",
-    repeat: -1,
-    yoyo: true,
-    stagger: 0.5,
-    repeatDelay: gsap.utils.random(4, 7),
-  });
-});
-
-squares.forEach((el) => {
-  tl2.to(el, {
-    rotation: 360,
-    duration: 1.2,
-    ease: "power2.out",
-    repeat: -1,
-    yoyo: true,
-    stagger: 0.5,
-    repeatDelay: gsap.utils.random(5, 9),
-  });
-});
+// const logo = qs<HTMLElement>("#hero-logo");
+//
+// const squares = logo.querySelectorAll<HTMLElement>(
+//   ".dot[data-shape='square']"
+// );
+//
+// const diamonds = logo.querySelectorAll<HTMLElement>(
+//   ".dot[data-shape='diamond']"
+// );
+//
+// const tl2 = gsap.timeline({
+//   defaults: { ease: "power3.out" },
+// })
+//
+// diamonds.forEach((el) => {
+//   tl2.to(el, {
+//     rotation: 225,
+//     duration: 1,
+//     ease: "power1.inOut",
+//     repeat: -1,
+//     yoyo: true,
+//     stagger: 0.5,
+//     repeatDelay: gsap.utils.random(4, 7),
+//   });
+// });
+//
+// squares.forEach((el) => {
+//   tl2.to(el, {
+//     rotation: 360,
+//     duration: 1.2,
+//     ease: "power2.out",
+//     repeat: -1,
+//     yoyo: true,
+//     stagger: 0.5,
+//     repeatDelay: gsap.utils.random(5, 9),
+//   });
+// });
 
 gsap.utils.toArray<Element>("#about li").forEach((item) => {
   gsap.fromTo(item, {

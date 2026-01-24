@@ -7,13 +7,20 @@
 }
 
 @layer components {
+  #hero .stats li p {
+    @apply font-semibold font-montserrat text-neutral-300;
+  }
+
+  #hero .stats li h2 {
+    @apply font-iceberg font-bold text-5xl text-emerald-500;
+  }
 
   #skills .skill {
     @apply max-w-6xl mx-auto min-h-screen p-4 flex flex-col gap-8 justify-center items-start;
   }
 
   #skills .skill .title {
-    @apply font-iceberg font-bold text-[65px] text-center text-emerald-300;
+    @apply font-iceberg font-bold text-[65px] text-center text-emerald-500;
   }
 
   #skills .skill .desc {
@@ -41,7 +48,7 @@
   }
 
   #projects .project h2 {
-    @apply text-6xl font-iceberg font-bold text-emerald-300 transition-colors duration-200 delay-100;
+    @apply text-6xl font-iceberg font-bold text-emerald-500 transition-colors duration-200 delay-100;
   }
 
   #projects .project p {
