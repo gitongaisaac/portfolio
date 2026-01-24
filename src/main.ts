@@ -511,8 +511,8 @@ gsap.to(".review-card", {
 /**
  * Contact Section
  */
-gsap.set("#contact .head p", { opacity: 0, y: 50 });
 gsap.set("#contact .head h1", { y: 50 });
+gsap.set("#contact .head p", { opacity: 0, y: 50 });
 gsap.set("#contact form > div, #contact form > button", { opacity: 0, y: 30 });
 
 gsap.to("#contact .head h1", {
