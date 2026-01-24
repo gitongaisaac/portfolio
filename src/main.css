@@ -76,6 +76,10 @@
     @apply focus:border-emerald-500/50;
   }
 
+  .head {
+    @apply mb-14;
+  }
+
   .head h1 {
     @apply text-6xl md:text-7xl lg:text-[85px] xl:text-[100px] py-2 font-bold font-iceberg text-center text-neutral-400;
   }
