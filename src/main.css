@@ -4,8 +4,12 @@
   --font-nunito: "Nunito", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-iceberg: "Iceberg", sans-serif;
+}
 
-  --color-primary: var(--color-emerald-500);
+@layer base {
+  a {
+    @apply block;
+  }
 }
 
 @layer components {
@@ -14,7 +18,7 @@
   }
 
   #hero .stats li h2 {
-    @apply font-iceberg font-bold text-5xl text-emerald-500;
+    @apply font-iceberg font-bold text-5xl text-teal-500;
   }
 
   #skills .skill {
@@ -22,11 +26,11 @@
   }
 
   #skills .skill .title {
-    @apply font-iceberg font-bold text-5xl lg:text-6xl text-center text-emerald-500;
+    @apply font-iceberg font-bold text-5xl lg:text-6xl text-center text-teal-500;
   }
 
   #skills .skill .desc {
-    @apply py-2 max-w-4xl text-2xl text-neutral-400 text-wrap;
+    @apply py-2 max-w-4xl text-xl md:text-2xl text-neutral-400;
   }
 
   #skills .skill .tools {
@@ -50,7 +54,7 @@
   }
 
   #projects .project h2 {
-    @apply text-4xl sm:text-6xl font-iceberg font-bold text-emerald-500 transition-colors duration-200 delay-100;
+    @apply text-4xl sm:text-6xl font-iceberg font-bold text-teal-500 transition-colors duration-200 delay-100;
   }
 
   #projects .project p {
@@ -66,7 +70,7 @@
   }
 
   #projects .project .tech-stack div {
-    @apply size-2 bg-emerald-600 rounded-full;
+    @apply size-2 bg-teal-600 rounded-full;
   }
 
 
@@ -75,7 +79,7 @@
   }
 
   #contact input, #contact textarea {
-    @apply focus:border-emerald-500/50;
+    @apply focus:border-teal-500/50;
   }
 
   .head {
@@ -83,7 +87,7 @@
   }
 
   .head h1 {
-    @apply text-6xl md:text-7xl lg:text-[85px] xl:text-[100px] py-2 font-bold font-iceberg text-center text-neutral-400;
+    @apply text-6xl md:text-7xl lg:text-[85px] xl:text-[100px] py-2 font-bold font-iceberg text-center text-neutral-100;
   }
 
   .head p {
@@ -91,36 +95,15 @@
   }
 }
 
-.no-js #hero-logo,
+.no-js #tagline,
 .no-js #hero-intro,
-.no-js #tagline {
+.no-js #hero .stats,
+.no-js #back-nav,
+.no-js #project-title,
+.no-js #project-role,
+.no-js #showcase,
+.no-js #overview {
   opacity: 0;
-}
-
-.db::before,  .front-end::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  rotate: 8deg;
-  background: var(--color-neutral-900);
-  border-radius: 100% 10px 100% 10px;
-  opacity: 0.8;
-}
-
-.back-end::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  rotate: -8deg;
-  background: var(--color-neutral-900);
-  border-radius: 10px 100% 10px 100%;
-  opacity: 0.8;
 }
 
 /** ==============================

@@ -11,6 +11,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SCREEN_MD = window.innerWidth > 768;
 
+// Select all links you want to animate
+const links = document.querySelectorAll('.transition-link');
+const curtain = document.getElementById('transition-curtain');
+
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    // 1. STOP the browser from jumping immediately
+    e.preventDefault();
+    const targetUrl = link.getAttribute('href');
+
+    // 2. Animate the curtain IN
+    gsap.to(curtain, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        // 3. NOW change the page (while screen is black)
+        window.location.href = targetUrl ?? '/index.html';
+      }
+    });
+  });
+});
+
+// Optional: Fade curtain OUT if user hits "Back" button to return here
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    gsap.to(curtain, { opacity: 0, duration: 0.5 });
+  }
+});
+
 const svg = document.getElementById('stars');
 const SVG_NS = "http://www.w3.org/2000/svg";
 const STAR_COUNT = window.innerWidth > 1024 ? 200 : 100;
@@ -135,13 +165,14 @@ taglineTL
 
 const contentTl = gsap.timeline();
 
-gsap.set(".stats li", { opacity: 0, x: -20 });
+gsap.set("#hero li", { opacity: 0, x: -20 });
 
+contentTl.to("#hero .stats", { duration: 0.5, opacity: 1 });
 contentTl.to("#hero-intro", { duration: 0.5, opacity: 1 });
 
 contentTl.to(".stats li", {
-  opacity: 1,
   x: 0,
+  opacity: 1,
   duration: 0.8,
   stagger: 0.1,
   ease: "power3.out"
@@ -370,7 +401,7 @@ projectItems.forEach((item) => {
     });
     gsap.to(title, {
       x: 0,
-      color: '#10b981', // Matches emerald-500 from CSS
+      color: '#14b8a6', // Matches teal-500 from CSS
       duration: 0.4,
       ease: 'power2.out'
     });

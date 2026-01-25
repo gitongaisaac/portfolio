@@ -2,16 +2,18 @@
 <html lang="en" class="box-border">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
     <title>G | Full-stack web Developer</title>
   </head>
   <body class="no-js relative bg-black text-gray-200 font-nunito overflow-x-hidden">
+    <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999] opacity-0 pointer-events-none"></div>
+
     <svg
         id="stars"
         class="fixed inset-0 w-full h-full pointer-events-none -z-50"
@@ -29,12 +31,12 @@
     </svg>
 
     <section id="hero" class="relative min-h-screen">
-      <div id="hero-content" class="relative max-w-6xl p-4 mx-auto z-10 overflow-hidden">
+      <div id="hero-content" class="relative max-w-6xl p-4 mx-auto z-10">
         <div id="tagline" class="absolute h-screen w-full flex flex-col items-center justify-center">
           <div class="h-full flex flex-col justify-center items-center gap-6 font-bold font-iceberg space-y-14 text-7xl md:text-8xl text-gray-300">
-            <h1 class="compile block bg-linear-to-l from-yellow-600 to-emerald-200 bg-clip-text text-transparent">COMPILE,</h1>
+            <h1 class="compile block bg-linear-to-l from-yellow-600 to-teal-200 bg-clip-text text-transparent">COMPILE,</h1>
             <h1 class="debug block">DEBUG,</h1>
-            <h1 class="repeat block bg-linear-to-r from-cyan-600 to-yellow-600 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h1>
+            <h1 class="repeat block bg-linear-to-r from-yellow-600 to-teal-600 bg-clip-text text-transparent">REPEAT<span class="full-stop">.</span></h1>
           </div>
         </div>
 
@@ -64,7 +66,7 @@
 
           <div id="hero-intro" class="w-full h-[95%] mb-5 pb-5 flex flex-col justify-end">
             <div class="space-y-3">
-              <h1 class="hero-title text-6xl md:text-8xl font-bold font-iceberg text-emerald-500 mt-4 flex gap-6 py-2">G.</h1>
+              <h1 class="hero-title text-6xl md:text-8xl font-bold font-iceberg text-teal-500 mt-4 flex gap-6 py-2">G.</h1>
               <p class="hero-text max-w-lg text-neutral-400 font-montserrat font-semibold overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
                 Facilis ipsa soluta temporibus!
@@ -75,15 +77,14 @@
 
         <ul
             id="about"
-            class="min-h-[150dvh] pl-4 space-y-20 mt-4 pt-32 grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 justify-between"
+            class="min-h-[150dvh] pl-4 space-y-20 mt-4 pt-32 grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 justify-between oveflow-hidden"
         >
           <li id="me" class="row-start-1 md:col-start-2 md:ml-0 self-center py-2">
-            <h2 class="py-2 font-iceberg font-bold text-cyan-400 text-3xl">
-              <span class="animate-pulse">-</span>
-              <span>Who I Am</span>
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              Who I Am
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-2xl">
+            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
               quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
               dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
@@ -91,12 +92,11 @@
           </li>
 
           <li id="build" class="md:col-start-1 row-start-2 self-center py-2">
-            <h2 class="py-2 font-iceberg font-bold text-cyan-400 text-3xl">
-              <span class="animate-pulse">-</span>
-              <span>What I Do</span>
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              What I Do
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-2xl">
+            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
               ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
               recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
@@ -104,12 +104,11 @@
           </li>
 
           <li id="why" class="md:col-start-2 row-start-3 self-center py-2">
-            <h2 class="py-2 font-iceberg font-bold text-cyan-400 text-3xl">
-              <span class="animate-pulse">-</span>
-              <span>Why I Do It</span>
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              Why I Do It
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-2xl">
+            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
               eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
               nisi obcaecati provident quia rerum sint tenetur veniam vitae?
@@ -122,7 +121,7 @@
 
     <section id="skills" class="relative max-w-7xl mx-auto min-h-[200vh] py-10 overflow-hidden">
       <div class="max-w-6xl mx-auto p-4 head">
-        <h1 class="bg-linear-to-l from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+        <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
           Skills & Tools
         </h1>
         <p class="text-start">
@@ -183,7 +182,7 @@
               Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
               molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
             </p>
-            <div class="flex gap-4 items-center my-4 p-2 px-4 text-xl text-cyan-400 bg-neutral-900/80 w-fit rounded-lg">
+            <div class="flex gap-4 items-center my-4 p-2 px-4 text-xl text-amber-400 bg-neutral-900/80 w-fit rounded-lg">
               <i class="fa-solid fa-gear"></i>
               <p class="font-semibold font-montserrat">RESTful API Design</p>
             </div>
@@ -276,7 +275,7 @@
         </div>
 
         <div class="global">
-          <h3 class="text-2xl py-4 font-iceberg font-semibold text-emerald-500">Dev Tools: </h3>
+          <h3 class="text-2xl py-4 font-iceberg font-semibold text-teal-500">Dev Tools: </h3>
           <ul class="tools flex gap-4 items-center justify-start">
             <li class="tool">
               <img src="/logos/git.png" alt="Git logo" class="img size-6">
@@ -298,15 +297,15 @@
     <section id="projects" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
       <div class="max-w-6xl mx-auto">
         <div class="head">
-          <h1 class="bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+          <h1 class="bg-linear-to-r from-amber-400 to-teal-400 bg-clip-text text-transparent">
             Projects
           </h1>
-          <p class="text-start py-8">Explore my latest work and the technologies that power them</p>
+          <p class="text-start py-8">Explore my latest work and the technologies that power them.</p>
         </div>
 
         <ul class="project-list space-y-4">
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=ikopurrty" class="transition-link">
               <h2>IkoPurrty</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>Next</p> </li>
@@ -318,7 +317,7 @@
             </a>
           </li>
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=premium-gava" class="transition-link">
               <h2>PremiumGava</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>Next</p> </li>
@@ -331,7 +330,7 @@
             </a>
           </li>
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=me-and-you" class="transition-link">
               <h2>M & U</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>React Native</p> </li>
@@ -344,7 +343,7 @@
             </a>
           </li>
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=portfolio" class="transition-link">
               <h2>Portfolio | G</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>HTML</p> </li>
@@ -356,7 +355,7 @@
             </a>
           </li>
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=sprint-kenya" class="transition-link">
               <h2>Sprint Kenya</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>HTML</p> </li>
@@ -368,7 +367,7 @@
             </a>
           </li>
           <li class="project">
-            <a href="https://github.com/gitongaisaac/portfolio" target="_blank" rel="noreferrer">
+            <a href="/project?id=sam-ke" class="transition-link">
               <h2>SamKe</h2>
               <ul class="tech-stack">
                 <li> <div></div> <p>HTML</p> </li>
@@ -384,16 +383,16 @@
     <section id="reviews" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
       <div class="max-w-6xl mx-auto p-4">
         <div class="head pb-14 text-center">
-          <h1 class="bg-linear-to-l from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+          <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
             Reviews
           </h1>
           <p>What people are saying about our collaboration.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reviews-list">
-          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-colors">
+          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
             <div class="space-y-4">
-              <div class="flex text-emerald-400 text-sm">
+              <div class="flex text-teal-400 text-sm">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -405,7 +404,7 @@
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
-              <div class="size-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-bold font-iceberg text-xl">
+              <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
                 JD
               </div>
               <div>
@@ -415,9 +414,9 @@
             </div>
           </div>
 
-          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-colors">
+          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
             <div class="space-y-4">
-              <div class="flex text-emerald-400 text-sm">
+              <div class="flex text-teal-400 text-sm">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -429,7 +428,7 @@
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
-              <div class="size-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-bold font-iceberg text-xl">
+              <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
                 AS
               </div>
               <div>
@@ -439,9 +438,9 @@
             </div>
           </div>
 
-          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-colors">
+          <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
             <div class="space-y-4">
-              <div class="flex text-emerald-400 text-sm">
+              <div class="flex text-teal-400 text-sm">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -453,7 +452,7 @@
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
-              <div class="size-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-bold font-iceberg text-xl">
+              <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
                 BW
               </div>
               <div>
@@ -469,7 +468,8 @@
     <section id="contact" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
       <div class="max-w-6xl mx-auto p-4">
         <div class="head pb-14 text-center">
-          <h1 class="bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 class="bg-linear-to-r from-teal-400 to-amber-400 bg-clip-text text-transparent">
+<!--          <h1 class="bg-linear-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">-->
             Get in Touch
           </h1>
           <p>Have a question or want to work together?</p>
@@ -481,26 +481,26 @@
               <div class="space-y-2">
                 <label for="name" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Name</label>
                 <input type="text" id="name" name="name" required
-                       class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50 transition-all">
+                       class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
               </div>
               <div class="space-y-2">
                 <label for="email" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Email</label>
                 <input type="email" id="email" name="email" required
-                       class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50 transition-all">
+                       class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
               </div>
             </div>
             <div class="space-y-2">
               <label for="subject" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Subject</label>
               <input type="text" id="subject" name="subject" required
-                     class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50 transition-all">
+                     class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
             </div>
             <div class="space-y-2">
               <label for="message" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Message</label>
               <textarea id="message" name="message" rows="6" required
-                        class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50 transition-all"></textarea>
+                        class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"></textarea>
             </div>
             <button type="submit"
-                    class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-neutral-950 font-bold font-iceberg text-xl rounded-lg transition-colors cursor-pointer">
+                    class="w-full py-4 bg-teal-500 hover:bg-teal-600 text-neutral-950 font-bold font-iceberg text-xl rounded-lg transition-colors cursor-pointer">
               Send Message
             </button>
           </form>
@@ -517,11 +517,11 @@
           <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
           Developed by
           <span class="text-cyan-600 font-semibold font-iceberg">
-            <a href="http://gitongaisaac.netlify.app" class="px-1">
+            <a href="http://gitongaisaac.netlify.app" class="inline pr-1">
               <span class="px-0.5">Gitonga Isaac</span>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-          </span>,
+          </span>
           and deployed on
           <span class="text-neutral-200 font-semibold font-iceberg">Netlify</span>.
         </p>
@@ -539,7 +539,7 @@
           </div>
         </div>
 
-        <p class="text-neutral-400">&copy; 2026 All rights reserved.</p>
+        <p class="font-montserrat font-semibold text-sm text-neutral-400">&copy; 2026 All rights reserved.</p>
       </div>
     </footer>
 

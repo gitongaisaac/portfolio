@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" class="box-border">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
+  <title>Project | IkoPurrty</title>
+</head>
+<body class="no-js bg-black text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
+  <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
+
+  <svg
+      id="stars"
+      class="fixed inset-0 w-full h-full pointer-events-none -z-50"
+      xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <nav id="back-nav" class="max-w-5xl mx-auto p-4 sm:py-8 my-4 sm:my-8">
+    <a href="/#projects" class="transition-link group w-fit flex items-center gap-4 font-iceberg text-teal-400">
+      <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
+      <p class="font-semibold">Home</p>
+    </a>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20">
+    <!-- Header / Hero -->
+    <header class="mb-12">
+      <h1 id="project-title" class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 tracking-tight font-iceberg">
+        <!-- JS Injected -->
+      </h1>
+      <p id="project-role" class="text-xl text-teal-400 font-iceberg font-medium mb-6">
+        <!-- JS Injected: Role | Timeline -->
+      </p>
+
+      <div id="showcase" class="aspect-video w-full rounded-xl overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800/50">
+        <img id="project-banner" src="" alt="Project Banner" class="w-full h-full object-cover opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section id="overview" class="mb-16 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-semibold text-neutral-100 mb-4 border-l-4 border-teal-500 pl-4 font-iceberg">Overview</h2>
+        <div id="project-description" class="text-neutral-400 leading-relaxed space-y-4 font-montserrat">
+          <!-- JS Injected HTML -->
+        </div>
+      </div>
+
+      <!-- Tech Stack Sidebar -->
+      <div class="bg-neutral-900/50 p-6 rounded-lg border border-neutral-800 h-fit">
+        <h3 class="text-lg font-semibold text-neutral-100 mb-4 font-iceberg">Tech Stack</h3>
+        <div id="project-stack" class="space-y-6">
+          <!-- JS Injected: Groups of tags -->
+        </div>
+
+        <div id="project-links" class="mt-8 pt-6 border-t border-neutral-800 flex flex-col gap-3">
+          <!-- JS Injected buttons -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Highlights (The "Senior" Section) -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-neutral-100 mb-6 flex items-center gap-3 font-iceberg">
+        <span class="text-teal-400">#</span> System Architecture
+      </h2>
+      <div class="bg-neutral-900/30 rounded-xl p-8 border border-neutral-800">
+        <ul id="architecture-list" class="grid gap-4 text-neutral-300">
+          <!-- JS Injected list items with icons -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Engineering Challenges (Case Studies) -->
+    <section>
+      <h2 class="text-2xl font-semibold text-neutral-100 mb-8 font-iceberg">Engineering Challenges</h2>
+      <div id="challenges-container" class="grid gap-8">
+        <!-- JS Injected Cards -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-neutral-950 border-t border-neutral-900 text-neutral-200 py-8">
+    <div class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center">
+      <p class="text-neutral-400 font-montserrat max-w-lg text-center">
+        Built with,
+        <span class="text-neutral-200 font-semibold font-iceberg">TypeScript, HTML, GSAP, Tailwind CSS,</span>
+        and
+        <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
+        Developed by
+        <span class="text-cyan-600 font-semibold font-iceberg">
+            <a href="http://gitongaisaac.netlify.app" class="inline pr-1">
+              <span class="px-0.5">Gitonga Isaac</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </span>
+        and deployed on
+        <span class="text-neutral-200 font-semibold font-iceberg">Netlify</span>.
+      </p>
+
+
+      <div class="space-y-4 flex gap-4 items-center justify-center">
+        <div class="flex gap-6 items-center justify-center">
+          <a href="https://gitongaisaac.netlify.app" class="hover:text-zinc-400 transition-colors">
+            <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
+          </a>
+          <p>isaacggitonga@gmail.com</p>
+          <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-zinc-400 transition-colors">
+            <i class="fa-brands fa-github text-3xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <p class="font-montserrat font-semibold text-sm text-neutral-400">&copy; 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/project.ts"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
