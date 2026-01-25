@@ -8,9 +8,10 @@ export interface ProjectChallenge {
 export interface Project {
   id: string; // matches the URL param
   title: string;
-  shortDescription: string;
-  fullDescription: string; // Can be HTML string
-  bannerImage: string; // Path to image in /public
+  status: string[];
+  description: string[];
+  about: string[];
+  bannerUrl: string; // Path to image in /public
   role: string; // e.g., "Lead Full-Stack Engineer"
   timeline: string;
 
@@ -23,7 +24,7 @@ export interface Project {
   };
 
   // Highlighting specific architectural patterns (The "Senior" stuff)
-  architectureHighlights: string[];
+  architecture: string[];
 
   // The "STAR" method (Situation, Task, Action, Result) in object form
   challenges: ProjectChallenge[];

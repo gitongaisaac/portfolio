@@ -69,12 +69,26 @@ if (!project) {
 // 1. Populate Header
 document.getElementById('project-title')!.textContent = project.title;
 document.getElementById('project-role')!.textContent = `${project.role}  •  ${project.timeline}`;
-(document.getElementById('project-banner') as HTMLImageElement).src = project.bannerImage;
+(document.getElementById('project-banner') as HTMLImageElement).src = project.bannerUrl;
 (document.getElementById('project-banner') as HTMLImageElement).alt = `${project.title} Banner`;
 document.title = `${project.title} | G`;
 
+const projectStatus = document.getElementById('project-status')!;
+
+project.status.forEach(status => {
+  const p = document.createElement('p');
+  p.innerText = status;
+  projectStatus.appendChild(p);
+})
+
 // 2. Populate Description (innerHTML for paragraph tags)
-document.getElementById('project-description')!.innerHTML = project.fullDescription;
+const projectDescription = document.getElementById('project-description')!;
+
+project.about.forEach(item  => {
+  const p = document.createElement('p');
+  p.innerText = item;
+  projectDescription.appendChild(p);
+})
 
 // 3. Populate Stack
 const stackContainer = document.getElementById('project-stack')!;
@@ -95,7 +109,7 @@ Object.entries(project.stack).forEach(([category, items]) => {
 
 // 4. Architecture Highlights
 const archList = document.getElementById('architecture-list')!;
-project.architectureHighlights.forEach(item => {
+project.architecture.forEach(item => {
   const li = document.createElement('li');
   li.className = 'flex items-start gap-3 font-montserrat';
   li.innerHTML = `

@@ -4,12 +4,13 @@ export const projects: Project[] = [
   {
     id: 'ikopurrty',
     title: 'Ticketing Platform - IkoPurrty',
-    shortDescription: 'A high-concurrency ticketing platform with secure M-Pesa payments and robust RBAC.',
-    fullDescription: `
-      <p class="mb-4">Events Hub is a comprehensive SaaS solution designed to handle high-traffic event ticketing. The core challenge was ensuring data integrity during flash sales while maintaining a seamless user experience via Next.js Server Components.</p>
-      <p>The system features a hybrid authentication model to solve the conflict between stateless server rendering and secure mutation handling.</p>
-    `,
-    bannerImage: '/images/events-hub-banner.webp', // Placeholder
+    status: ['This project is complete'],
+    description: ['A high-concurrency ticketing platform with secure M-Pesa payments and robust RBAC.'],
+    about: [
+      'Events Hub is a comprehensive SaaS solution designed to handle high-traffic event ticketing. The core challenge was ensuring data integrity during flash sales while maintaining a seamless user experience via Next.js Server Components.',
+      'The system features a hybrid authentication model to solve the conflict between stateless server rendering and secure mutation handling.'
+    ],
+    bannerUrl: '/projects/ikopurrty.png', // Placeholder
     role: 'System Architect & Full-Stack Developer',
     timeline: '3 Months',
     stack: {
@@ -18,7 +19,7 @@ export const projects: Project[] = [
       database: ['PostgreSQL', 'Prisma', 'Redis'],
       devops: ['Vercel', 'Neon', 'GitHub Actions']
     },
-    architectureHighlights: [
+    architecture: [
       'Unit of Work (UoW) pattern for transactional integrity across repositories.',
       'Hybrid Auth Strategy using short-lived Access Tokens and long-lived Session Tokens.',
       'Pessimistic Locking to prevent ticket overselling during concurrent checkouts.',
@@ -40,12 +41,13 @@ export const projects: Project[] = [
   {
     id: 'premium-gava',
     title: 'Government Service Portal',
-    shortDescription: 'Enterprise-grade BFF architecture connecting modern UI with legacy Express services.',
-    fullDescription: `
-      <p class="mb-4">A digital transformation project to modernize citizen service delivery. The system required strict data compliance and integration with existing infrastructure.</p>
-      <p>The architecture utilizes a Backend-for-Frontend (BFF) pattern where Next.js acts as a secure proxy and orchestration layer for a robust Express.js backend.</p>
-    `,
-    bannerImage: '/images/gov-portal-banner.webp',
+    status: ['This project is complete.'],
+    description: ['Enterprise-grade BFF architecture connecting modern UI with legacy Express services.'],
+    about: [
+      'A digital transformation project to modernize citizen service delivery. The system required strict data compliance and integration with existing infrastructure.',
+      'The architecture utilizes a Backend-for-Frontend (BFF) pattern where Next.js acts as a secure proxy and orchestration layer for a robust Express.js backend.'
+    ],
+    bannerUrl: '/projects/gava.png',
     role: 'Backend Lead',
     timeline: 'Ongoing',
     stack: {
@@ -54,7 +56,7 @@ export const projects: Project[] = [
       database: ['MySQL', 'Redis'],
       devops: ['Docker', 'Nginx', 'Linux VPS']
     },
-    architectureHighlights: [
+    architecture: [
       'Backend-for-Frontend (BFF) pattern for secure cookie proxying.',
       'Custom API Client with automatic token propagation and Zod validation.',
       'Repository pattern with Raw SQL for optimized complex queries.',
