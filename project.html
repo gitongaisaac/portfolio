@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
-  <title>Project | IkoPurrty</title>
+  <title>Project Details | G</title>
 </head>
 <body class="no-js bg-black text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
   <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
@@ -37,7 +37,23 @@
     </a>
   </nav>
 
-  <main class="max-w-4xl mx-auto px-6 pb-20">
+  <main id="not-found" class="max-w-4xl mx-auto px-6 pb-32 py-8 hidden">
+    <div class="bg-neutral-900/30 p-8 space-y-10 flex flex-col items-center text-center border border-neutral-800 rounded-xl">
+      <div class="space-y-2">
+        <h1 class="text-2xl font-semibold text-neutral-100 mb-4 font-iceberg">Oops!</h1>
+        <p class="text-neutral-400 font-montserrat font-semibold">It looks like this project was not found!</p>
+        <p class="text-neutral-400 font-montserrat font-semibold">Please go back to the projects list and try again.</p>
+        <p class="text-neutral-400 font-montserrat font-semibold">You can also check out other projects from the list.</p>
+      </div>
+
+      <a href="/#projects" class="transition-link group flex items-center gap-4 font-iceberg text-teal-400">
+        <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
+        <p class="font-semibold">Home</p>
+      </a>
+    </div>
+  </main>
+
+  <main id="project" class="max-w-4xl mx-auto px-6 pb-20">
     <!-- Header / Hero -->
     <header class="mb-12">
       <h1 id="project-title" class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 tracking-tight font-iceberg">

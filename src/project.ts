@@ -60,8 +60,9 @@ const projectId = params.get('id');
 const project = projects.find(p => p.id === projectId);
 
 if (!project) {
-  // Handle 404 - Redirect or show error
-  document.body.innerHTML = '<div class="h-screen flex items-center justify-center text-neutral-200 text-2xl font-iceberg">Project not found</div>';
+  // Handle 404
+  document.getElementById('project')!.classList.add('hidden');
+  document.getElementById('not-found')!.classList.remove('hidden');
   throw new Error('Project not found');
 }
 
