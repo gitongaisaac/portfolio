@@ -121,4 +121,29 @@
   opacity: 0.8;
 }
 
+/** ==============================
+  Custom Scrollbar
+================================== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-700) #0b0f0e; /* thumb | track */
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+      180deg,
+      #050707,
+      #0b0f0e
+  );
+}
+
+
 
