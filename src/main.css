@@ -4,6 +4,8 @@
   --font-nunito: "Nunito", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-iceberg: "Iceberg", sans-serif;
+
+  --color-primary: var(--color-emerald-500);
 }
 
 @layer components {
