@@ -497,17 +497,80 @@ const animatePage = () => {
       start: "top 80%",
     }
   });
-
-  const contactForm = document.getElementById("contact-form") as HTMLFormElement;
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData.entries());
-      console.log("Form submitted:", data);
-      alert("Thank you for your message! (This is a demo)");
-      contactForm.reset();
-    });
-  }
 }
 
+const contactForm = document.getElementById("contact-form") as HTMLFormElement;
+const formStatus = document.getElementById("form-status");
+const submitBtn = contactForm?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!submitBtn || !formStatus) return;
+
+    // Reset status
+    formStatus.classList.add('hidden');
+    formStatus.classList.remove('text-green-400', 'text-red-400', 'bg-green-400/10', 'bg-red-400/10');
+
+    // Disable button
+    submitBtn.disabled = true;
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Success
+        formStatus.textContent = result.message || 'Thank you for your message! I will get back to you soon.';
+        formStatus.classList.remove('hidden');
+        formStatus.classList.add('text-green-400', 'bg-green-400/10');
+
+        // Animation for success
+        gsap.fromTo(formStatus,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        );
+
+        // Fun animation for the form on success
+        gsap.to(contactForm, {
+          x: 10,
+          yoyo: true,
+          repeat: 3,
+          duration: 0.1,
+          ease: "power2.inOut"
+        });
+
+        contactForm.reset();
+      } else {
+        // Error from server
+        throw new Error(result.error || 'Something went wrong. Please try again later.');
+      }
+    } catch (error: any) {
+      formStatus.textContent = error.message;
+      formStatus.classList.remove('hidden');
+      formStatus.classList.add('text-red-400', 'bg-red-400/10');
+
+      // Animation for error
+      gsap.fromTo(formStatus,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+}
