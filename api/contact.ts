@@ -44,6 +44,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
     await transporter.sendMail(mailOptions);
     return response.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    return response.status(500).json({ error: 'Failed to send email' });
+    const message = error instanceof Error ? `Failed: ${error.message}` : 'Failed to send email';
+    return response.status(500).json({ error: message });
   }
 }
