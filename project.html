@@ -37,22 +37,6 @@
     </a>
   </nav>
 
-  <main id="not-found" class="max-w-4xl mx-auto px-6 pb-32 py-8 hidden">
-    <div class="bg-neutral-900/30 p-8 space-y-10 flex flex-col items-center text-center border border-neutral-800 rounded-xl">
-      <div class="space-y-2">
-        <h1 class="text-2xl font-semibold text-neutral-100 mb-4 font-iceberg">Oops!</h1>
-        <p class="text-neutral-400 font-montserrat font-semibold">It looks like this project was not found!</p>
-        <p class="text-neutral-400 font-montserrat font-semibold">Please go back to the projects list and try again.</p>
-        <p class="text-neutral-400 font-montserrat font-semibold">You can also check out other projects from the list.</p>
-      </div>
-
-      <a href="/#projects" class="transition-link group flex items-center gap-4 font-iceberg text-teal-400">
-        <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
-        <p class="font-semibold">Home</p>
-      </a>
-    </div>
-  </main>
-
   <main id="project" class="max-w-4xl mx-auto px-6 pb-20">
     <!-- Header / Hero -->
     <header class="mb-12">
@@ -71,15 +55,15 @@
     <!-- Overview -->
     <section id="overview" class="mb-16 grid md:grid-cols-3 gap-12">
       <div class="md:col-span-2 space-y-10">
-        <div>
-          <h2 class="text-2xl font-semibold text-neutral-100 mb-4 border-l-4 border-teal-500 pl-4 font-iceberg">Status</h2>
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg">Status</h2>
           <p id="project-status" class="text-neutral-400 leading-relaxed space-y-4 font-montserrat">
-            <!-- JS Injected HTML -->
+            <!-- JS Injected HTML p tags -->
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-semibold text-neutral-100 mb-4 border-l-4 border-teal-500 pl-4 font-iceberg">Overview</h2>
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg">Overview</h2>
           <div id="project-description" class="text-neutral-400 leading-relaxed space-y-4 font-montserrat">
             <!-- JS Injected HTML -->
           </div>
@@ -120,6 +104,22 @@
     </section>
   </main>
 
+  <main id="not-found" class="max-w-4xl mx-auto px-6 pb-32 py-8 hidden">
+    <div class="bg-neutral-900/30 p-8 space-y-10 flex flex-col items-center text-center border border-neutral-800 rounded-xl">
+      <div class="space-y-2">
+        <h1 class="text-2xl font-semibold text-neutral-100 mb-4 font-iceberg">Oops!</h1>
+        <p class="text-neutral-400 font-montserrat font-semibold">It looks like this project was not found!</p>
+        <p class="text-neutral-400 font-montserrat font-semibold">Please go back to the projects list and try again.</p>
+        <p class="text-neutral-400 font-montserrat font-semibold">You can also check out other projects from the list.</p>
+      </div>
+
+      <a href="/#projects" class="transition-link group flex items-center gap-4 font-iceberg text-teal-400">
+        <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
+        <p class="font-semibold">Home</p>
+      </a>
+    </div>
+  </main>
+
   <footer class="bg-neutral-950 border-t border-neutral-900 text-neutral-200 py-8">
     <div class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center">
       <p class="text-neutral-400 font-montserrat max-w-lg text-center">
@@ -130,7 +130,7 @@
         Developed by
         <span class="text-cyan-600 font-semibold font-iceberg">
             <a href="http://gitongaisaac.netlify.app" class="inline pr-1">
-              <span class="px-0.5">Gitonga Isaac</span>
+              <span class="px-0.5">Isaac</span>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </span>

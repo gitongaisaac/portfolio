@@ -36,7 +36,9 @@ export const projects: Project[] = [
         problem: 'Next.js Server Components are stateless and cannot set cookies, making token refreshes difficult without client-side flickering.',
         solution: 'Designed a "Hybrid Session" model using a long-lived, stateless Session JWT for read operations and a short-lived Opaque Access Token for write operations, ensuring fast reads without compromising mutation security.'
       }
-    ]
+    ],
+    repoUrl: 'https://github.com/gitongaisaac/events-hub',
+    liveUrl: 'https://ikopurrty.vercel.app/'
   },
   {
     id: 'premium-gava',
@@ -74,5 +76,44 @@ export const projects: Project[] = [
         solution: 'Implemented a custom Unit of Work class using dependency injection child containers to swap the global DB pool with a transactional connection context dynamically.'
       }
     ]
+  },
+  {
+    id: 'portfolio',
+    title: 'Portfolio | Full Stack Web Developer',
+    status: ['This project is complete'],
+    description: ['A high-performance personal portfolio featuring advanced GSAP animations and dynamic content injection.'],
+    about: [
+      'This portfolio was designed to showcase my technical skills while providing a high-quality user experience. The main goal was to move away from static templates and build a custom, performant engine for project presentation.',
+      'The site uses a dynamic project routing system that injects data from a centralized store, allowing for easy updates and maintenance.'
+    ],
+    bannerUrl: '/projects/portfolio.png',
+    role: 'Lead Developer',
+    timeline: '2 Weeks',
+    stack: {
+      frontend: ['TypeScript', 'GSAP', 'Tailwind CSS', 'Vite', 'HTML5'],
+      backend: ['Vercel Functions (Node.js)'],
+      database: [],
+      devops: ['Vercel', 'GitHub Actions']
+    },
+    architecture: [
+      'Dynamic Content Injection system based on URL parameters.',
+      'GSAP ScrollTrigger for complex scroll-based orchestration.',
+      'Atomic Design principles for reusable components.',
+      'Serverless Contact Form handling via Vercel Edge/Serverless functions.'
+    ],
+    challenges: [
+      {
+        title: 'Animation Orchestration',
+        problem: "I had never handled animations of this magnitude before, which led to initial performance bottlenecks and timeline conflicts.",
+        solution: 'Leveraged GSAP timelines and ScrollTrigger to create a centralized animation controller, ensuring smooth transitions and efficient resource management.'
+      },
+      {
+        title: 'Dynamic Data Injection',
+        problem: 'Creating separate HTML files for every project was inefficient and hard to maintain.',
+        solution: 'Implemented a single dynamic project.html file that fetches and renders project-specific data based on URL IDs, significantly reducing code duplication.'
+      }
+    ],
+    repoUrl: 'https://github.com/gitongaisaac/portfolio',
+    liveUrl: 'https://gitongaisaac.vercel.app/'
   }
 ];

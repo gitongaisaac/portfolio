@@ -11,34 +11,51 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SCREEN_MD = window.innerWidth > 768;
 
-// Select all links you want to animate
-const links = document.querySelectorAll('.transition-link');
-const curtain = document.getElementById('transition-curtain');
+// Wait for the DOM to be ready
+document.addEventListener("DOMContentLoaded", () => {
+  const curtain = document.getElementById('transition-curtain');
 
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    // 1. STOP the browser from jumping immediately
-    e.preventDefault();
-    const targetUrl = link.getAttribute('href');
-
-    // 2. Animate the curtain IN
-    gsap.to(curtain, {
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.inOut",
-      onComplete: () => {
-        // 3. NOW change the page (while screen is black)
-        window.location.href = targetUrl ?? '/index.html';
+  // Optional: Small delay to ensure images/fonts are parsed
+  gsap.to(curtain, {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.inOut",
+    delay: 0.2,
+    onComplete: () => {
+      // Remove it from the DOM flow so it doesn't block clicks
+      if (curtain) {
+        curtain.style.pointerEvents = "none";
       }
+      // Start page animations after curtain is gone
+      animatePage();
+    }
+  });
+
+  // Select all links you want to animate
+  const links = document.querySelectorAll('.transition-link');
+  const transitionCurtain = document.getElementById('transition-curtain');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // 1. STOP the browser from jumping immediately
+      e.preventDefault();
+      const targetUrl = link.getAttribute('href');
+
+      // 2. Animate the curtain IN
+      gsap.to(transitionCurtain, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.inOut",
+        onStart: () => {
+          if (transitionCurtain) transitionCurtain.style.pointerEvents = "all";
+        },
+        onComplete: () => {
+          // 3. NOW change the page (while screen is black)
+          window.location.href = targetUrl ?? '/index.html';
+        }
+      });
     });
   });
-});
-
-// Optional: Fade curtain OUT if user hits "Back" button to return here
-window.addEventListener('pageshow', (e) => {
-  if (e.persisted) {
-    gsap.to(curtain, { opacity: 0, duration: 0.5 });
-  }
 });
 
 const svg = document.getElementById('stars');
@@ -89,406 +106,408 @@ for (let i = 0; i < STAR_COUNT; i++) {
   });
 }
 
-gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
-gsap.set("#hero-intro", { opacity: 0, y: 20 });
+const animatePage = () => {
+  gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
+  gsap.set("#hero-intro", { opacity: 0, y: 20 });
 
-const tl = gsap.timeline();
+  const tl = gsap.timeline();
 
-const taglineTL = gsap.timeline();
+  const taglineTL = gsap.timeline();
 
-gsap.set(".compile", { yPercent: SCREEN_MD ? 40 : 20, opacity: 0 });
-gsap.set(".debug", { xPercent: SCREEN_MD ? -70 : -35, opacity: 0 });
-gsap.set(".repeat", { yPercent: SCREEN_MD ? -40 : -20, opacity: 0 });
-gsap.set(".full-stop", { yPercent: SCREEN_MD ? -20 : -10, opacity: 0, scale: 0, transformOrigin: "50% 50%" });
+  gsap.set(".compile", { yPercent: SCREEN_MD ? 40 : 20, opacity: 0 });
+  gsap.set(".debug", { xPercent: SCREEN_MD ? -70 : -35, opacity: 0 });
+  gsap.set(".repeat", { yPercent: SCREEN_MD ? -40 : -20, opacity: 0 });
+  gsap.set(".full-stop", { yPercent: SCREEN_MD ? -20 : -10, opacity: 0, scale: 0, transformOrigin: "50% 50%" });
 
-taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
+  taglineTL.to("#tagline", { duration: 0.5, opacity: 1 });
 
-// ON — entrance (percent-based so it scales with font-size)
-taglineTL
-  .to(".compile", {
-    yPercent: 0,
-    xPercent: SCREEN_MD ? -30 : -15,
+  // ON — entrance (percent-based so it scales with font-size)
+  taglineTL
+    .to(".compile", {
+      yPercent: 0,
+      xPercent: SCREEN_MD ? -30 : -15,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power3.out",
+    })
+    .to(".debug", {
+      xPercent: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power3.out",
+    }, "+=0.1")
+    .to(".repeat", {
+      yPercent: 0,
+      xPercent: SCREEN_MD ? 30 : 15,
+      opacity: 1,
+      duration: 0.7,
+      ease: "power4.out",
+    }, "+=0.15")
+    .to(".full-stop", {
+      yPercent: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    }, "-=0.25")
+
+    .to({}, { duration: 0.6 })
+
+    // HOLD — let it breathe
+    .to({}, { duration: 0.6 })
+
+    // OFF — clean exit (also percent-based)
+    .to(".compile", {
+      yPercent: -60,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+    })
+    .to(".debug", {
+      xPercent: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+    }, "<")
+    .to(".repeat", {
+      yPercent: 60,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+    }, "<")
+    .to(".full-stop", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.2,
+    }, "<");
+
+  const contentTl = gsap.timeline();
+
+  gsap.set("#hero li", { opacity: 0, x: -20 });
+
+  contentTl.to("#hero .stats", { duration: 0.5, opacity: 1 });
+  contentTl.to("#hero-intro", { duration: 0.5, opacity: 1 });
+
+  contentTl.to(".stats li", {
+    x: 0,
     opacity: 1,
-    duration: 0.6,
-    ease: "power3.out",
-  })
-  .to(".debug", {
-    xPercent: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power3.out",
-  }, "+=0.1")
-  .to(".repeat", {
-    yPercent: 0,
-    xPercent: SCREEN_MD ? 30 : 15,
-    opacity: 1,
-    duration: 0.7,
-    ease: "power4.out",
-  }, "+=0.15")
-  .to(".full-stop", {
-    yPercent: 0,
-    opacity: 1,
-    scale: 1,
-    duration: 0.3,
-    ease: "power2.out",
-  }, "-=0.25")
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "power3.out"
+  }, "-=0.3");
 
-  .to({}, { duration: 0.6 })
+  document.fonts.ready.then(() => {
+    SplitText.create(".hero-text", {
+      type: "chars words",
+      onSplit: (self) => {
+        contentTl.from(self.chars, {
+          yPercent: "random([-100, 100])",
+          rotation: "random([-30, 30])",
+          autoAlpha: 0,
+          smartWrap: true,
+          stagger: {
+            amount: 2,
+            from: "random",
+          },
+        }, '-=0.8')
+      }
+    });
 
-  // HOLD — let it breathe
-  .to({}, { duration: 0.6 })
-
-  // OFF — clean exit (also percent-based)
-  .to(".compile", {
-    yPercent: -60,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power2.in",
-  })
-  .to(".debug", {
-    xPercent: 30,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power2.in",
-  }, "<")
-  .to(".repeat", {
-    yPercent: 60,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power2.in",
-  }, "<")
-  .to(".full-stop", {
-    opacity: 0,
-    scale: 0,
-    duration: 0.2,
-  }, "<");
-
-const contentTl = gsap.timeline();
-
-gsap.set("#hero li", { opacity: 0, x: -20 });
-
-contentTl.to("#hero .stats", { duration: 0.5, opacity: 1 });
-contentTl.to("#hero-intro", { duration: 0.5, opacity: 1 });
-
-contentTl.to(".stats li", {
-  x: 0,
-  opacity: 1,
-  duration: 0.8,
-  stagger: 0.1,
-  ease: "power3.out"
-}, "-=0.3");
-
-document.fonts.ready.then(() => {
-  SplitText.create(".hero-text", {
-    type: "chars words",
-    onSplit: (self) => {
-      contentTl.from(self.chars, {
-        yPercent: "random([-100, 100])",
-        rotation: "random([-30, 30])",
-        autoAlpha: 0,
-        smartWrap: true,
-        stagger: {
-          amount: 2,
-          from: "random",
-        },
-      }, '-=0.8')
-    }
-  });
-
-  contentTl.to('.hero-title', {
-    duration: 3,
-    scrambleText: {
-      text: "Isaac Gitonga",
-      chars: "Gitonga Isaac",
-      speed: 1,
-    }
-  }, '-=0.8')
-    .to({}, { duration: 1 })
-    .to('.hero-title', {
+    contentTl.to('.hero-title', {
       duration: 3,
       scrambleText: {
-        text: "G.",
-        chars: "Isaac Gitonga",
+        text: "Isaac Gitonga",
+        chars: "Gitonga Isaac",
+        speed: 1,
       }
+    }, '-=0.8')
+      .to({}, { duration: 1 })
+      .to('.hero-title', {
+        duration: 3,
+        scrambleText: {
+          text: "G.",
+          chars: "Isaac Gitonga",
+        }
+    })
   })
-})
 
-tl.add(taglineTL).add(contentTl);
+  tl.add(taglineTL).add(contentTl);
 
-gsap.utils.toArray<Element>("#about li").forEach((item) => {
-  gsap.fromTo(item, {
-    opacity: 0,
-    y: 100,
-    xPercent: item.matches(":nth-child(odd)") ? 10 : -10,
-  }, {
-    y: -100,
+  gsap.utils.toArray<Element>("#about li").forEach((item) => {
+    gsap.fromTo(item, {
+      opacity: 0,
+      y: 100,
+      xPercent: item.matches(":nth-child(odd)") ? 10 : -10,
+    }, {
+      y: -100,
+      opacity: 1,
+      xPercent: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 95%",
+        end: "center center",
+        scrub: 1,
+      }
+    });
+  })
+
+  /**
+   * Skills Section
+   */
+  gsap.set("#skills .head h1", { y: 50, opacity: 0 });
+  gsap.set("#skills .head p", { opacity: 0, y: 30 });
+
+  gsap.to("#skills .head h1, #skills .head p", {
+    y: 0,
     opacity: 1,
-    xPercent: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#skills",
+      start: "top 80%",
+      scrub: 1,
+    }
+  });
+
+  gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
+    const title = skill.querySelector('.title');
+    const desc = skill.querySelector('.desc');
+    const tools = skill.querySelectorAll('.tool');
+
+    gsap.from(title, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: skill,
+        start: 'top center',
+        end: 'bottom bottom',
+        toggleActions: 'play none none reverse',
+        scrub: 1
+      }
+    });
+
+    gsap.from(desc, {
+      x: i % 2 === 0 ? -100 : 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: skill,
+        start: 'top center',
+        end: 'bottom bottom',
+        toggleActions: 'play none none reverse',
+        scrub: 1,
+      }
+    });
+
+    gsap.from(tools, {
+      opacity: 0,
+      y: 30,
+      duration: 1.5,
+      stagger: 0.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: skill,
+        start: 'top 20%',
+        end: 'bottom 105%',
+        toggleActions: 'play none none reverse',
+        scrub: 1,
+      }
+    });
+  })
+
+  /**
+   * Projects Section
+   */
+  gsap.set("#projects .head h1", { y: 50, opacity: 0 });
+  gsap.set("#projects .head p", { opacity: 0, y: 30 });
+
+  gsap.to("#projects .head h1", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#projects",
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: 1,
+    }
+  });
+
+  gsap.to('#projects .head p', {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#projects",
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: 1,
+    }
+  })
+
+  gsap.to("#projects .head p", {
+    x: 0,
+    opacity: 1,
     duration: 1,
     ease: "power2.out",
+    scrambleText: {
+      text: 'A curated selection of my most recent projects.',
+      chars: 'My Favourite Recent projects.',
+    },
     scrollTrigger: {
-      trigger: item,
-      start: "top 95%",
-      end: "center center",
-      scrub: 1,
+      trigger: "#projects .head",
+      start: "top 80%",
+      end: "bottom 20%",
     }
-  });
-})
+  })
 
-/**
- * Skills Section
- */
-gsap.set("#skills .head h1", { y: 50, opacity: 0 });
-gsap.set("#skills .head p", { opacity: 0, y: 30 });
+  const projectItems = document.querySelectorAll(".project");
 
-gsap.to("#skills .head h1, #skills .head p", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#skills",
-    start: "top 80%",
-    scrub: 1,
-  }
-});
+  gsap.set(projectItems, { opacity: 0, y: 50 });
 
-gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
-  const title = skill.querySelector('.title');
-  const desc = skill.querySelector('.desc');
-  const tools = skill.querySelectorAll('.tool');
-
-  gsap.from(title, {
-    opacity: 0,
-    scale: 0.8,
+  gsap.to(projectItems, {
+    opacity: 1,
+    y: 0,
     duration: 1,
-    ease: 'power3.out',
+    stagger: 0.2,
+    ease: "power3.out",
     scrollTrigger: {
-      trigger: skill,
-      start: 'top center',
-      end: 'bottom bottom',
+      trigger: '.project-list',
+      start: "top 85%",
       toggleActions: 'play none none reverse',
-      scrub: 1
-    }
+    },
   });
 
-  gsap.from(desc, {
-    x: i % 2 === 0 ? -100 : 100,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: skill,
-      start: 'top center',
-      end: 'bottom bottom',
-      toggleActions: 'play none none reverse',
-      scrub: 1,
-    }
-  });
+  projectItems.forEach((item) => {
+    const title = item.querySelector('h2');
+    const techStack = item.querySelector('.tech-stack');
 
-  gsap.from(tools, {
-    opacity: 0,
-    y: 30,
-    duration: 1.5,
-    stagger: 0.5,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: skill,
-      start: 'top 20%',
-      end: 'bottom 105%',
-      toggleActions: 'play none none reverse',
-      scrub: 1,
-    }
-  });
-})
-
-/**
- * Projects Section
- */
-gsap.set("#projects .head h1", { y: 50, opacity: 0 });
-gsap.set("#projects .head p", { opacity: 0, y: 30 });
-
-gsap.to("#projects .head h1", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#projects",
-    start: "top 80%",
-    end: "bottom 20%",
-    scrub: 1,
-  }
-});
-
-gsap.to('#projects .head p', {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#projects",
-    start: "top 80%",
-    end: "bottom 20%",
-    scrub: 1,
-  }
-})
-
-gsap.to("#projects .head p", {
-  x: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power2.out",
-  scrambleText: {
-    text: 'A curated selection of my most recent projects.',
-    chars: 'My Favourite Recent projects.',
-  },
-  scrollTrigger: {
-    trigger: "#projects .head",
-    start: "top 80%",
-    end: "bottom 20%",
-  }
-})
-
-const projectItems = document.querySelectorAll(".project");
-
-gsap.set(projectItems, { opacity: 0, y: 50 });
-
-gsap.to(projectItems, {
-  opacity: 1,
-  y: 0,
-  duration: 1,
-  stagger: 0.2,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: '.project-list',
-    start: "top 85%",
-    toggleActions: 'play none none reverse',
-  },
-});
-
-projectItems.forEach((item) => {
-  const title = item.querySelector('h2');
-  const techStack = item.querySelector('.tech-stack');
-
-  item.addEventListener('mouseenter', () => {
-    gsap.to(item, {
-      paddingLeft: '2rem',
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-    gsap.to(title, {
-      x: 10,
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-    if (techStack) {
-      gsap.to(techStack.querySelectorAll('li'), {
-        x: 5,
-        stagger: 0.05,
-        duration: 0.3,
+    item.addEventListener('mouseenter', () => {
+      gsap.to(item, {
+        paddingLeft: '2rem',
+        duration: 0.4,
         ease: 'power2.out'
       });
-    }
-  });
+      gsap.to(title, {
+        x: 10,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+      if (techStack) {
+        gsap.to(techStack.querySelectorAll('li'), {
+          x: 5,
+          stagger: 0.05,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      }
+    });
 
-  item.addEventListener('mouseleave', () => {
-    gsap.to(item, {
-      paddingLeft: '0',
-      backgroundColor: 'transparent',
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-    gsap.to(title, {
-      x: 0,
-      color: '#14b8a6', // Matches teal-500 from CSS
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-    if (techStack) {
-      gsap.to(techStack.querySelectorAll('li'), {
+    item.addEventListener('mouseleave', () => {
+      gsap.to(item, {
+        paddingLeft: '0',
+        backgroundColor: 'transparent',
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+      gsap.to(title, {
         x: 0,
-        stagger: 0.05,
-        duration: 0.3,
+        color: '#14b8a6', // Matches teal-500 from CSS
+        duration: 0.4,
         ease: 'power2.out'
       });
+      if (techStack) {
+        gsap.to(techStack.querySelectorAll('li'), {
+          x: 0,
+          stagger: 0.05,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      }
+    });
+  });
+
+  /**
+   * Reviews Section
+   */
+  gsap.set("#reviews .head h1", { y: 50, opacity: 0 });
+  gsap.set("#reviews .head p", { opacity: 0, y: 30 });
+
+  gsap.set(".review-card", { opacity: 0, y: 40 });
+
+  gsap.to("#reviews .head h1, #reviews .head p", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#reviews",
+      start: "top 80%",
+      scrub: 1,
     }
   });
-});
 
-/**
- * Reviews Section
- */
-gsap.set("#reviews .head h1", { y: 50, opacity: 0 });
-gsap.set("#reviews .head p", { opacity: 0, y: 30 });
-
-gsap.set(".review-card", { opacity: 0, y: 40 });
-
-gsap.to("#reviews .head h1, #reviews .head p", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#reviews",
-    start: "top 80%",
-    scrub: 1,
-  }
-});
-
-gsap.to(".review-card", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  stagger: 0.2,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".reviews-list",
-    start: "top 90%",
-    scrub: 1,
-  }
-});
-
-/**
- * Contact Section
- */
-gsap.set("#contact .head h1", { y: 50, opacity: 0 });
-gsap.set("#contact .head p", { opacity: 0, y: 30 });
-gsap.set("#contact form > div, #contact form > button", { opacity: 0, y: 30 });
-
-gsap.to("#contact .head h1, #contact .head p", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#contact",
-    start: "top 80%",
-    scrub: 1,
-  }
-});
-
-gsap.to("#contact form > div, #contact form > button", {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  stagger: 0.2,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: "#contact-form",
-    start: "top 80%",
-  }
-});
-
-const contactForm = document.getElementById("contact-form") as HTMLFormElement;
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form submitted:", data);
-    alert("Thank you for your message! (This is a demo)");
-    contactForm.reset();
+  gsap.to(".review-card", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".reviews-list",
+      start: "top 90%",
+      scrub: 1,
+    }
   });
+
+  /**
+   * Contact Section
+   */
+  gsap.set("#contact .head h1", { y: 50, opacity: 0 });
+  gsap.set("#contact .head p", { opacity: 0, y: 30 });
+  gsap.set("#contact form > div, #contact form > button", { opacity: 0, y: 30 });
+
+  gsap.to("#contact .head h1, #contact .head p", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 80%",
+      scrub: 1,
+    }
+  });
+
+  gsap.to("#contact form > div, #contact form > button", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#contact-form",
+      start: "top 80%",
+    }
+  });
+
+  const contactForm = document.getElementById("contact-form") as HTMLFormElement;
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData.entries());
+      console.log("Form submitted:", data);
+      alert("Thank you for your message! (This is a demo)");
+      contactForm.reset();
+    });
+  }
 }
 

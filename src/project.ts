@@ -140,6 +140,32 @@ project.challenges.forEach(challenge => {
   challengesContainer.appendChild(card);
 });
 
+// 6. Project Links (Repo & Live)
+const linksContainer = document.getElementById('project-links')!;
+if (project.liveUrl) {
+  const liveLink = document.createElement('a');
+  liveLink.href = project.liveUrl;
+  liveLink.target = '_blank';
+  liveLink.className = 'project-link-btn flex items-center justify-center gap-2 w-full py-3 bg-teal-500 hover:bg-teal-600 text-neutral-950 font-bold font-iceberg rounded-lg transition-colors duration-300';
+  liveLink.innerHTML = `
+    <span>Live Site</span>
+    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+  `;
+  linksContainer.appendChild(liveLink);
+}
+
+if (project.repoUrl) {
+  const repoLink = document.createElement('a');
+  repoLink.href = project.repoUrl;
+  repoLink.target = '_blank';
+  repoLink.className = 'project-link-btn flex items-center justify-center gap-2 w-full py-3 bg-neutral-800 hover:bg-neutral-700 text-neutral-100 font-bold font-iceberg rounded-lg border border-neutral-700 transition-colors duration-300';
+  repoLink.innerHTML = `
+    <i class="fa-brands fa-github"></i>
+    <span>View Source</span>
+  `;
+  linksContainer.appendChild(repoLink);
+}
+
 /**
  * Page Animations
  */
@@ -147,8 +173,10 @@ function animatePage() {
   gsap.set("#back-nav", {  xPercent: -20, opacity: 0 });
   gsap.set("#showcase", { scale: 0.95, opacity: 0})
   gsap.set("#project-title", { y: 30, opacity: 0 });
+  gsap.set("#project-status", { y: 30, opacity: 0 });
   gsap.set("#project-role", { y: 20, opacity: 0 });
   gsap.set("#overview", { y: 20, opacity: 0 });
+  gsap.set(".project-link-btn", { y: 10, opacity: 0 });
 
   const tl = gsap.timeline({
     defaults: { ease: "power3.out", duration: 1 }
@@ -156,41 +184,54 @@ function animatePage() {
 
   // Header Animation
   tl.to("#project-title", { y: 0, opacity: 1 }, 0.2)
+    .to("#project-status", { y: 0, opacity: 1 }, "-=0.7")
     .to("#project-role", { y: 0, opacity: 1 }, "-=0.7")
     .to("#showcase", { scale: 1, opacity: 1 }, "-=0.7")
     .to("#back-nav", { xPercent: 0, opacity: 1 }, "-=0.7")
-    .to("#overview", { y: 0, opacity: 1 }, "-=0.7");
+    .to("#overview", { y: 0, opacity: 1 }, "-=0.7")
+    .to(".project-link-btn", { y: 0, opacity: 1, stagger: 0.1 }, "-=0.7");
 
   // Overview & Tech Stack
-  gsap.from("section:nth-of-type(1) h2", {
-    scrollTrigger: {
-      trigger: "section:nth-of-type(1)",
-      start: "top 85%",
-    },
+  gsap.from("#overview h2", {
     x: -30,
     opacity: 0,
-    duration: 1
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#overview",
+      start: "top 85%",
+    },
   });
 
   gsap.from("#project-description p", {
-    scrollTrigger: {
-      trigger: "#project-description",
-      start: "top 85%",
-    },
     y: 20,
     opacity: 0,
     stagger: 0.2,
-    duration: 1
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#project-description",
+      start: "top 85%",
+    }
+  });
+
+  gsap.from("#project-status p", {
+    y: 20,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#project-status",
+      start: "top 85%",
+    }
   });
 
   gsap.from("section:nth-of-type(1) .bg-neutral-900\\/50", {
+    x: 30,
+    opacity: 0,
+    duration: 1,
     scrollTrigger: {
       trigger: "section:nth-of-type(1) .bg-neutral-900\\/50",
       start: "top 85%",
     },
-    x: 30,
-    opacity: 0,
-    duration: 1
   });
 
   // Architecture Section
