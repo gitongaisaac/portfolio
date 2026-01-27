@@ -10,6 +10,8 @@ export function initNavbar() {
 
   if (!menuToggle || !sideNav || !menuClose || !navBackdrop || !navDrawer) return;
 
+  gsap.to(sideNav, { opacity: 1 });
+
   // Initialize state
   gsap.set(sideNav, { visibility: 'hidden' });
   gsap.set(navDrawer, { xPercent: 100 });
