@@ -509,8 +509,12 @@ if (contactForm) {
 
     if (!submitBtn || !formStatus) return;
 
+
     // Reset status
-    formStatus.classList.add('hidden');
+    const formStatusMessage = formStatus.querySelector('.form-status-message');
+    if (formStatusMessage) {
+      formStatusMessage.classList.add('hidden');
+    }
     formStatus.classList.remove('text-green-400', 'text-red-400', 'bg-green-400/10', 'bg-red-400/10');
 
     // Disable button
@@ -534,8 +538,11 @@ if (contactForm) {
 
       if (response.ok) {
         // Success
-        formStatus.textContent = result.message || 'Thank you for your message! I will get back to you soon.';
-        formStatus.classList.remove('hidden');
+        const formStatusMessage = formStatus.querySelector('.form-status-message');
+        if (formStatusMessage) {
+          formStatusMessage.textContent = result.message || 'Thank you for your message! I will get back to you soon.';
+          formStatusMessage.classList.remove('hidden');
+        }
         formStatus.classList.add('text-green-400', 'bg-green-400/10');
 
         // Animation for success
@@ -546,7 +553,7 @@ if (contactForm) {
 
         // Fun animation for the form on success
         gsap.to(contactForm, {
-          x: 10,
+          x: 5,
           yoyo: true,
           repeat: 3,
           duration: 0.1,
@@ -555,12 +562,15 @@ if (contactForm) {
 
         contactForm.reset();
       } else {
-        // Error from server
         throw new Error(result.error || 'Something went wrong. Please try again later.');
       }
     } catch (error: any) {
-      formStatus.textContent = error.message;
-      formStatus.classList.remove('hidden');
+      const statusMessage = formStatus.querySelector('.form-status-message');
+
+      if (!statusMessage) return;
+
+      statusMessage.textContent = error.message;
+      statusMessage.classList.remove('hidden');
       formStatus.classList.add('text-red-400', 'bg-red-400/10');
 
       // Animation for error
