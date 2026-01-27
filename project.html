@@ -14,6 +14,69 @@
 <body class="no-js bg-black text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
   <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
 
+  <!-- Navigation -->
+  <button id="menu-toggle" class="fixed top-6 right-6 z-[90] p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm">
+    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+  </button>
+
+  <nav id="side-nav" class="fixed inset-0 z-[99]">
+    <div id="nav-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-[99]"></div>
+
+    <div id="nav-content" class="fixed right-0 w-full md:w-[450px] space-y-6 flex flex-col h-full p-8 z-[200] bg-neutral-950 border-l border-neutral-800 overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <div class="flex gap-6 text-2xl text-neutral-400">
+          <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-white transition-colors">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <button id="menu-close" class="p-3 text-neutral-400 hover:text-white transition-colors cursor-pointer">
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+      </div>
+
+      <ul class="space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden">
+        <li>
+          <a href="/#hero" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+            <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">01</span>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/#skills" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+            <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">02</span>
+            Skills
+          </a>
+        </li>
+        <li>
+          <a href="/#projects" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+            <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">03</span>
+            Projects
+          </a>
+        </li>
+        <li>
+          <a href="/#reviews" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+            <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">04</span>
+            Reviews
+          </a>
+        </li>
+        <li>
+          <a href="/#contact" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+            <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">05</span>
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <div class="flex gap-4 items-center">
+        <img src="/logos/logo-dark.png" alt="Profile Logo" class="rounded-full w-8 h-8">
+        <p class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase">isaacggitonga@gmail.com</p>
+      </div>
+    </div>
+  </nav>
+
   <svg
       id="stars"
       class="fixed inset-0 w-full h-full pointer-events-none -z-50"

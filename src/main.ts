@@ -2,6 +2,7 @@ import gsap from "gsap";
 import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
 import {SplitText} from "gsap/SplitText";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {initNavbar} from "./navbar";
 
 document.documentElement.classList.remove("no-js");
 
@@ -13,6 +14,7 @@ const SCREEN_MD = window.innerWidth > 768;
 
 // Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", () => {
+  initNavbar();
   const curtain = document.getElementById('transition-curtain');
 
   // Optional: Small delay to ensure images/fonts are parsed
