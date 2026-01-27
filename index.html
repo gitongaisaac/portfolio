@@ -11,8 +11,8 @@
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
     <title>G | Full-stack web Developer</title>
   </head>
-  <body class="no-js relative bg-black text-gray-200 font-nunito">
-    <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999] opacity-0 pointer-events-none"></div>
+  <body data-page="home" class="no-js relative bg-black text-gray-200 font-nunito">
+    <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
 
     <button id="menu-toggle" class="fixed top-6 right-6 z-[90] p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm">
       <i class="fa-solid fa-bars-staggered text-2xl"></i>
@@ -602,7 +602,7 @@
               <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
             </a>
             <p class="bg-neutral-800 rounded-md px-4">
-              <span class="pr-2">isaacggitonga@gmail.com</span>
+              <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
               <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy"></i></button>
             </p>
             <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-zinc-400 transition-colors">
@@ -616,5 +616,6 @@
     </footer>
 
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/home.ts"></script>
   </body>
 </html>

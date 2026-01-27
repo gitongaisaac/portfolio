@@ -4,9 +4,9 @@ export function initNavbar() {
   const menuToggle = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');
   const sideNav = document.getElementById('side-nav');
+  const navDrawer = document.getElementById('nav-content');
   const navBackdrop = document.getElementById('nav-backdrop');
   const navLinks = document.querySelectorAll('.nav-link');
-  const navDrawer = document.getElementById('nav-content');
 
   if (!menuToggle || !sideNav || !menuClose || !navBackdrop || !navDrawer) return;
 
@@ -44,7 +44,7 @@ export function initNavbar() {
   })
   .to(navDrawer, {
     xPercent: 0,
-    duration: 0.6,
+    duration: 0.4,
     ease: "power3.inOut"
   }, "-=0.2")
   .from(".nav-link", {

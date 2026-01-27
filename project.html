@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
   <title>Project Details | G</title>
 </head>
-<body class="no-js bg-black text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
+<body data-page="project" class="no-js bg-black text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
   <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
 
   <!-- Navigation -->
@@ -39,31 +39,31 @@
 
       <ul class="space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden">
         <li>
-          <a href="/#hero" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+          <a href="/#hero" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
             <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">01</span>
             Home
           </a>
         </li>
         <li>
-          <a href="/#skills" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+          <a href="/#skills" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
             <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">02</span>
             Skills
           </a>
         </li>
         <li>
-          <a href="/#projects" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+          <a href="/#projects" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
             <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">03</span>
             Projects
           </a>
         </li>
         <li>
-          <a href="/#reviews" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+          <a href="/#reviews" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
             <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">04</span>
             Reviews
           </a>
         </li>
         <li>
-          <a href="/#contact" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
+          <a href="/#contact" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
             <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">05</span>
             Contact
           </a>
@@ -211,7 +211,7 @@
             <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
           </a>
           <p class="bg-neutral-800 rounded-md px-4">
-            <span class="pr-2">isaacggitonga@gmail.com</span>
+            <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
             <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy"></i></button>
           </p>
           <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-zinc-400 transition-colors">
@@ -224,7 +224,7 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/project.ts"></script>
   <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/pages/project.ts"></script>
 </body>
 </html>
