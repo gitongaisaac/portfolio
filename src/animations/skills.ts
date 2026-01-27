@@ -1,20 +1,8 @@
 import gsap from "gsap";
+import {initSectionHead} from "@/animations";
 
 export const animateSkills = () => {
-  gsap.set("#skills .head h1", { y: 50, opacity: 0 });
-  gsap.set("#skills .head p", { opacity: 0, y: 30 });
-
-  gsap.to("#skills .head h1, #skills .head p", {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: "#skills",
-      start: "top 80%",
-      scrub: 1,
-    }
-  });
+  initSectionHead('skills');
 
   gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
     const title = skill.querySelector('.title');
@@ -65,3 +53,31 @@ export const animateSkills = () => {
     });
   })
 };
+
+gsap.from("#skills .global .tool", {
+  opacity: 0,
+  y: 30,
+  duration: 1.5,
+  stagger: 0.5,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: '.global',
+    start: 'top 80%',
+    end: 'bottom 60%',
+    toggleActions: 'play none none reverse',
+    scrub: 1,
+  }
+})
+
+gsap.from("#skills .global h3", {
+  opacity: 0,
+  xPercent: 10,
+  duration: 1.5,
+  ease: 'power2.out',
+  scrollTrigger: {
+    trigger: '.global',
+    start: 'top 80%',
+    end: 'bottom center',
+    toggleActions: 'play none none reverse',
+  }
+})

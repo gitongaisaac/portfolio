@@ -1,50 +1,8 @@
 import gsap from "gsap";
+import {initSectionHead} from "@/animations/utils.ts";
 
 export function animateProjects() {
-  gsap.set("#projects .head h1", { y: 50, opacity: 0 });
-  gsap.set("#projects .head p", { opacity: 0, y: 30 });
-
-  gsap.to("#projects .head h1", {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: "#projects",
-      start: "top 80%",
-      end: "bottom 20%",
-      scrub: 1,
-    }
-  });
-
-  gsap.to('#projects .head p', {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: "#projects",
-      start: "top 80%",
-      end: "bottom 20%",
-      scrub: 1,
-    }
-  })
-
-  gsap.to("#projects .head p", {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power2.out",
-    scrambleText: {
-      text: 'A curated selection of my most recent projects.',
-      chars: 'My Favourite Recent projects.',
-    },
-    scrollTrigger: {
-      trigger: "#projects .head",
-      start: "top 80%",
-      end: "bottom 20%",
-    }
-  })
+  initSectionHead('projects');
 
   const projectItems = document.querySelectorAll(".project");
 
