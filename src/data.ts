@@ -77,43 +77,225 @@ export const projects: Project[] = [
       }
     ]
   },
+
   {
-    id: 'portfolio',
-    title: 'Portfolio | Full Stack Web Developer',
-    status: ['This project is complete'],
-    description: ['A high-performance personal portfolio featuring advanced GSAP animations and dynamic content injection.'],
+    id: "portfolio",
+    title: "Personal Portfolio Website",
+    status: ["Live", "Actively Maintained"],
+    description: [
+      "A high-performance, animation-driven portfolio built to showcase engineering depth, visual storytelling, and system-level thinking.",
+      "Designed as a static site with rich interactions, scroll-based animations, and a carefully structured architecture using modern tooling."
+    ],
     about: [
-      'This portfolio was designed to showcase my technical skills while providing a high-quality user experience. The main goal was to move away from static templates and build a custom, performant engine for project presentation.',
-      'The site uses a dynamic project routing system that injects data from a centralized store, allowing for easy updates and maintenance.'
+      "This project serves as both a personal brand and a technical playground, allowing me to explore advanced animation patterns, layout composition, and performance-aware front-end architecture.",
+      "Rather than relying on a heavy framework, the site is intentionally built with vanilla HTML, TypeScript, and GSAP, orchestrated through Vite for fast builds and modular development.",
+      "The focus was on clarity, motion discipline, and maintainability — ensuring animations enhance storytelling without overwhelming content or sacrificing performance."
     ],
-    bannerUrl: '/projects/portfolio.png',
-    role: 'Lead Developer',
-    timeline: '2 Weeks',
+    bannerUrl: "/projects/portfolio/banner.jpg",
+    role: "Designer & Lead Front-End Engineer",
+    timeline: "2024 – Present",
+
     stack: {
-      frontend: ['TypeScript', 'GSAP', 'Tailwind CSS', 'Vite', 'HTML5'],
-      backend: ['Vercel Functions (Node.js)'],
+      frontend: [
+        "HTML5",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+      ],
+      backend: [],
       database: [],
-      devops: ['Vercel', 'GitHub Actions']
+      devops: [
+        "Vite",
+        "ESBuild",
+        "Vercel"
+      ]
     },
+
     architecture: [
+      "Multi-page static architecture using Vite",
+      "Scroll-driven animation timelines with GSAP + ScrollTrigger",
+      "Component-like section isolation without a framework",
+      "Progressive enhancement with graceful degradation",
+      "Performance-aware asset loading and SVG rendering",
+      'Serverless Contact Form handling via Vercel Edge/Serverless functions.',
       'Dynamic Content Injection system based on URL parameters.',
-      'GSAP ScrollTrigger for complex scroll-based orchestration.',
-      'Atomic Design principles for reusable components.',
-      'Serverless Contact Form handling via Vercel Edge/Serverless functions.'
     ],
+
     challenges: [
       {
-        title: 'Animation Orchestration',
-        problem: "I had never handled animations of this magnitude before, which led to initial performance bottlenecks and timeline conflicts.",
-        solution: 'Leveraged GSAP timelines and ScrollTrigger to create a centralized animation controller, ensuring smooth transitions and efficient resource management.'
+        title: "Balancing Motion with Performance",
+        problem:
+          "Heavy scroll-based animations risked jank, layout shifts, and poor performance on lower-end devices.",
+        solution:
+          "Animations were carefully orchestrated using pinned sections, scrubbed timelines, and GPU-friendly transforms, while avoiding layout-thrashing properties."
       },
       {
-        title: 'Dynamic Data Injection',
-        problem: 'Creating separate HTML files for every project was inefficient and hard to maintain.',
-        solution: 'Implemented a single dynamic project.html file that fetches and renders project-specific data based on URL IDs, significantly reducing code duplication.'
+        title: "Framework-Free Maintainability",
+        problem:
+          "Building a complex interactive site without React or Vue required strong structure to avoid tangled logic.",
+        solution:
+          "The site was organized around clear section boundaries, shared utilities, and strongly-typed data models, keeping logic predictable and scalable."
+      },
+      {
+        title: "First Paint & Flicker Issues",
+        problem:
+          "Initial rendering caused visible flicker before GSAP animations initialized.",
+        solution:
+          "Critical elements were pre-styled using CSS (opacity, transforms) and only revealed once animation timelines were ready, eliminating layout flashes."
       }
     ],
-    repoUrl: 'https://github.com/gitongaisaac/portfolio',
-    liveUrl: 'https://gitongaisaac.vercel.app/'
+
+    repoUrl: "https://github.com/gitongaisaac/portfolio",
+    liveUrl: "https://gitongaisaac.com"
+  },
+  {
+    id: "sprint-kenya",
+    title: "Marketing Agency Website & Brand Platform",
+    status: ["Live", "Client Project"],
+    description: [
+      "A marketing agency website focused on storytelling, credibility, and visual impact.",
+      "Built to communicate brand philosophy while supporting long-form content, case studies, and future scalability."
+    ],
+    about: [
+      "This project involved designing and engineering a modern marketing website for a full-service brand and experiential marketing agency.",
+      "The challenge was to present dense information — services, philosophy, and history — in a way that felt dynamic, confident, and easy to navigate.",
+      "The solution leaned heavily on scroll-driven storytelling, pinned sections, and progressive content reveals to guide users through the narrative without overwhelming them."
+    ],
+    bannerUrl: "/projects/marketing-agency/banner.jpg",
+    role: "Lead Front-End Engineer",
+    timeline: "2023 – 2024",
+
+    stack: {
+      frontend: [
+        "HTML5",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+      ],
+      backend: ['Vercel functions (Node.js)'],
+      database: [],
+      devops: [
+        "Vite",
+        "Vercel",
+      ]
+    },
+
+    architecture: [
+      "Pinned section storytelling using ScrollTrigger",
+      "Separation of scroll-logic from content structure",
+      "Reusable animation patterns across sections",
+      "Static-first architecture with future CMS compatibility",
+      "Responsive layout system optimized for large screens and mobile"
+    ],
+
+    challenges: [
+      {
+        title: "Presenting Long-Form Content Without Fatigue",
+        problem:
+          "Large blocks of copy risked overwhelming users and reducing engagement.",
+        solution:
+          "Content was broken into scroll-paced sections with pinned headers, staggered reveals, and alternating layouts to maintain visual rhythm."
+      },
+      {
+        title: "Pinned Sections with Sticky Navigation",
+        problem:
+          "Pinned content conflicted with a persistent navigation bar, causing offset and scroll inconsistencies.",
+        solution:
+          "Custom pin start/end calculations were implemented using dynamic offsets based on navigation height, ensuring smooth transitions."
+      },
+      {
+        title: "Brand-Consistent Motion Design",
+        problem:
+          "Animations needed to feel intentional and premium without appearing decorative or noisy.",
+        solution:
+          "Motion was constrained to a small set of easing curves, directions, and timings, reinforcing brand confidence rather than distracting from content."
+      }
+    ],
+
+    liveUrl: "https://sprintbrandkenya.com",
+  },
+
+  {
+    id: "me-and-you",
+    title: "Me & You - Sports Arena Management App",
+    status: ["Production", "Paused", "Returning to Maintenance"],
+    description: [
+      "A mobile application built to streamline daily operations for a football hall business with multiple branches.",
+      "The app centralizes fixture tracking, branch-level revenue, and expense reporting to reduce operational overhead and improve visibility for management."
+    ],
+    about: [
+      "This application was built to solve a real operational problem for a client managing multiple football viewing halls across different branches, each with its own employees and daily financial activity.",
+      "The system enables staff to log daily expenses, track available fixtures, and report revenue per fixture per branch, while giving management a consolidated view of performance across locations.",
+      "Developed as a solo project and my first real production React Native application, this project forced me to learn state management, authentication, backend integration, and deployment under real constraints."
+    ],
+    bannerUrl: "/projects/football-app/banner.jpg",
+    role: "Sole Full-Stack Mobile Engineer",
+    timeline: "2021 – 2023",
+
+    stack: {
+      frontend: [
+        "React Native (Expo)",
+        "Redux",
+        "TypeScript (post v2.1.1)",
+        "Expo SecureStore",
+        "Biometric Authentication"
+      ],
+      backend: [
+        "Node.js",
+        "Express.js",
+        "JWT Authentication"
+      ],
+      database: [
+        "MySQL"
+      ],
+      devops: [
+        "Expo",
+        "APK Distribution",
+        "Namecheap cPanel Hosting"
+      ]
+    },
+
+    architecture: [
+      "Role-based authorization (Admin, Manager, Supervisor, Employee)",
+      "Token-based authentication using access and refresh tokens (JWT)",
+      "Branch-context–aware state management on the client",
+      "RESTful API design with protected routes",
+      "Client-side secure credential storage using Expo SecureStore"
+    ],
+
+    challenges: [
+      {
+        title: "Managing Complex State in a Multi-Branch Context",
+        problem:
+          "Each user operated within a specific branch and role, requiring the app to maintain both branch context and authorization level consistently across screens.",
+        solution:
+          "Redux was used to centralize authentication state, branch context, and fetched data, allowing predictable state transitions and reducing cross-screen coupling."
+      },
+      {
+        title: "Authentication & Authorization in a First Production App",
+        problem:
+          "Implementing secure authentication and role-based authorization without prior production experience posed a steep learning curve.",
+        solution:
+          "JWT-based authentication with access and refresh tokens was implemented, paired with role-based access control on both the frontend and backend to ensure users could only perform permitted actions."
+      },
+      {
+        title: "Large-Scale Migration from JavaScript to TypeScript",
+        problem:
+          "After multiple releases, the growing codebase became difficult to reason about and refactor safely using JavaScript alone.",
+        solution:
+          "The application was incrementally migrated to TypeScript starting from version 2.1.1, improving type safety, refactor confidence, and long-term maintainability despite the learning curve as a solo developer."
+      },
+      {
+        title: "Backend Maintainability & Technical Debt",
+        problem:
+          "The backend relied heavily on raw SQL queries and controller-layer logic, making maintenance and refactoring risky.",
+        solution:
+          "While the initial implementation prioritized correctness and security, the experience highlighted the need for service layers, repositories, and proper transaction management — lessons that now inform all future backend work."
+      }
+    ],
+
+    liveUrl: undefined,
+    repoUrl: undefined
   }
+
 ];

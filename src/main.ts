@@ -108,6 +108,10 @@ for (let i = 0; i < STAR_COUNT; i++) {
   });
 }
 
+const copyEmail = document.querySelectorAll('.copy-email');
+copyEmail.forEach(email => email.addEventListener('click', () =>
+  navigator.clipboard.writeText('isaacggitonga@gmail.com')));
+
 const animatePage = () => {
   gsap.set("#hero-logo", { opacity: 0, scale: 0.9 });
   gsap.set("#hero-intro", { opacity: 0, y: 20 });

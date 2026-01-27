@@ -16,7 +16,7 @@ export function initNavbar() {
     scale: 0.6,
     opacity: 0,
     delay: 1.5,
-    duration: 2,
+    duration: 1,
     ease: "power2.out"
   })
 
