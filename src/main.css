@@ -110,6 +110,7 @@
 }
 
 .no-js #side-nav,
+.no-js #menu-toggle,
 .no-js #tagline,
 .no-js #hero-intro,
 .no-js #hero .stats,
@@ -128,7 +129,7 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-neutral-700) #0b0f0e; /* thumb | track */
+  scrollbar-color: var(--color-neutral-700) var(--color-neutral-950); /* thumb | track */
 }
 
 /* WebKit browsers (Chrome, Edge, Safari) */

@@ -10,6 +10,16 @@ export function initNavbar() {
 
   if (!menuToggle || !sideNav || !menuClose || !navBackdrop || !navDrawer) return;
 
+  gsap.set(menuToggle, { opacity: 1 });
+
+  gsap.from(menuToggle, {
+    scale: 0.6,
+    opacity: 0,
+    delay: 1.5,
+    duration: 2,
+    ease: "power2.out"
+  })
+
   gsap.to(sideNav, { opacity: 1 });
 
   // Initialize state
