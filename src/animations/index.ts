@@ -5,6 +5,6 @@ import {initProjectAnimations} from "./project.ts";
 import {animateProjects} from "./projects.ts";
 import {animateReviews} from "./reviews.ts";
 import {animateSkills} from "./skills.ts";
-import {initSectionHead} from "@/animations/utils.ts";
+import {animateHeadings} from "./utils.ts";
 
-export {initNavbar, animateHero, initSectionHead, animateContact, animateProjects, initProjectAnimations, animateReviews, animateSkills};
+export {initNavbar, animateHeadings, animateHero, animateContact, animateProjects, initProjectAnimations, animateReviews, animateSkills};

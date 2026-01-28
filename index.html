@@ -131,10 +131,10 @@
 
           <div id="hero-intro" class="w-full h-[95%] mb-5 pb-5 flex flex-col justify-end">
             <div class="space-y-3">
-              <h1 class="hero-title text-5xl md:text-6xl font-bold font-iceberg text-teal-500 mt-4 flex gap-6 py-2">G.</h1>
+              <h1 class="hero-title text-5xl md:text-6xl font-bold font-iceberg text-teal-500 flex gap-6 py-2">G.</h1>
               <p class="hero-text max-w-lg text-neutral-400 font-montserrat font-semibold overflow-hidden">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
-                Facilis ipsa soluta temporibus!
+                <span class="block">Understand the machine before abstracting over it.</span>
+                <span class="block">Every abstraction must earn its cost; complexity is a deliberate trade-off.</span>
               </p>
             </div>
           </div>
@@ -142,43 +142,78 @@
 
         <ul
             id="about"
-            class="min-h-[150dvh] p-6 space-y-20 mt-4 pt-32 grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 justify-between oveflow-hidden"
+            class="min-h-[150dvh] p-4 space-y-20 mt-4 pt-32 grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 justify-between oveflow-hidden"
         >
-          <li id="me" class="row-start-1 md:col-start-2 md:ml-0 self-center py-2">
+          <li id="me" class="identity row-start-1 md:col-start-2 md:ml-0 self-center py-2">
             <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
               Who I Am
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus itaque molestias mollitia natus nobis,
-              quaerat quo sunt vero voluptate! Adipisci iusto pariatur quas quos. Deserunt,
-              dicta dolorem illum iste molestiae possimus quae rem rerum. Aperiam consectetur cupiditate delectus excepturi.
-            </p>
+            <div class="text-neutral-400 text-xl space-y-4">
+              <p>
+                I’m a software engineer and system architect who builds reliable digital systems for organizations
+                where correctness, security, and long-term maintainability matter.
+              </p>
+              <p>
+                I specialize in designing and evolving backend-heavy applications — platforms that handle money,
+                sensitive data, complex workflows, and real operational constraints.
+                My work spans greenfield builds and legacy modernization, with a strong focus on systems that
+                need to survive production, not just demos.
+              </p>
+              <p>
+                I don’t chase trends. I design systems that are understandable, auditable, and resilient
+                — systems that teams can maintain and businesses can trust.
+              </p>
+            </div>
           </li>
 
-          <li id="build" class="md:col-start-1 row-start-2 self-center py-2">
+          <li id="build" class="identity md:col-start-1 row-start-2 self-center py-2">
             <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
               What I Do
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa cumque delectus, dolore,
-              ducimus earum enim expedita id labore minus nesciunt nihil optio provident quam quis ratione
-              recusandae rem reprehenderit similique sit suscipit vel veniam voluptate! Ab distinctio laboriosam libero!
-            </p>
+            <div class="max-w-xl text-neutral-400 text-xl space-y-6">
+              <p>I design, build, and modernize software systems with a strong emphasis on backend architecture and system integrity.</p>
+
+              <div class="space-y-2">
+                <h6 class="text-teal-500 font-iceberg font-semibold">This includes:</h6>
+                <ul class="list-disc list-outside text-neutral-300 text-lg space-y-4">
+                  <li>High-reliability backend systems (APIs, transactional workflows, data-heavy platforms)</li>
+                  <li>Payment and financial integrations where correctness and idempotency are non-negotiable</li>
+                  <li>Legacy system modernization, migrating existing platforms to modern stacks without breaking production</li>
+                  <li>Architecture consulting, helping teams untangle complexity and make sustainable technical decisions</li>
+                  <li>Hybrid architectures (BFFs, serverless + traditional backends) that balance performance, security, and delivery speed</li>
+                </ul>
+              </div>
+
+              <p>
+                I work closely with clients to translate business requirements into technical systems
+                that scale with both usage and organizational growth.
+              </p>
+            </div>
           </li>
 
-          <li id="why" class="md:col-start-2 row-start-3 self-center py-2">
+          <li id="why" class="identity md:col-start-2 row-start-3 self-center py-2">
             <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
               Why I Do It
             </h2>
 
-            <p class="max-w-xl text-neutral-400 text-xl md:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cumque debitis dignissimos
-              eligendi explicabo impedit ipsa labore laudantium magnam minus mollitia necessitatibus,
-              nisi obcaecati provident quia rerum sint tenetur veniam vitae?
-              Aperiam iste magnam molestias quaerat quos vero, voluptates.
-            </p>
+            <div class="max-w-xl text-neutral-400 text-xl space-y-4">
+              <p>
+                Most costly software failures don’t come from bad ideas — they come from fragile systems,
+                rushed architecture, and hidden technical debt.
+              </p>
+              <p>
+                I build software because I care about systems that hold up under pressure:
+                systems that behave correctly when traffic spikes, when money is involved, when requirements change,
+                and when the original developers are no longer around.
+              </p>
+              <p>
+                I enjoy solving the hard parts of engineering — state, concurrency, data integrity,
+                and evolution over time — because getting those right early saves clients years of pain, rewrites,
+                and unexpected costs later.
+              </p>
+            </div>
           </li>
         </ul>
       </div>
@@ -189,21 +224,39 @@
         <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
           Skills & Tools
         </h1>
-        <p>
-          A comprehensive toolkit for building modern web applications
+        <p class="space-y-6">
+          <span class="block">A comprehensive toolkit for building modern web applications</span>
+          <span class="block max-w-5xl mx-auto text-lg font-medium">
+            While I work comfortably across the full stack, my strongest contributions are in database design and
+            backend architecture — where system behavior, data integrity, and long-term scalability are decided.
+          </span>
         </p>
       </div>
 
       <div class="max-w-6xl mx-auto p-4 space-y-10">
         <div class="db skill relative">
-          <h4 class="title">Database</h4>
+          <h4 class="title">Database Design</h4>
 
-          <p class="desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-            soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-            Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-            molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-          </p>
+          <div class="desc">
+            <p>I design databases as systems, not just storage layers.</p>
+
+            <p>
+              My focus is on data models that reflect real business constraints, enforce integrity at the database level,
+              and remain performant as complexity grows. I’m particularly attentive to transaction boundaries,
+              indexing strategies, and query behavior under load.
+            </p>
+
+            <p>
+              I’m comfortable working close to the metal when necessary (raw SQL, locking strategies, query plans),
+              and equally comfortable introducing ORMs. The goal is always the same: predictable performance,
+              clear data ownership, and schemas that can evolve without breaking production.
+            </p>
+
+            <p>
+              <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
+              Relational Modeling, Transactional Integrity, Indexing Strategy, Concurrency Control, Data Migrations.
+            </p>
+          </div>
 
           <ul class="tools">
             <li class="tool">
@@ -238,15 +291,36 @@
         </div>
 
         <div class="back-end skill relative">
-          <h4 class="title">Backend</h4>
+          <h4 class="title">Backend Development</h4>
 
           <div>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-              soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-              Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-              molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
+          <div class="desc">
+            <p>Back-end engineering is where I do my best work.</p>
+
+            <p>
+              I build APIs and backend systems with a strong emphasis on correctness, security, and
+              long-term maintainability. Business logic lives in clearly defined layers, independent of frameworks,
+              making systems easier to test, reason about, and scale.
             </p>
+
+            <p>
+              I pay close attention to system boundaries: authentication vs authorization, reads vs writes,
+              synchronous vs asynchronous flows. Whether it’s handling payments, managing distributed state, or
+              modernizing a legacy system, I design backends to behave correctly under real-world conditions
+              — not just ideal ones.
+            </p>
+
+            <p>
+              If given the opportunity to specialize, this is where I would focus: designing robust, production-grade
+              backend systems that businesses can rely on.
+            </p>
+
+            <p>
+              <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
+              API Design, Authentication & Authorization, Transactional Workflows, System Architecture.
+            </p>
+          </div>
+
             <div class="flex gap-4 items-center my-4 p-2 px-4 text-xl text-amber-400 bg-neutral-900/50 border border-neutral-800 w-fit rounded-lg">
               <i class="fa-solid fa-gear"></i>
               <p class="font-semibold font-montserrat">RESTful API Design</p>
@@ -290,14 +364,32 @@
         </div>
 
         <div class="front-end skill relative">
-          <h4 class="title">Frontend</h4>
+          <h4 class="title">Frontend Development</h4>
 
-          <p class="desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quos recusandae,
-            soluta temporibus tenetur veritatis. Beatae culpa dolorem eum excepturi fuga ipsum quaerat vel.
-            Assumenda, aut, consequuntur cum dolores ea earum excepturi hic ipsam iure magnam modi,
-            molestias officiis rem sint soluta suscipit tempore. Aut corporis exercitationem fugiat minima qui?
-          </p>
+          <div class="desc">
+            <p>
+              While I can build any kind of UI, I enjoy building data-driven interfaces that prioritize clarity,
+              correctness, and usability.
+            </p>
+
+            <p>
+              My strongest front-end work lives in admin panels, dashboards, and internal tools — interfaces
+              where users need to understand complex data, perform precise actions, and trust the system.
+              This is where I find frontend work most interesting — and where thoughtful design
+              has the highest impact.
+            </p>
+
+            <p>
+              I pay close attention to data fetching patterns, managing states, and error handling,
+              ensuring the UI accurately reflects backend state at all times. Queries, mutations, and cache invalidation
+              are designed deliberately so the interface stays responsive without becoming fragile or overcomplicated.
+            </p>
+
+            <p>
+              <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
+              Data-Heavy UI Design, Admin Dashboards, Structured Layouts, Predictable State Management, Clean and Maintainable Front-end Architecture.
+            </p>
+          </div>
 
           <ul class="tools">
             <li class="tool">
@@ -477,16 +569,24 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-                "Isaac is an exceptional developer. His attention to detail and ability to translate complex requirements into elegant code is truly impressive."
+                “
+                Thank you for building this system with such care, and for the trust you showed under unique circumstances.
+                Your cooperation and clear project scoping stood out and helped us avoid potential future mistakes.
+                We look forward to putting the system into production with confidence.
+
+<!--                Thank you for building this system with so much care. You really understood the risks around payments-->
+<!--                and ticket availability, and the platform has been solid even under pressure.-->
+<!--                We felt confident knowing the core logic was built properly.-->
+                ”
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
               <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-                JD
+                LC
               </div>
               <div>
-                <h4 class="font-bold font-iceberg text-neutral-200">John Doe</h4>
-                <p class="text-sm text-neutral-500 font-montserrat">CEO, TechStart</p>
+                <h4 class="font-bold font-iceberg text-neutral-200">Lucieta Christine</h4>
+                <p class="text-sm text-neutral-500 font-montserrat">PM, Stratera</p>
               </div>
             </div>
           </div>
@@ -501,16 +601,20 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-                "Working with Isaac was a breeze. He delivered the project ahead of schedule and the quality surpassed our expectations."
+                “Thank you for translating our brand into a clean, modern website.
+                You really paid attention to the visuals and how information is presented, and
+                the end result feels professional, fast, and easy for clients to understand.
+                We look forward to continue working together.
+                ”
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
               <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-                AS
+                EN
               </div>
               <div>
-                <h4 class="font-bold font-iceberg text-neutral-200">Alice Smith</h4>
-                <p class="text-sm text-neutral-500 font-montserrat">Product Manager, Innovate</p>
+                <h4 class="font-bold font-iceberg text-neutral-200">Elinah Naeku</h4>
+                <p class="text-sm text-neutral-500 font-montserrat">CEO, Sprint Kenya</p>
               </div>
             </div>
           </div>
@@ -525,16 +629,18 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-                "A highly skilled professional who stays up-to-date with the latest technologies. Highly recommended for any web project."
+                “Thank you for taking on a complex operational problem and turning it into a usable app.
+                You really thought through how different roles work across branches,
+                and the app made day-to-day tracking much easier for our team.”
               </p>
             </div>
             <div class="mt-8 flex items-center gap-4">
               <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-                BW
+                NM
               </div>
               <div>
-                <h4 class="font-bold font-iceberg text-neutral-200">Bob Williams</h4>
-                <p class="text-sm text-neutral-500 font-montserrat">Founder, Creative agency</p>
+                <h4 class="font-bold font-iceberg text-neutral-200">Nicholus Maina</h4>
+                <p class="text-sm text-neutral-500 font-montserrat">Business Owner</p>
               </div>
             </div>
           </div>

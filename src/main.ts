@@ -1,11 +1,12 @@
 import gsap from "gsap";
-import {initNavbar, initProjectAnimations} from "@/animations";
+import {animateHeadings, initNavbar, initProjectAnimations} from "@/animations";
 import {initHomeAnimations} from "@/pages";
 
 document.documentElement.classList.remove("no-js");
 
 function initPageAnimations() {
   if (document.body.dataset.page === "home") {
+    animateHeadings();
     initHomeAnimations();
   }
 

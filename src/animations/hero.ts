@@ -77,7 +77,7 @@ function animateTagline(tl: GSAPTimeline) {
 }
 
 function animateContent(tl: GSAPTimeline) {
-  gsap.set("#hero li", { opacity: 0, x: -20 });
+  gsap.set("#hero .stats li", { opacity: 0, x: -30 });
 
   tl.to("#hero .stats", { duration: 0.5, opacity: 1 });
   tl.to("#hero-intro", { duration: 0.5, opacity: 1 });
@@ -127,15 +127,13 @@ function animateContent(tl: GSAPTimeline) {
 }
 
 export function animateAbout() {
-  gsap.utils.toArray<Element>("#about li").forEach((item) => {
+  gsap.utils.toArray<Element>("#about .identity").forEach((item) => {
     gsap.fromTo(item, {
       opacity: 0,
       y: 100,
-      xPercent: item.matches(":nth-child(odd)") ? 10 : -10,
     }, {
       y: -100,
       opacity: 1,
-      xPercent: 0,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {

@@ -15,7 +15,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    allowedHosts: ['223bce6a5462.ngrok-free.app'],
+    allowedHosts: ['9f0cf1c5858a.ngrok-free.app'],
   },
   resolve: {
     alias: {

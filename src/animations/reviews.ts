@@ -1,9 +1,6 @@
 import gsap from "gsap";
-import {initSectionHead} from "@/animations/utils.ts";
 
 export function animateReviews() {
-  initSectionHead('reviews');
-
   gsap.set(".review-card", { opacity: 0, y: 40 });
 
   gsap.to(".review-card", {
@@ -14,7 +11,8 @@ export function animateReviews() {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".reviews-list",
-      start: "top 90%",
+      start: "top 95%",
+      end: "top top",
       scrub: 1,
     }
   });

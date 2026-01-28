@@ -1,9 +1,6 @@
 import gsap from "gsap";
-import {initSectionHead} from "@/animations/utils.ts";
 
 export function animateProjects() {
-  initSectionHead('projects');
-
   const projectItems = document.querySelectorAll(".project");
 
   gsap.set(projectItems, { opacity: 0, y: 50 });

@@ -8,7 +8,7 @@
       "Events Hub is a comprehensive SaaS solution designed to handle high-traffic event ticketing. The core challenge was ensuring data integrity during flash sales while maintaining a seamless user experience via Next.js Server Components.",
       "The system features a hybrid authentication model to solve the conflict between stateless server rendering and secure mutation handling."
     ],
-    "bannerUrl": "/projects/ikopurrty.png",
+    "bannerUrl": "/projects/ikopurrty/banner.png",
     "role": "System Architect & Full-Stack Developer",
     "timeline": "3 Months",
     "stack": {
@@ -139,7 +139,7 @@
       "The challenge was to present dense information — services, philosophy, and history — in a way that felt dynamic, confident, and easy to navigate.",
       "The solution leaned heavily on scroll-driven storytelling, pinned sections, and progressive content reveals to guide users through the narrative without overwhelming them."
     ],
-    "bannerUrl": "/projects/marketing-agency/banner.jpg",
+    "bannerUrl": "/projects/sprint/banner.png",
     "role": "Lead Front-End Engineer",
     "timeline": "2023 – 2024",
     "stack": {

@@ -6,7 +6,7 @@ import {animateContact, animateHero, animateProjects, animateReviews, animateSki
 
 gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(SplitText);
-gsap.registerPlugin(ScrollTrigger);``
+gsap.registerPlugin(ScrollTrigger);
 
 export function handleContactFormSubmit() {
   const contactForm = document.getElementById("contact-form") as HTMLFormElement;

@@ -1,37 +1,34 @@
 import gsap from "gsap";
-import {initSectionHead} from "@/animations";
 
 export const animateSkills = () => {
-  initSectionHead('skills');
-
-  gsap.utils.toArray<Element>('#skills .skill').forEach((skill, i) => {
+  gsap.utils.toArray<Element>('#skills .skill').forEach((skill) => {
     const title = skill.querySelector('.title');
     const desc = skill.querySelector('.desc');
     const tools = skill.querySelectorAll('.tool');
 
     gsap.from(title, {
+      y: 100,
       opacity: 0,
-      scale: 0.8,
       duration: 1,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: skill,
-        start: 'top center',
-        end: 'bottom bottom',
+        start: 'top 80%',
+        end: 'top 30%',
         toggleActions: 'play none none reverse',
         scrub: 1
       }
     });
 
     gsap.from(desc, {
-      x: i % 2 === 0 ? -100 : 100,
+      y: 100,
       opacity: 0,
-      duration: 1.2,
+      duration: 1,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: skill,
-        start: 'top center',
-        end: 'bottom bottom',
+        start: 'top 80%',
+        end: 'top 30%',
         toggleActions: 'play none none reverse',
         scrub: 1,
       }
@@ -40,13 +37,13 @@ export const animateSkills = () => {
     gsap.from(tools, {
       opacity: 0,
       y: 30,
-      duration: 1.5,
+      duration: 1,
       stagger: 0.5,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: skill,
-        start: 'top 20%',
-        end: 'bottom 105%',
+        start: 'bottom bottom',
+        end: 'bottom 80%',
         toggleActions: 'play none none reverse',
         scrub: 1,
       }

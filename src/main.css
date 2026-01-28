@@ -25,16 +25,20 @@
     @apply font-iceberg font-bold text-5xl text-teal-500;
   }
 
+  #hero #about .identity {
+    @apply relative sm:p-8 rounded-full;
+  }
+
   #skills .skill {
-    @apply max-w-6xl mx-auto min-h-screen p-4 flex flex-col gap-8 justify-center items-start overflow-x-hidden;
+    @apply max-w-6xl mx-auto min-h-screen sm:p-4 flex flex-col gap-8 justify-center items-start overflow-hidden;
   }
 
   #skills .skill .title {
-    @apply font-iceberg font-bold text-5xl lg:text-6xl text-center text-teal-500;
+    @apply font-iceberg font-bold text-4xl lg:text-6xl text-center text-teal-500;
   }
 
   #skills .skill .desc {
-    @apply py-2 max-w-4xl text-xl md:text-2xl text-neutral-400;
+    @apply py-2 max-w-4xl space-y-4 text-xl text-neutral-300;
   }
 
   #skills .skill .tools {
@@ -87,7 +91,7 @@
   }
 
   .head {
-    @apply  py-8 md:my-0;
+    @apply  p-2 py-8 md:my-0;
   }
 
   .head h1 {
@@ -124,6 +128,12 @@
 .no-js #overview {
   opacity: 0;
 }
+
+/*.identity::before {*/
+/*  content: '';*/
+/*  @apply absolute inset-0 bg-neutral-950/50 rounded-full;*/
+/*  z-index: -1;*/
+/*}*/
 
 /** ==============================
   Custom Scrollbar
