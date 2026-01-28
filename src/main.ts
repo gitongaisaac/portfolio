@@ -129,6 +129,16 @@ export function copyEmail() {
     navigator.clipboard.writeText('isaacggitonga@gmail.com')));
 }
 
+export function addCopyright() {
+  const year = new Date().getFullYear();
+
+  const currency = document.querySelector('footer .year');
+  if (!currency) return;
+
+  currency.textContent = year.toString();
+}
+
 runCurtain();
 initStars();
 copyEmail();
+addCopyright();

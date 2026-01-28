@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
-    <title>G | Full-stack web Developer</title>
+    <title>Isaac Gitonga | Full-stack web Developer</title>
   </head>
-  <body data-page="home" class="no-js relative bg-black text-gray-200 font-nunito">
+  <body data-page="home" class="no-js relative bg-black text-gray-200 font-nunito overflow-x-hidden">
     <div id="transition-curtain" class="fixed inset-0 bg-black z-[9999]"></div>
 
     <button id="menu-toggle" class="fixed top-6 right-6 z-[90] p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm">
       <i class="fa-solid fa-bars-staggered text-2xl"></i>
     </button>
 
-    <nav id="side-nav" class="fixed inset-0 z-[99]">
+    <nav id="side-nav" class="h-screen fixed inset-0 z-[99]">
       <div id="nav-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-[99]"></div>
 
       <div id="nav-content" class="fixed right-0 w-full md:w-[450px] space-y-6 flex flex-col h-full p-8 z-[200] bg-neutral-950 border-l border-neutral-800 overflow-y-auto">
@@ -71,7 +71,7 @@
 
         <div class="flex gap-4 items-center">
           <img src="/logos/logo-dark.png" alt="Profile Logo" class="rounded-full w-8 h-8">
-          <p class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase">
+          <p class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase text-nowrap">
             <span class="pr-2">isaacggitonga@gmail.com</span>
             <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy text-xl"></i></button>
           </p>
@@ -81,7 +81,7 @@
 
     <svg
         id="stars"
-        class="fixed inset-0 w-full h-full pointer-events-none -z-50"
+        class="fixed inset-0 w-full h-screen pointer-events-none -z-50"
         xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
@@ -131,7 +131,7 @@
 
           <div id="hero-intro" class="w-full h-[95%] mb-5 pb-5 flex flex-col justify-end">
             <div class="space-y-3">
-              <h1 class="hero-title text-6xl md:text-8xl font-bold font-iceberg text-teal-500 mt-4 flex gap-6 py-2">G.</h1>
+              <h1 class="hero-title text-5xl md:text-6xl font-bold font-iceberg text-teal-500 mt-4 flex gap-6 py-2">G.</h1>
               <p class="hero-text max-w-lg text-neutral-400 font-montserrat font-semibold overflow-hidden">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quasi recusandae reprehenderit.
                 Facilis ipsa soluta temporibus!
@@ -184,7 +184,7 @@
       </div>
     </section>
 
-    <section id="skills" class="relative max-w-7xl mx-auto min-h-[200vh] py-10 overflow-hidden">
+    <section id="skills" class="relative max-w-7xl mx-auto py-10">
       <div class="head">
         <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
           Skills & Tools
@@ -343,10 +343,6 @@
           <h3 class="text-2xl py-4 font-iceberg font-semibold text-teal-500">Dev Tools: </h3>
           <ul class="tools flex flex-wrap gap-4 items-center justify-start">
             <li class="tool">
-              <img src="/logos/gemini.png" alt="Gemini AI logo" class="img size-6">
-              <p>Gemini</p>
-            </li>
-            <li class="tool">
               <img src="/logos/git.png" alt="Git logo" class="img size-6">
               <p>Git</p>
             </li>
@@ -365,6 +361,10 @@
             <li class="tool">
               <img src="/logos/pnpm.webp" alt="pnpm logo" class="img size-6">
               <p>PNPM</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/gemini.png" alt="Gemini AI logo" class="img size-6">
+              <p>Gemini</p>
             </li>
           </ul>
         </div>
@@ -596,24 +596,23 @@
           <span class="text-neutral-200 font-semibold font-iceberg">TypeScript, HTML, GSAP, Tailwind CSS,</span>
           and
           <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
-          Developed by
-          <span class="text-cyan-600 font-semibold font-iceberg">
-            <a href="http://github.com/gitongaisaac" class="inline pr-1">
-              <span class="px-0.5">Isaac Gitonga</span>
+          Designed and developed by
+          <span class="text-cyan-600 font-semibold font-iceberg text-nowrap">
+            <a href="http://github.com/gitongaisaac" class="inline text-nowrap">
+              <span class="px-0.5">Isaac G.</span>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-          </span>
-          and deployed on
-          <span class="text-neutral-200 font-semibold font-iceberg">Netlify</span>.
+          </span>.
+          Deployed on
+          <span class="text-neutral-200 font-semibold font-iceberg">Vercel</span>.
         </p>
-
 
         <div class="space-y-4 flex gap-4 items-center justify-center">
           <div class="flex gap-4 items-center justify-center">
             <a href="https://gitongaisaac.netlify.app" class="hover:text-zinc-400 transition-colors">
               <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
             </a>
-            <p class="bg-neutral-800 rounded-md px-4">
+            <p class="bg-neutral-900 border border-neutral-800 rounded-md px-4">
               <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
               <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy"></i></button>
             </p>
@@ -623,7 +622,9 @@
           </div>
         </div>
 
-        <p class="font-montserrat font-semibold text-sm text-neutral-400">&copy; 2026 All rights reserved.</p>
+        <p class="font-montserrat font-semibold text-sm text-neutral-400">
+          &copy; <span class="year">2026</span> Isaac G. All rights reserved.
+        </p>
       </div>
     </footer>
 

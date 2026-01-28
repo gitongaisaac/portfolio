@@ -13,6 +13,10 @@
 }
 
 @layer components {
+  section {
+    @apply overflow-hidden;
+  }
+
   #hero .stats li p {
     @apply font-semibold font-montserrat text-neutral-300 text-nowrap;
   }
@@ -22,7 +26,7 @@
   }
 
   #skills .skill {
-    @apply max-w-6xl mx-auto min-h-screen p-4 flex flex-col gap-8 justify-center items-start;
+    @apply max-w-6xl mx-auto min-h-screen p-4 flex flex-col gap-8 justify-center items-start overflow-x-hidden;
   }
 
   #skills .skill .title {

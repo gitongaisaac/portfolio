@@ -110,7 +110,7 @@ function animateContent(tl: GSAPTimeline) {
     tl.to('.hero-title', {
       duration: 3,
       scrambleText: {
-        text: "Isaac Gitonga",
+        text: "Isaac Gitonga.",
         chars: "Gitonga Isaac",
         speed: 1,
       }
@@ -119,7 +119,7 @@ function animateContent(tl: GSAPTimeline) {
       .to('.hero-title', {
         duration: 3,
         scrambleText: {
-          text: "G.",
+          text: "ISAAC G.",
           chars: "Isaac Gitonga",
         }
       })
