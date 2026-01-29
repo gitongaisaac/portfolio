@@ -42,8 +42,8 @@ export const animateSkills = () => {
       ease: 'power2.out',
       scrollTrigger: {
         trigger: skill,
-        start: 'bottom bottom',
-        end: 'bottom 80%',
+        start: '80% bottom',
+        end: 'bottom 85%',
         toggleActions: 'play none none reverse',
         scrub: 1,
       }

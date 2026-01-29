@@ -83,7 +83,7 @@ export function initStars() {
     const circle = document.createElementNS(SVG_NS, "circle");
 
     // 2. Set Attributes
-    // We use percentages (%) for cx/cy so they auto-adjust on resize
+    // Use percentages (%) for cx/cy so they auto-adjust on resize
     circle.setAttribute("cx", Math.random() * 100 + "%");
     circle.setAttribute("cy", Math.random() * 100 + "%");
 

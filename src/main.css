@@ -4,6 +4,8 @@
   --font-nunito: "Nunito", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-iceberg: "Iceberg", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --font-revalia: "Revalia", sans-serif;
 }
 
 @layer base {
@@ -38,19 +40,24 @@
   }
 
   #skills .skill .desc {
-    @apply py-2 max-w-4xl space-y-4 text-xl text-neutral-300;
+    @apply py-2 max-w-4xl space-y-4 text-lg text-neutral-400;
+  }
+
+  #skills .skill .desc strong {
+    @apply font-semibold font-montserrat text-neutral-300;
   }
 
   #skills .skill .tools {
     @apply flex flex-wrap gap-4 py-4 rounded-lg;
   }
 
-  #skills .skill .tool, #skills .global .tool {
+  #skills .skill .tool,
+  #skills .global .tool {
     @apply bg-neutral-900/50 text-neutral-300 border border-neutral-800 rounded-md h-fit p-2 px-4 flex gap-2 items-center justify-center;
   }
 
   .tool p {
-    @apply font-semibold font-montserrat;
+    @apply font-semibold font-mono;
   }
 
   #projects .project {
@@ -62,7 +69,15 @@
   }
 
   #projects .project h2 {
-    @apply text-4xl sm:text-6xl font-iceberg font-bold text-teal-500 transition-colors duration-200 delay-100;
+    @apply relative text-4xl lg:text-6xl font-iceberg font-bold text-teal-500 transition-colors duration-200 delay-100;
+  }
+
+  #projects .project h2 span {
+    @apply pr-4;
+  }
+
+  #projects .project h2 i {
+    @apply absolute top-0 text-slate-200 text-lg sm:text-xl;
   }
 
   #projects .project p {
