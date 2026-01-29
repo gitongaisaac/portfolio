@@ -88,7 +88,7 @@
       "Rather than relying on a heavy framework, the site is intentionally built with vanilla HTML, TypeScript, and GSAP, orchestrated through Vite for fast builds and modular development.",
       "The focus was on clarity, motion discipline, and maintainability — ensuring animations enhance storytelling without overwhelming content or sacrificing performance."
     ],
-    "bannerUrl": "/projects/portfolio/banner.png",
+    "bannerUrl": "/projects/portfolio/banner-2.png",
     "role": "Designer & Lead Front-End Engineer",
     "timeline": "2024 – Present",
     "stack": {
