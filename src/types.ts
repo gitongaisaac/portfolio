@@ -1,11 +1,15 @@
-// src/types.ts
-export interface ProjectChallenge {
+export type ProjectChallenge = {
   title: string;
   problem: string;
   solution: string;
 }
 
-export interface Project {
+export type ProjectRetrospective = {
+  title: string;
+  description: string;
+}
+
+export type Project = {
   id: string; // matches the URL param
   title: string;
   status: string[];
@@ -28,6 +32,8 @@ export interface Project {
 
   // The "STAR" method (Situation, Task, Action, Result) in object form
   challenges: ProjectChallenge[];
+
+  retrospective?: ProjectRetrospective[];
 
   // Links
   repoUrl?: string;

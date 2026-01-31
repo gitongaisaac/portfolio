@@ -36,16 +36,16 @@ export function initProjectAnimations() {
     },
   });
 
-  gsap.from("#project-description p", {
+  gsap.from("#project-desc p", {
     y: 20,
     opacity: 0,
     stagger: 0.2,
     duration: 1,
     scrollTrigger: {
-      trigger: "#project-description",
+      trigger: "#project-desc",
       start: "top 85%",
     }
-  });
+  })
 
   gsap.from("#project-status p", {
     y: 20,
@@ -54,6 +54,17 @@ export function initProjectAnimations() {
     duration: 1,
     scrollTrigger: {
       trigger: "#project-status",
+      start: "top 85%",
+    }
+  });
+
+  gsap.from("#project-about p", {
+    y: 20,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#project-about",
       start: "top 85%",
     }
   });
@@ -111,4 +122,25 @@ export function initProjectAnimations() {
     stagger: 0.2,
     duration: 1
   });
+
+  // Retrospective Section
+  gsap.from("#retro-title", {
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "section:nth-of-type(4)",
+      start: "top 85%",
+    },
+  })
+
+  gsap.from("#retro-list li", {
+    y: 30,
+    opacity: 0,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: "#retro-list",
+      start: "top 85%",
+    }
+  })
 }

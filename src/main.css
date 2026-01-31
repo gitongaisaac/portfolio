@@ -93,7 +93,7 @@
   }
 
   #projects .project .tech-stack div {
-    @apply size-2 bg-teal-600 rounded-full;
+    @apply size-2 bg-neutral-700 rounded-full;
   }
 
 

@@ -1,10 +1,12 @@
-import {projects} from "@/assets";
+import projects from "@/assets/data";
+import {Project} from "@/types.ts";
 
 // Get ID from URL query param ?id=events-hub
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get('id');
 
-const project = projects.find(p => p.id === projectId);
+const project = projects.find(p => p.id === projectId) as Project;
+console.log(project);
 
 if (!project) {
   // Handle 404
@@ -20,24 +22,43 @@ document.getElementById('project-role')!.textContent = `${project.role}  •  ${
 (document.getElementById('project-banner') as HTMLImageElement).alt = `${project.title} Banner`;
 document.title = `${project.title} | G`;
 
+// 1. Populate Status (innerHTML for paragraph tags)
+const projectDesc = document.getElementById('project-desc')!;
+
+project.description.forEach(item => {
+  const p = document.createElement('p');
+  p.textContent = item;
+  projectDesc.appendChild(p);
+});
+
+
+// 2. Populate Status
 const projectStatus = document.getElementById('project-status')!;
 
 project.status.forEach(status => {
+  const div = document.createElement('div');
+  div.className = 'flex items-center gap-2 mb-2';
+
+  const dot = document.createElement('div');
+  dot.className = 'size-2 rounded-full bg-teal-500';
+  div.appendChild(dot);
+
   const p = document.createElement('p');
-  p.innerText = status;
-  projectStatus.appendChild(p);
+  p.textContent = status;
+  div.appendChild(p);
+  projectStatus.appendChild(div);
 })
 
-// 2. Populate Description (innerHTML for paragraph tags)
-const projectDescription = document.getElementById('project-description')!;
+// 3. Populate Description (innerHTML for paragraph tags)
+const projectAbout = document.getElementById('project-about')!;
 
 project.about.forEach(item  => {
   const p = document.createElement('p');
   p.innerText = item;
-  projectDescription.appendChild(p);
+  projectAbout.appendChild(p);
 })
 
-// 3. Populate Stack
+// 4. Populate Stack
 const stackContainer = document.getElementById('project-stack')!;
 Object.entries(project.stack).forEach(([category, items]) => {
   const group = document.createElement('div');
@@ -54,7 +75,7 @@ Object.entries(project.stack).forEach(([category, items]) => {
   stackContainer.appendChild(group);
 });
 
-// 4. Architecture Highlights
+// 5. Architecture Highlights
 const archList = document.getElementById('architecture-list')!;
 project.architecture.forEach(item => {
   const li = document.createElement('li');
@@ -66,7 +87,7 @@ project.architecture.forEach(item => {
   archList.appendChild(li);
 });
 
-// 5. Challenges
+// 6. Challenges
 const challengesContainer = document.getElementById('challenges-container')!;
 project.challenges.forEach(challenge => {
   const card = document.createElement('div');
@@ -86,6 +107,27 @@ project.challenges.forEach(challenge => {
   `;
   challengesContainer.appendChild(card);
 });
+
+// 7. Retrospective
+const retro = document.getElementById('retro')!;
+const retrosContainer = document.getElementById('retro-list')!;
+
+if (!project.retrospective) {
+  retro.classList.add('hidden');
+} else {
+  project.retrospective.forEach((retro, i) => {
+    const pos = i + 1;
+
+    const card = document.createElement('li');
+    card.innerHTML = `
+      <h3 class="text-lg font-semibold text-teal-300 my-3 font-iceberg">
+        <span class="pr-2 text-sm text-neutral-600">${pos > 9 ? pos : `0${pos}`}.</span>${retro.title}
+      </h3>
+      <p class="text-neutral-400 font-montserrat text-[14px]">${retro.description}</p>
+    `;
+    retrosContainer.appendChild(card);
+  })
+}
 
 // 6. Project Links (Repo & Live)
 const linksContainer = document.getElementById('project-links')!;
