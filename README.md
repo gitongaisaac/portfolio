@@ -118,9 +118,9 @@ npm run build
 └── vite.config.ts         # Vite configuration
 ```
 
-The animations folder contains all the animations for the portfolio except for the global animations; animations belonging to both the `index.html` and `project.html` pages are in `main.ts`.<br>
-Each section in `index.html` has its own animation file in `src/animations`. `project.html` has just `src/animations/project.ts` file for all its animations.<br>
-`main.ts` is the main TypeScript file. Both `index.html` and `project.html` must first call this file before calling their respective TypeScript files in `src/pages`.<br>
+- The animations folder contains all the animations for the portfolio except for the global animations; animations belonging to both the `index.html` and `project.html` pages are in `main.ts`.
+- Each section in `index.html` has its own animation file in `src/animations`. `project.html` has just `src/animations/project.ts` file for all its animations.
+- `main.ts` is the main TypeScript file. Both `index.html` and `project.html` must first call this file before calling their respective TypeScript files in `src/pages`.
 
 ## License
 
