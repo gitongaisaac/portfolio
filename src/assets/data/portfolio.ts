@@ -62,5 +62,5 @@ export const portfolio: Project = {
   ],
 
   repoUrl: "https://github.com/gitongaisaac/portfolio",
-  liveUrl: "https://gitongaisaac.com"
+  liveUrl: "https://gitongaisaac.netlify.app"
 };

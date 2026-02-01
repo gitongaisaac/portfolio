@@ -60,5 +60,5 @@ export const sprintKenya: Project = {
     }
   ],
 
-  liveUrl: "https://sprintbrandconnections.com"
+  liveUrl: "https://sprintkenya.netlify.app"
 };

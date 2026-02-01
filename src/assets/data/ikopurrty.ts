@@ -60,5 +60,4 @@ export const ikopurrty: Project = {
         "Defined a phased delivery roadmap with ticketing as the core revenue driver. While only Phase 1 was implemented, the database schema and authentication model were designed to be domain-agnostic, allowing future expansion into music and merchandise without a rewrite."
     }
   ],
-  liveUrl: "https://ikopurrty.com/"
 };
