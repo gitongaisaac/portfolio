@@ -3,26 +3,29 @@
 This repository contains the source code for my personal portfolio website.
 
 The site is a static showcase of selected projects, engineering work, and professional background.<br>
-If you fork this repository, please provide proper attribution by linking back to [gitongaisaac.com](https://gitongaisaac.netlify.app).
+If you fork this repository, please provide proper attribution by linking back to [isaacgitonga.com](https://isaacgitonga.com/).
 
-👉 **Live site:** [gitongaisaac.com](https://gitongaisaac.netlify.app)
+👉 **Live site:** [isaacgitonga.com](https://isaacgitonga.com/)
 
 ---
 
 ## Tech Stack
 
 ### Frontend
+
 - HTML5
 - TypeScript
 - Tailwind CSS
 - GSAP (animations)
 
 ### Tooling / Hosting
+
 - Vite
 - ESBuild
 - Vercel
 
 ### Backend (Contact Form)
+
 - Vercel Serverless Functions
 - Nodemailer (email delivery)
 
@@ -38,7 +41,8 @@ cd portfolio
 ```
 
 ### 2. Install dependencies
-```bash 
+
+```bash
 # Install dependencies
 npm install
 ```
@@ -53,6 +57,7 @@ cp .env.example .env.local
 ```
 
 **Required Environment Variables:**
+
 ```dotenv
 EMAIL_USER=your-username@gmail.com
 EMAIL_PASS=your-app-password
@@ -88,7 +93,7 @@ vercel dev
 See:<br>
 [Vercel CLI Documentation](https://vercel.com/docs/cli)
 
-### 5. Build for production 
+### 5. Build for production
 
 ```bash
 npm run build
@@ -105,8 +110,8 @@ npm run build
 │   ├── assets/
 │   │   └── data/          # Project and site data
 │   ├── pages/             # Page-specific TypeScript logic
-│   │   └── home.ts        # TypeScript logic specific to `index.html` 
-│   │   └── project.ts     # TypeScript logic specific to `project.html` 
+│   │   └── home.ts        # TypeScript logic specific to `index.html`
+│   │   └── project.ts     # TypeScript logic specific to `project.html`
 │   ├── main.css           # Global styles (Tailwind)
 │   ├── main.ts            # Main entry point
 │   └── types.ts           # TypeScript type definitions
@@ -120,7 +125,7 @@ npm run build
 
 - The animations folder contains all the animations for the portfolio except for the global animations; animations belonging to both the `index.html` and `project.html` pages are in `main.ts`.
 - Each section in `index.html` has its own animation file in `src/animations`. `project.html` has just `src/animations/project.ts` file for all its animations.
-- `main.ts` is the main TypeScript file. Both `index.html` and `project.html` must first call this file before calling their respective TypeScript files in `src/pages`.
+- `main.ts` is the main TypeScript file. Both `index.html` and `project.html` must first load this file before calling their specific TypeScript files in `src/pages`.
 
 ## License
 

@@ -3,8 +3,9 @@ import {animateHeadings, initNavbar, initProjectAnimations} from "@/animations";
 import {initHomeAnimations} from "@/pages";
 
 /**
- * This is the main TypeScript file. This file must be loaded before loading the specific page ts file.
+ * This is the main TypeScript file. This file must be loaded before loading the specific page TS file.
  */
+
 
 document.documentElement.classList.remove("no-js");
 
