@@ -8,7 +8,13 @@ gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
-export function handleContactFormSubmit() {
+/**
+ * Handles the submission of the contact form by sending form data to the server via an API call.
+ * Displays success or error messages based on the response status and includes animations for feedback.
+ *
+ * @return {void} This function does not return a value as it sets up an event listener on the contact form.
+ */
+export function handleContactFormSubmit(): void {
   const contactForm = document.getElementById("contact-form") as HTMLFormElement;
   const formStatus = document.getElementById("form-status");
   const submitBtn = contactForm?.querySelector('button[type="submit"]') as HTMLButtonElement;
@@ -98,6 +104,9 @@ export function handleContactFormSubmit() {
 
 handleContactFormSubmit();
 
+/**
+ * This function initializes all page animations. It is called from the initPageAnimations function in `main.ts`.
+ */
 export function initHomeAnimations() {
   animateHero();
 

@@ -2,20 +2,21 @@ import projects from "@/assets/data";
 import {Project} from "@/types.ts";
 
 /**
- * This file handles the dynamic population of the Project Detail page.
+ * This file handles the dynamic population of the Project Detail page; `project.html`.
  * It retrieves the project ID from the URL query parameters, fetches the
  * corresponding project data, and updates the DOM elements with project-specific
  * information including the title, role, timeline, description, tech stack,
  * architecture highlights, challenges, and retrospective.
  */
 
-// Get ID from URL query param ?id=events-hub
+// Get ID from URL query param ?id=portfolio
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get('id');
 
+// Find the project with the matching ID
 const project = projects.find(p => p.id === projectId) as Project;
-console.log(project);
 
+// If no project is found, display a not found card and throw an error
 if (!project) {
   // Handle 404
   document.getElementById('project')!.classList.add('hidden');
