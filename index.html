@@ -1,761 +1,1244 @@
 <!doctype html>
 <html lang="en" class="box-border">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="stylesheet" href="/src/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
-  <title>Isaac Gitonga | Full-stack web Developer</title>
-</head>
-<body data-page="home" class="no-js relative bg-neutral-950 text-gray-200 font-nunito overflow-x-hidden">
-  <div id="transition-curtain" class="fixed inset-0 bg-neutral-950 z-9999"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3ca0c365cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Isaac Gitonga | Software Engineer</title>
+  </head>
+  <body
+    data-page="home"
+    class="no-js relative bg-neutral-950 text-gray-200 font-nunito overflow-x-hidden"
+  >
+    <div
+      id="transition-curtain"
+      class="fixed inset-0 bg-neutral-950 z-9999"
+    ></div>
 
-  <button id="menu-toggle" class="fixed top-6 right-6 z-90 p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm">
-    <i class="fa-solid fa-bars-staggered text-2xl"></i>
-  </button>
+    <button
+      id="menu-toggle"
+      class="fixed top-6 right-6 z-90 p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm"
+    >
+      <i class="fa-solid fa-bars-staggered text-2xl"></i>
+    </button>
 
-  <nav id="side-nav" class="h-screen fixed inset-0 z-99">
-    <div id="nav-backdrop" class="fixed inset-0 bg-neutral-950/50 backdrop-blur-xs -z-1"></div>
+    <nav id="side-nav" class="h-screen fixed inset-0 z-99">
+      <div
+        id="nav-backdrop"
+        class="fixed inset-0 bg-neutral-950/50 backdrop-blur-xs -z-1"
+      ></div>
 
-    <div id="nav-content" class="fixed right-0 w-full md:w-112.5 space-y-6 flex flex-col justify-between h-full p-8 bg-neutral-950 border-l border-neutral-800 overflow-y-auto">
-      <div class="flex flex-col space-y-6">
-        <div class="flex items-center justify-between">
-          <div class="flex gap-6 text-2xl text-neutral-400">
-            <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-white transition-colors">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
+      <div
+        id="nav-content"
+        class="fixed right-0 w-full md:w-112.5 space-y-6 flex flex-col justify-between h-full p-8 bg-neutral-950 border-l border-neutral-800 overflow-y-auto"
+      >
+        <div class="flex flex-col space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex gap-6 text-2xl text-neutral-400">
+              <a
+                href="https://github.com/gitongaisaac"
+                target="_blank"
+                class="hover:text-white transition-colors"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="hover:text-white transition-colors"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+            <button
+              id="menu-close"
+              class="p-3 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+            >
+              <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
           </div>
-          <button id="menu-close" class="p-3 text-neutral-400 hover:text-white transition-colors cursor-pointer">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-          </button>
+
+          <ul
+            class="mt-0 space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden"
+          >
+            <li>
+              <a
+                href="/#hero"
+                class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >01</span
+                >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#skills"
+                class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >02</span
+                >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#projects"
+                class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >03</span
+                >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#reviews"
+                class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >04</span
+                >
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#contact"
+                class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >05</span
+                >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <ul class="mt-0 space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden">
-          <li>
-            <a href="/#hero" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">01</span>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/#skills" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">02</span>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="/#projects" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">03</span>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="/#reviews" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">04</span>
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a href="/#contact" class="nav-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">05</span>
-              Contact
-            </a>
-          </li>
-        </ul>
+        <div class="flex gap-6 items-center">
+          <img
+            src="/logos/logo-dark.png"
+            alt="Profile Logo"
+            class="rounded-full w-8 h-8"
+          />
+          <p
+            class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase truncate text-nowrap"
+          >
+            <button
+              class="copy-email active:scale-70 transition-all duration-200"
+            >
+              <i class="fa-solid fa-copy text-xl"></i>
+            </button>
+            <span class="pl-1">isaacggitonga@gmail.com</span>
+          </p>
+        </div>
       </div>
+    </nav>
 
-      <div class="flex gap-4 items-center">
-        <img src="/logos/logo-dark.png" alt="Profile Logo" class="rounded-full w-8 h-8">
-        <p class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase text-nowrap">
-          <span class="pr-2">isaacggitonga@gmail.com</span>
-          <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy text-xl"></i></button>
-        </p>
-      </div>
-    </div>
-  </nav>
-
-  <svg
+    <svg
       id="stars"
       class="fixed inset-0 w-full h-screen pointer-events-none -z-50"
       xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-  </svg>
+    >
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
 
-  <section id="hero" class="relative min-h-screen">
-    <div id="hero-content" class="relative max-w-6xl p-4 mx-auto z-10">
-      <div id="tagline" class="absolute h-screen w-full flex flex-col items-center justify-center">
-        <div class="h-full flex flex-col justify-center items-center gap-6 font-bold font-iceberg space-y-14 text-7xl md:text-8xl text-gray-300">
-          <h1 class="compile block bg-linear-to-l from-yellow-600 to-teal-200 bg-clip-text text-transparent">MEASURE.</h1>
-          <h1 class="debug block">OPTIMIZE.</h1>
-          <h1 class="repeat block bg-linear-to-r from-yellow-600 to-teal-600 bg-clip-text text-transparent">SCALE<span class="full-stop">.</span></h1>
-        </div>
-      </div>
-
-      <div class="min-h-screen flex flex-col md:flex-row-reverse items-end justify-end md:justify-between gap-2 md:gap-4 py-4">
-        <ul class="stats space-y-5 ml-auto md:ml-0 self-center">
-          <li>
-            <p>Experience</p>
-            <h2>4+<span class="text-xl">yrs</span></h2>
-          </li>
-          <li>
-            <p>Applications</p>
-            <h2>3+</h2>
-          </li>
-          <li>
-            <p>Websites</p>
-            <h2>10+</h2>
-          </li>
-          <li>
-            <p>Repositories</p>
-            <h2>40+</h2>
-          </li>
-          <li>
-            <p>Hireable</p>
-            <h2>Yes</h2>
-          </li>
-        </ul>
-
-        <div id="hero-intro" class="w-full h-[95%] mb-5 pb-5 flex flex-col justify-end">
-          <div class="space-y-3">
-            <h1 class="hero-title text-5xl md:text-6xl font-bold font-iceberg text-teal-500 flex gap-6 py-2">G.</h1>
-            <p class="hero-text max-w-lg text-neutral-400 font-montserrat font-semibold overflow-hidden">
-              <span class="block">Understand the machine before abstracting over it.</span>
-              <span class="block">Every abstraction must earn its cost; complexity is a deliberate trade-off.</span>
-            </p>
+    <section id="hero" class="relative min-h-screen">
+      <div id="hero-content" class="relative max-w-6xl p-4 mx-auto z-10">
+        <div
+          id="tagline"
+          class="absolute h-screen w-full flex flex-col items-center justify-center"
+        >
+          <div
+            class="h-full flex flex-col justify-center items-center gap-6 font-bold font-iceberg space-y-14 text-7xl md:text-8xl text-gray-300"
+          >
+            <h1
+              class="compile block bg-linear-to-l from-yellow-600 to-teal-200 bg-clip-text text-transparent"
+            >
+              MEASURE.
+            </h1>
+            <h1 class="debug block">OPTIMIZE.</h1>
+            <h1
+              class="repeat block bg-linear-to-r from-yellow-600 to-teal-600 bg-clip-text text-transparent"
+            >
+              SCALE<span class="full-stop">.</span>
+            </h1>
           </div>
         </div>
-      </div>
 
-      <ul
+        <div
+          class="min-h-screen flex flex-col md:flex-row-reverse items-end justify-end md:justify-between gap-2 md:gap-4 py-4"
+        >
+          <ul class="stats space-y-5 ml-auto md:ml-0 self-center">
+            <li>
+              <p>Experience</p>
+              <h2>4+<span class="text-xl">yrs</span></h2>
+            </li>
+            <li>
+              <p>Applications</p>
+              <h2>3+</h2>
+            </li>
+            <li>
+              <p>Websites</p>
+              <h2>10+</h2>
+            </li>
+            <li>
+              <p>Repositories</p>
+              <h2>40+</h2>
+            </li>
+            <li>
+              <p>Hireable</p>
+              <h2>Yes</h2>
+            </li>
+          </ul>
+
+          <div
+            id="hero-intro"
+            class="w-full h-[95%] mb-5 pb-5 flex flex-col justify-end"
+          >
+            <div class="space-y-3">
+              <h1
+                class="hero-title text-5xl md:text-6xl font-bold font-iceberg text-teal-500 flex gap-6 py-2"
+              >
+                G.
+              </h1>
+              <p
+                class="hero-text max-w-lg text-neutral-400 font-montserrat font-semibold overflow-hidden"
+              >
+                <span class="block"
+                  >Understand the machine before abstracting over it.</span
+                >
+                <span class="block"
+                  >Every abstraction must earn its cost; complexity is a
+                  deliberate trade-off.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <ul
           id="about"
           class="min-h-[150dvh] p-4 space-y-20 mt-4 pt-32 text-lg text-neutral-300 grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-5 justify-between oveflow-hidden"
-      >
-        <li id="me" class="identity row-start-1 md:col-start-2 md:ml-0 self-center py-2">
-          <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
-            Who I Am
-          </h2>
+        >
+          <li
+            id="me"
+            class="identity row-start-1 md:col-start-2 md:ml-0 self-center py-2"
+          >
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              Who I Am
+            </h2>
 
-          <div class="leading-relaxed space-y-4">
+            <div class="leading-relaxed space-y-4">
+              <p>
+                I’m a software engineer and system architect who builds reliable
+                infrastructure for organizations where correctness, security,
+                and long-term maintainability are non-negotiable.
+              </p>
+              <p>
+                I specialize in evolving backend-heavy platforms that handle
+                sensitive data, complex workflows, and real operational
+                constraints. My work spans greenfield builds to legacy
+                modernization, always focusing on software that survives
+                production, not just the demo.
+              </p>
+              <p>
+                I don’t chase hype. I design architectures that are
+                understandable, auditable, and resilient—solutions that teams
+                can maintain and businesses can trust.
+              </p>
+            </div>
+          </li>
+
+          <li
+            id="build"
+            class="identity md:col-start-1 row-start-2 self-center py-2"
+          >
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              Technical Expertise
+            </h2>
+
+            <div class="max-w-xl leading-relaxed space-y-6">
+              <p>
+                I architect, build, and modernize software systems with a
+                relentless focus on backend stability and data integrity.
+              </p>
+
+              <div class="space-y-2">
+                <h6 class="text-teal-500 font-iceberg font-semibold">
+                  This includes:
+                </h6>
+                <ul
+                  class="list-disc list-outside text-neutral-400 text-base space-y-4"
+                >
+                  <li>
+                    <span class="font-montserrat font-semibold text-neutral-300"
+                      >Resilient Backend Infrastructure:
+                    </span>
+                    <span
+                      >Designing APIs, transactional workflows, and
+                      data-intensive platforms that prioritize uptime.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="font-montserrat font-semibold text-neutral-300"
+                      >Financial Engineering:
+                    </span>
+                    <span
+                      >Building payment integrations and ledgers where
+                      correctness and idempotency are non-negotiable.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="font-montserrat font-semibold text-neutral-300"
+                      >Legacy Modernization:
+                    </span>
+                    <span
+                      >Migrating critical platforms to modern stacks
+                      incrementally, ensuring zero downtime for production
+                      users.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="font-montserrat font-semibold text-neutral-300"
+                      >Architecture Consulting:
+                    </span>
+                    <span
+                      >Helping teams untangle technical debt and make
+                      sustainable, long-term engineering decisions.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="font-montserrat font-semibold text-neutral-300"
+                      >Hybrid Architectures:
+                    </span>
+                    <span
+                      >Balancing performance and delivery speed using BFFs
+                      (Backend for Frontend), serverless, and traditional
+                      monolithic patterns.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <p>
+                I translate complex business requirements into technical systems
+                that scale with both usage and organizational growth.
+              </p>
+            </div>
+          </li>
+
+          <li
+            id="why"
+            class="identity md:col-start-2 row-start-3 self-center py-2"
+          >
+            <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
+              Why I Do It
+            </h2>
+
+            <div class="max-w-xl leading-relaxed space-y-4">
+              <p>
+                Most costly software failures don’t stem from bad ideas — they
+                stem from fragile systems, rushed architecture, and unmanaged
+                technical debt.
+              </p>
+              <p>
+                I build software because I value
+                <span class="text-neutral-200">resilience</span>. I design
+                systems that hold up under pressure: when traffic spikes, when
+                money is on the line, and long after the original authors have
+                moved on.
+              </p>
+              <p>
+                I thrive on the hard parts of engineering —state management,
+                concurrency, and data integrity —because getting these right
+                early saves clients years of pain, expensive rewrites, and lost
+                trust.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="relative max-w-7xl mx-auto py-10">
+      <div class="head">
+        <h1
+          class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent"
+        >
+          Skills & Tools
+        </h1>
+        <p class="space-y-6 max-w-5xl mx-auto text-lg font-medium">
+          <span class="block text-xl">
+            Tools change, but architectural principles endure. I select
+            technologies based on stability, ecosystem maturity, and performance
+            —never hype.
+          </span>
+          <span class="block">
+            While I work comfortably across the full stack, my strongest
+            contributions are in
+            <strong class="text-neutral-300"
+              >database design and backend architecture
+            </strong>
+            —where system behavior, data integrity, and long-term scalability
+            are decided.
+          </span>
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto p-4 space-y-10">
+        <div class="db skill relative">
+          <h4 class="title">Database Design</h4>
+
+          <div class="desc">
             <p>
-              I’m a software engineer and system architect who builds reliable infrastructure for organizations where
-              correctness, security, and long-term maintainability are non-negotiable.
+              I design databases as <strong>systems</strong>, not just storage
+              layers.
             </p>
+
             <p>
-              I specialize in evolving backend-heavy platforms that handle sensitive data,
-              complex workflows, and real operational constraints. My work spans greenfield builds to
-              legacy modernization, always focusing on software that survives production, not just the demo.
+              My focus is on data models that reflect real business constraints,
+              enforcing
+              <strong>integrity at the database level</strong>
+              so data remains valid even if application code fails. I prioritize
+              transaction boundaries, indexing strategies, and predictable query
+              behavior under load.
             </p>
+
             <p>
-              I don’t chase hype. I design architectures that are understandable, auditable, and
-              resilient—solutions that teams can maintain and businesses can trust.
+              I work comfortably <strong>close to the metal</strong> —analyzing
+              query plans, managing locking strategies, and writing raw
+              SQL—while knowing exactly when to abstract complexity with an ORM.
+              The goal is always the same: clear ownership, consistent
+              performance, and schemas that can evolve without breaking
+              production.
+            </p>
+
+            <p>
+              <span class="text-gray-200 font-montserrat font-semibold"
+                >Core strengths:
+              </span>
+              <span class="block">
+                Relational Modeling, Transactional Integrity, Indexing Strategy,
+                Concurrency Control, Data Migrations.
+              </span>
             </p>
           </div>
-        </li>
 
-        <li id="build" class="identity md:col-start-1 row-start-2 self-center py-2">
-          <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
-            Technical Expertise
-          </h2>
+          <ul class="tools">
+            <li class="tool">
+              <img
+                src="/logos/db.png"
+                alt="PostgreSQL logo"
+                class="img bg-cover bg-center size-6"
+              />
+              <p>SQL</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/postgres.png"
+                alt="PostgreSQL logo"
+                class="img bg-cover bg-center h-6 w-8"
+              />
+              <p>PostgreSQL</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/mysql.png"
+                alt="MySQL logo"
+                class="img object-cover size-6"
+              />
+              <p>MySQL</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/prisma.png"
+                alt="Prisma ORM logo"
+                class="img object-cover rounded-sm size-6"
+              />
+              <p>Prisma</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/redis.png"
+                alt="Redis logo"
+                class="img object-cover size-6 rounded-sm"
+              />
+              <p>Redis</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/mongodb.png"
+                alt="mongoDb logo"
+                class="img object-cover size-6"
+              />
+              <p>MongoDB</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/neon.jpeg"
+                alt="Neon logo"
+                class="img object-cover size-6"
+              />
+              <p>Neon</p>
+            </li>
+          </ul>
+        </div>
 
-          <div class="max-w-xl leading-relaxed space-y-6">
-            <p>I architect, build, and modernize software systems with a relentless focus on backend stability and data integrity.</p>
+        <div class="back-end skill relative">
+          <h4 class="title">Backend Engineering</h4>
 
-            <div class="space-y-2">
-              <h6 class="text-teal-500 font-iceberg font-semibold">This includes:</h6>
-              <ul class="list-disc list-outside text-neutral-400 text-base space-y-4">
+          <div>
+            <div class="desc">
+              <p>
+                Backend engineering is my <strong>primary discipline</strong>.
+              </p>
+
+              <p>
+                I build APIs and systems where
+                <strong>business logic lives in isolated layers</strong>,
+                independent of frameworks. This decoupling makes systems easier
+                to test, reason about, and scale without being locked into
+                specific tools.
+              </p>
+
+              <p>
+                I pay strict attention to <strong>system boundaries</strong>:
+                distinct separation between authentication and authorization,
+                read vs. write models, and synchronous vs. asynchronous flows.
+                Whether handling payments or modernizing legacy systems, I
+                design backends to behave correctly under
+                <strong>real-world conditions</strong> —handling failure states
+                as gracefully as happy paths.
+              </p>
+
+              <p>
+                This is my chosen specialization: designing robust,
+                production-grade systems that businesses can rely on.
+              </p>
+
+              <p class="space-y-2">
+                <span class="text-gray-200 font-montserrat font-semibold"
+                  >Core strengths:
+                </span>
+                <span class="block">
+                  API Design, Authentication & Authorization, Transactional
+                  Workflows, System Architecture.
+                </span>
+              </p>
+            </div>
+
+            <div
+              class="flex gap-4 items-center my-4 p-2 px-4 text-lg text-amber-500 bg-neutral-900/50 border border-neutral-800 w-fit rounded-lg"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <p class="font-mono font-semibold">RESTful API Design</p>
+            </div>
+          </div>
+
+          <ul class="tools">
+            <li class="tool">
+              <img
+                src="/logos/typescript.png"
+                alt="TypeScript logo"
+                class="img size-6"
+              />
+              <p>TypeScript</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/node.webp"
+                alt="Node JS logo"
+                class="img size-6"
+              />
+              <p>Node.js</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/express.webp"
+                alt="Express JS logo"
+                class="img size-6"
+              />
+              <p>Express</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/next.png"
+                alt="Next JS logo"
+                class="img size-6"
+              />
+              <p>Next.js</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/postman.png"
+                alt="Postman logo"
+                class="img size-6"
+              />
+              <p>Postman</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/cloudflare.png"
+                alt="Postman logo"
+                class="img size-6"
+              />
+              <p>CloudFlare</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/vercel.png"
+                alt="Vercel logo"
+                class="img size-6"
+              />
+              <p>Vercel</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/netlify.png"
+                alt="Netlify logo"
+                class="img size-6"
+              />
+              <p>Netlify</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="front-end skill relative">
+          <h4 class="title">Frontend Engineering</h4>
+
+          <div class="desc">
+            <p>
+              I approach frontend development with the same rigor as backend
+              architecture.
+            </p>
+
+            <p>
+              I specialize in <strong>data-dense interfaces</strong> —admin
+              panels, dashboards, and internal tools —where clarity and
+              precision are paramount. Users in these environments need to
+              understand complex data and perform precise actions without
+              fighting the UI.
+            </p>
+
+            <p>
+              My focus is on <strong>state synchronization:</strong> robust data
+              fetching patterns, correct error handling, and efficient cache
+              invalidation. I design interactions where the UI is an accurate
+              reflection of the backend state, ensuring responsiveness without
+              becoming fragile. I build interfaces that users can
+              <strong>trust</strong>.
+            </p>
+
+            <p>
+              <span class="text-gray-200 font-montserrat font-semibold"
+                >Core strengths:
+              </span>
+              <span class="block">
+                Data-Heavy UI Design, Admin Dashboards, Structured Layouts,
+                Predictable State Management, Clean and Maintainable Front-end
+                Architecture.
+              </span>
+            </p>
+          </div>
+
+          <ul class="tools">
+            <li class="tool">
+              <img
+                src="/logos/typescript.png"
+                alt="TypeScript logo"
+                class="img size-6"
+              />
+              <p>TypeScript</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/next.png"
+                alt="Next JS logo"
+                class="img size-6"
+              />
+              <p>Next.js</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/react.png"
+                alt="React JS logo"
+                class="img h-5 w-6"
+              />
+              <p>React.js</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/tailwind.png"
+                alt="Tailwind logo"
+                class="img h-4 w-6"
+              />
+              <p>Tailwind</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/tanstack-query.png"
+                alt="TanStack Query logo"
+                class="img size-6"
+              />
+              <p>Tanstack Query</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/redux.png" alt="Redux logo" class="img size-6" />
+              <p>Redux</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/zod.png" alt="Zod logo" class="img size-6" />
+              <p>Zod</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/gsap.png" alt="GSAP logo" class="img size-6" />
+              <p>GSAP</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/motion.png"
+                alt="Framer Motion logo"
+                class="img size-6"
+              />
+              <p>Motion</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="global">
+          <h3 class="text-2xl py-4 font-iceberg font-semibold text-teal-500">
+            Dev Tools:
+          </h3>
+          <ul class="tools flex flex-wrap gap-4 items-center justify-start">
+            <li class="tool">
+              <img src="/logos/git.png" alt="Git logo" class="img size-6" />
+              <p>Git</p>
+            </li>
+            <li class="tool">
+              <i class="fa-brands fa-github text-2xl"></i>
+              <p>GitHub</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/bash.png" alt="Bash logo" class="img size-6" />
+              <p>Linux / Bash</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/npm.png" alt="npm logo" class="img h-4 w-6" />
+              <p>NPM</p>
+            </li>
+            <li class="tool">
+              <img src="/logos/pnpm.webp" alt="pnpm logo" class="img size-6" />
+              <p>PNPM</p>
+            </li>
+            <li class="tool">
+              <img
+                src="/logos/gemini.png"
+                alt="Gemini AI logo"
+                class="img size-6"
+              />
+              <p>Gemini</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="head">
+          <h1
+            class="bg-linear-to-r from-amber-400 to-teal-400 bg-clip-text text-transparent"
+          >
+            Projects
+          </h1>
+          <p>Explore my latest work and the technologies that power them.</p>
+        </div>
+
+        <ul class="project-list space-y-4">
+          <li class="project">
+            <a href="/project?id=ticketing-platform" class="transition-link">
+              <h2>
+                <span>IkoPurrty</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h2>
+              <ul class="tech-stack">
                 <li>
-                  <span class="font-montserrat font-semibold text-neutral-300">Resilient Backend Infrastructure: </span>
-                  <span>Designing APIs, transactional workflows, and data-intensive platforms that prioritize uptime.</span>
+                  <div></div>
+                  <p>Next</p>
                 </li>
                 <li>
-                  <span class="font-montserrat font-semibold text-neutral-300">Financial Engineering: </span>
-                  <span>Building payment integrations and ledgers where correctness and idempotency are non-negotiable.</span>
+                  <div></div>
+                  <p>Tailwind</p>
                 </li>
                 <li>
-                  <span class="font-montserrat font-semibold text-neutral-300">Legacy Modernization: </span>
-                  <span>Migrating critical platforms to modern stacks incrementally, ensuring zero downtime for production users.</span>
+                  <div></div>
+                  <p>PostgreSQL</p>
                 </li>
                 <li>
-                  <span class="font-montserrat font-semibold text-neutral-300">Architecture Consulting: </span>
-                  <span>Helping teams untangle technical debt and make sustainable, long-term engineering decisions.</span>
+                  <div></div>
+                  <p>Prisma</p>
                 </li>
                 <li>
-                  <span class="font-montserrat font-semibold text-neutral-300">Hybrid Architectures: </span>
-                  <span>Balancing performance and delivery speed using BFFs (Backend for Frontend), serverless, and traditional monolithic patterns.</span>
+                  <div></div>
+                  <p>Zod</p>
                 </li>
               </ul>
-            </div>
-
-            <p>
-              I translate complex business requirements into technical systems that
-              scale with both usage and organizational growth.
-            </p>
-          </div>
-        </li>
-
-        <li id="why" class="identity md:col-start-2 row-start-3 self-center py-2">
-          <h2 class="py-2 font-iceberg font-bold text-teal-400 text-3xl">
-            Why I Do It
-          </h2>
-
-          <div class="max-w-xl leading-relaxed space-y-4">
-            <p>
-              Most costly software failures don’t stem from bad ideas — they stem from fragile systems,
-              rushed architecture, and unmanaged technical debt.
-            </p>
-            <p>
-              I build software because I value <span class="text-neutral-200">resilience</span>.
-              I design systems that hold up under pressure: when traffic spikes,
-              when money is on the line, and long after the original authors have moved on.
-            </p>
-            <p>
-              I thrive on the hard parts of engineering —state management, concurrency, and data integrity —because
-              getting these right early saves clients years of pain, expensive rewrites, and lost trust.
-            </p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="skills" class="relative max-w-7xl mx-auto py-10">
-    <div class="head">
-      <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
-        Skills & Tools
-      </h1>
-      <p class="space-y-6 max-w-5xl mx-auto text-lg font-medium">
-        <span class="block text-xl">
-          Tools change, but architectural principles endure. I select technologies based on stability,
-          ecosystem maturity, and performance —never hype.
-        </span>
-        <span class="block">
-          While I work comfortably across the full stack, my strongest contributions are in
-          <strong class="text-neutral-300">database design and backend architecture </strong>
-          —where system behavior, data integrity, and long-term scalability are decided.
-        </span>
-      </p>
-    </div>
-
-    <div class="max-w-6xl mx-auto p-4 space-y-10">
-      <div class="db skill relative">
-        <h4 class="title">Database Design</h4>
-
-        <div class="desc">
-          <p>I design databases as <strong>systems</strong>, not just storage layers.</p>
-
-          <p>
-            My focus is on data models that reflect real business constraints, enforcing
-            <strong>integrity at the database level</strong>
-            so data remains valid even if application code fails. I prioritize transaction boundaries,
-            indexing strategies, and predictable query behavior under load.
-          </p>
-
-          <p>
-            I work comfortably <strong>close to the metal</strong> —analyzing query plans,
-            managing locking strategies, and writing raw SQL—while knowing exactly when to abstract complexity with an ORM.
-            The goal is always the same: clear ownership, consistent performance, and schemas that can evolve without
-            breaking production.
-          </p>
-
-          <p>
-            <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
-            <span class="block">
-              Relational Modeling, Transactional Integrity, Indexing Strategy, Concurrency Control, Data Migrations.
-            </span>
-          </p>
-        </div>
-
-        <ul class="tools">
-          <li class="tool">
-            <img src="/logos/db.png" alt="PostgreSQL logo" class="img bg-cover bg-center size-6">
-            <p>SQL</p>
+            </a>
           </li>
-          <li class="tool">
-            <img src="/logos/postgres.png" alt="PostgreSQL logo" class="img bg-cover bg-center h-6 w-8">
-            <p>PostgreSQL</p>
+          <li class="project">
+            <a
+              href="/project?id=government-service-portal"
+              class="transition-link"
+            >
+              <h2>
+                <span>PremiumGava</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h2>
+              <ul class="tech-stack">
+                <li>
+                  <div></div>
+                  <p>Next</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Tailwind</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Express</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>PostgreSQL</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Prisma</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Zod</p>
+                </li>
+              </ul>
+            </a>
           </li>
-          <li class="tool">
-            <img src="/logos/mysql.png" alt="MySQL logo" class="img object-cover size-6">
-            <p>MySQL</p>
+          <li class="project">
+            <a href="/project?id=me-and-you" class="transition-link">
+              <h2>
+                <span>Me & You</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h2>
+              <ul class="tech-stack">
+                <li>
+                  <div></div>
+                  <p>React Native</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Redux</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>CSS</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Expo</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Express</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>MySQL</p>
+                </li>
+              </ul>
+            </a>
           </li>
-          <li class="tool">
-            <img src="/logos/prisma.png" alt="Prisma ORM logo" class="img object-cover rounded-sm size-6">
-            <p>Prisma</p>
+          <li class="project">
+            <a href="/project?id=portfolio" class="transition-link">
+              <h2>
+                <span>Portfolio | G</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h2>
+              <ul class="tech-stack">
+                <li>
+                  <div></div>
+                  <p>HTML</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Tailwind</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>TypeScript</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>GSAP</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Vite</p>
+                </li>
+              </ul>
+            </a>
           </li>
-          <li class="tool">
-            <img src="/logos/redis.png" alt="Redis logo" class="img object-cover size-6 rounded-sm">
-            <p>Redis</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/mongodb.png" alt="mongoDb logo" class="img object-cover size-6">
-            <p>MongoDB</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/neon.jpeg" alt="Neon logo" class="img object-cover size-6">
-            <p>Neon</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="back-end skill relative">
-        <h4 class="title">Backend Engineering</h4>
-
-        <div>
-        <div class="desc">
-          <p>Backend engineering is my <strong>primary discipline</strong>.</p>
-
-          <p>
-            I build APIs and systems where <strong>business logic lives in isolated layers</strong>, independent of frameworks.
-            This decoupling makes systems easier to test, reason about, and scale without being locked into specific tools.
-          </p>
-
-          <p>
-            I pay strict attention to <strong>system boundaries</strong>: distinct separation between authentication and authorization,
-            read vs. write models, and synchronous vs. asynchronous flows. Whether handling payments or
-            modernizing legacy systems, I design backends to behave correctly under <strong>real-world conditions</strong> —handling
-            failure states as gracefully as happy paths.
-          </p>
-
-          <p>This is my chosen specialization: designing robust, production-grade systems that businesses can rely on.</p>
-
-          <p class="space-y-2">
-            <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
-            <span class="block">
-              API Design, Authentication & Authorization, Transactional Workflows, System Architecture.
-            </span>
-          </p>
-        </div>
-
-          <div class="flex gap-4 items-center my-4 p-2 px-4 text-lg text-amber-500 bg-neutral-900/50 border border-neutral-800 w-fit rounded-lg">
-            <i class="fa-solid fa-gear"></i>
-            <p class="font-mono font-semibold">RESTful API Design</p>
-          </div>
-        </div>
-
-        <ul class="tools">
-          <li class="tool">
-            <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
-            <p>TypeScript</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/node.webp" alt="Node JS logo" class="img size-6">
-            <p>Node.js</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/express.webp" alt="Express JS logo" class="img size-6">
-            <p>Express</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
-            <p>Next.js</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/postman.png" alt="Postman logo" class="img size-6">
-            <p>Postman</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/cloudflare.png" alt="Postman logo" class="img size-6">
-            <p>CloudFlare</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/vercel.png" alt="Vercel logo" class="img size-6">
-            <p>Vercel</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/netlify.png" alt="Netlify logo" class="img size-6">
-            <p>Netlify</p>
+          <li class="project">
+            <a
+              href="/project?id=sprint-brand-connections"
+              class="transition-link"
+            >
+              <h2>
+                <span>Sprint Brand</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h2>
+              <ul class="tech-stack">
+                <li>
+                  <div></div>
+                  <p>HTML</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Tailwind</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>TypeScript</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>GSAP</p>
+                </li>
+                <li>
+                  <div></div>
+                  <p>Vite</p>
+                </li>
+              </ul>
+            </a>
           </li>
         </ul>
       </div>
+    </section>
 
-      <div class="front-end skill relative">
-        <h4 class="title">Frontend Engineering</h4>
-
-        <div class="desc">
-          <p>I approach frontend development with the same rigor as backend architecture.</p>
-
-          <p>
-            I specialize in <strong>data-dense interfaces</strong> —admin panels, dashboards,
-            and internal tools —where clarity and precision are paramount. Users in these environments need to
-            understand complex data and perform precise actions without fighting the UI.
-          </p>
-
-          <p>
-            My focus is on <strong>state synchronization:</strong> robust data fetching patterns,
-            correct error handling, and efficient cache invalidation. I design interactions where the UI is an
-            accurate reflection of the backend state, ensuring responsiveness without becoming fragile.
-            I build interfaces that users can <strong>trust</strong>.
-          </p>
-
-          <p>
-            <span class="text-gray-200 font-montserrat font-semibold">Core strengths: </span>
-            <span class="block">
-              Data-Heavy UI Design, Admin Dashboards, Structured Layouts, Predictable State Management, Clean and Maintainable Front-end Architecture.
-            </span>
-          </p>
+    <section id="reviews" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
+      <div class="max-w-6xl mx-auto p-4">
+        <div class="head">
+          <h1
+            class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent"
+          >
+            Reviews
+          </h1>
+          <p>What people are saying about our collaboration.</p>
         </div>
 
-        <ul class="tools">
-          <li class="tool">
-            <img src="/logos/typescript.png" alt="TypeScript logo" class="img size-6">
-            <p>TypeScript</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/next.png" alt="Next JS logo" class="img size-6">
-            <p>Next.js</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/react.png" alt="React JS logo" class="img h-5 w-6">
-            <p>React.js</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/tailwind.png" alt="Tailwind logo" class="img h-4 w-6">
-            <p>Tailwind</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/tanstack-query.png" alt="TanStack Query logo" class="img size-6">
-            <p>Tanstack Query</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/redux.png" alt="Redux logo" class="img size-6">
-            <p>Redux</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/zod.png" alt="Zod logo" class="img size-6">
-            <p>Zod</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/gsap.png" alt="GSAP logo" class="img size-6">
-            <p>GSAP</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/motion.png" alt="Framer Motion logo" class="img size-6">
-            <p>Motion</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="global">
-        <h3 class="text-2xl py-4 font-iceberg font-semibold text-teal-500">Dev Tools: </h3>
-        <ul class="tools flex flex-wrap gap-4 items-center justify-start">
-          <li class="tool">
-            <img src="/logos/git.png" alt="Git logo" class="img size-6">
-            <p>Git</p>
-          </li>
-          <li class="tool">
-            <i class="fa-brands fa-github text-2xl"></i>
-            <p>GitHub</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/bash.png" alt="Bash logo" class="img size-6">
-            <p>Linux / Bash</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/npm.png" alt="npm logo" class="img h-4 w-6">
-            <p>NPM</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/pnpm.webp" alt="pnpm logo" class="img size-6">
-            <p>PNPM</p>
-          </li>
-          <li class="tool">
-            <img src="/logos/gemini.png" alt="Gemini AI logo" class="img size-6">
-            <p>Gemini</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="head">
-        <h1 class="bg-linear-to-r from-amber-400 to-teal-400 bg-clip-text text-transparent">
-          Projects
-        </h1>
-        <p>Explore my latest work and the technologies that power them.</p>
-      </div>
-
-      <ul class="project-list space-y-4">
-        <li class="project">
-          <a href="/project?id=ticketing-platform" class="transition-link">
-            <h2>
-              <span>IkoPurrty</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </h2>
-            <ul class="tech-stack">
-              <li> <div></div> <p>Next</p> </li>
-              <li> <div></div> <p>Tailwind</p> </li>
-              <li> <div></div> <p>PostgreSQL</p> </li>
-              <li> <div></div> <p>Prisma</p> </li>
-              <li> <div></div> <p>Zod</p> </li>
-            </ul>
-          </a>
-        </li>
-        <li class="project">
-          <a href="/project?id=government-service-portal" class="transition-link">
-            <h2>
-              <span>PremiumGava</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </h2>
-            <ul class="tech-stack">
-              <li> <div></div> <p>Next</p> </li>
-              <li> <div></div> <p>Tailwind</p> </li>
-              <li> <div></div> <p>Express</p> </li>
-              <li> <div></div> <p>PostgreSQL</p> </li>
-              <li> <div></div> <p>Prisma</p> </li>
-              <li> <div></div> <p>Zod</p> </li>
-            </ul>
-          </a>
-        </li>
-        <li class="project">
-          <a href="/project?id=me-and-you" class="transition-link">
-            <h2>
-              <span>Me & You</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </h2>
-            <ul class="tech-stack">
-              <li> <div></div> <p>React Native</p> </li>
-              <li> <div></div> <p>Redux</p> </li>
-              <li> <div></div> <p>CSS</p> </li>
-              <li> <div></div> <p>Expo</p> </li>
-              <li> <div></div> <p>Express</p> </li>
-              <li> <div></div> <p>MySQL</p> </li>
-            </ul>
-          </a>
-        </li>
-        <li class="project">
-          <a href="/project?id=portfolio" class="transition-link">
-            <h2>
-              <span>Portfolio | G</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </h2>
-            <ul class="tech-stack">
-              <li> <div></div> <p>HTML</p> </li>
-              <li> <div></div> <p>Tailwind</p> </li>
-              <li> <div></div> <p>TypeScript</p> </li>
-              <li> <div></div> <p>GSAP</p> </li>
-              <li> <div></div> <p>Vite</p> </li>
-            </ul>
-          </a>
-        </li>
-        <li class="project">
-          <a href="/project?id=sprint-brand-connections" class="transition-link">
-            <h2>
-              <span>Sprint Brand</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </h2>
-            <ul class="tech-stack">
-              <li> <div></div> <p>HTML</p> </li>
-              <li> <div></div> <p>Tailwind</p> </li>
-              <li> <div></div> <p>TypeScript</p> </li>
-              <li> <div></div> <p>GSAP</p> </li>
-              <li> <div></div> <p>Vite</p> </li>
-            </ul>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="reviews" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
-    <div class="max-w-6xl mx-auto p-4">
-      <div class="head">
-        <h1 class="bg-linear-to-l from-amber-400 to-teal-400 bg-clip-text text-transparent">
-          Reviews
-        </h1>
-        <p>What people are saying about our collaboration.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reviews-list">
-        <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
-          <div class="space-y-4">
-            <div class="flex text-teal-400 text-sm">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reviews-list"
+        >
+          <div
+            class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors"
+          >
+            <div class="space-y-4">
+              <div class="flex text-teal-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-neutral-300 font-montserrat leading-relaxed italic"
+              >
+                “ Thank you for building this system with such care, and for the
+                trust you showed under unique circumstances. Your cooperation
+                and clear project scoping stood out and helped us avoid
+                potential future mistakes. We look forward to putting the system
+                into production with confidence. ”
+              </p>
             </div>
-            <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-              “
-              Thank you for building this system with such care, and for the trust you showed under unique circumstances.
-              Your cooperation and clear project scoping stood out and helped us avoid potential future mistakes.
-              We look forward to putting the system into production with confidence.
-              ”
-            </p>
-          </div>
-          <div class="mt-8 flex items-center gap-4">
-            <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-              LC
-            </div>
-            <div>
-              <h4 class="font-bold font-iceberg text-neutral-200">Lucieta Christine</h4>
-              <p class="text-sm text-neutral-500 font-montserrat">PM, Stratera</p>
+            <div class="mt-8 flex items-center gap-4">
+              <div
+                class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl"
+              >
+                LC
+              </div>
+              <div>
+                <h4 class="font-bold font-iceberg text-neutral-200">
+                  Lucieta Christine
+                </h4>
+                <p class="text-sm text-neutral-500 font-montserrat">
+                  PM, Stratera
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
-          <div class="space-y-4">
-            <div class="flex text-teal-400 text-sm">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+          <div
+            class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors"
+          >
+            <div class="space-y-4">
+              <div class="flex text-teal-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-neutral-300 font-montserrat leading-relaxed italic"
+              >
+                “Thank you for translating our brand into a clean, modern
+                website. You really paid attention to the visuals and how
+                information is presented, and the end result feels professional,
+                fast, and easy for clients to understand. We look forward to
+                continue working together. ”
+              </p>
             </div>
-            <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-              “Thank you for translating our brand into a clean, modern website.
-              You really paid attention to the visuals and how information is presented, and
-              the end result feels professional, fast, and easy for clients to understand.
-              We look forward to continue working together.
-              ”
-            </p>
+            <div class="mt-8 flex items-center gap-4">
+              <div
+                class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl"
+              >
+                EN
+              </div>
+              <div>
+                <h4 class="font-bold font-iceberg text-neutral-200">
+                  Elinah Naeku
+                </h4>
+                <p class="text-sm text-neutral-500 font-montserrat">
+                  CEO, Sprint Kenya
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="mt-8 flex items-center gap-4">
-            <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-              EN
-            </div>
-            <div>
-              <h4 class="font-bold font-iceberg text-neutral-200">Elinah Naeku</h4>
-              <p class="text-sm text-neutral-500 font-montserrat">CEO, Sprint Kenya</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors">
-          <div class="space-y-4">
-            <div class="flex text-teal-400 text-sm">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+          <div
+            class="review-card bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col justify-between hover:border-teal-500/30 transition-colors"
+          >
+            <div class="space-y-4">
+              <div class="flex text-teal-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-neutral-300 font-montserrat leading-relaxed italic"
+              >
+                “Thank you for taking on a complex operational problem and
+                turning it into a usable app. You really thought through how
+                different roles work across branches, and the app made
+                day-to-day tracking much easier for our team.”
+              </p>
             </div>
-            <p class="text-neutral-300 font-montserrat leading-relaxed italic">
-              “Thank you for taking on a complex operational problem and turning it into a usable app.
-              You really thought through how different roles work across branches,
-              and the app made day-to-day tracking much easier for our team.”
-            </p>
-          </div>
-          <div class="mt-8 flex items-center gap-4">
-            <div class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl">
-              NM
-            </div>
-            <div>
-              <h4 class="font-bold font-iceberg text-neutral-200">Nicholus Maina</h4>
-              <p class="text-sm text-neutral-500 font-montserrat">Business Owner</p>
+            <div class="mt-8 flex items-center gap-4">
+              <div
+                class="size-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 font-bold font-iceberg text-xl"
+              >
+                NM
+              </div>
+              <div>
+                <h4 class="font-bold font-iceberg text-neutral-200">
+                  Nicholus Maina
+                </h4>
+                <p class="text-sm text-neutral-500 font-montserrat">
+                  Business Owner
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
-    <div class="max-w-6xl mx-auto p-4">
-      <div class="head pb-14 text-center">
-        <h1 class="bg-linear-to-r from-teal-400 to-amber-400 bg-clip-text text-transparent">
-          Get in Touch
-        </h1>
-        <p>Have a question or want to work together?</p>
-      </div>
+    <section id="contact" class="min-h-screen max-w-7xl mx-auto p-4 py-10">
+      <div class="max-w-6xl mx-auto p-4">
+        <div class="head pb-14 text-center">
+          <h1
+            class="bg-linear-to-r from-teal-400 to-amber-400 bg-clip-text text-transparent"
+          >
+            Get in Touch
+          </h1>
+          <p>Have a question or want to work together?</p>
+        </div>
 
-      <div class="max-w-3xl mx-auto">
-        <form id="contact-form" class="space-y-6">
-          <input type="checkbox" name="botCheck" class="hidden" style="display: none;">
+        <div class="max-w-3xl mx-auto">
+          <form id="contact-form" class="space-y-6">
+            <input
+              type="checkbox"
+              name="botCheck"
+              class="hidden"
+              style="display: none"
+            />
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="name" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Name</label>
-              <input type="text" id="name" name="name" required
-                     class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label
+                  for="name"
+                  class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  for="email"
+                  class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                  required
+                  class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"
+                />
+              </div>
             </div>
             <div class="space-y-2">
-              <label for="email" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Email</label>
-              <input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required
-                     class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
+              <label
+                for="subject"
+                class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"
+              />
             </div>
-          </div>
-          <div class="space-y-2">
-            <label for="subject" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Subject</label>
-            <input type="text" id="subject" name="subject" required
-                   class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all">
-          </div>
-          <div class="space-y-2">
-            <label for="message" class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider">Message</label>
-            <textarea id="message" name="message" rows="6" required
-                      class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"></textarea>
-          </div>
-          <button type="submit"
-                  class="w-full py-4 bg-teal-500 hover:bg-teal-600 text-neutral-950 font-bold font-iceberg text-xl rounded-lg transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-            Send Message
-          </button>
-          <div id="form-status" class="h-10 text-center font-semibold font-montserrat py-2 rounded-lg">
-            <p class="form-status-message hidden"></p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-neutral-950 border-t border-neutral-800 text-neutral-200 py-8">
-    <div class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center">
-      <p class="text-neutral-400 font-montserrat max-w-lg text-center">
-        Built with,
-        <span class="text-neutral-200 font-semibold font-iceberg">TypeScript, HTML, GSAP, Tailwind CSS,</span>
-        and
-        <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
-        Designed and developed by
-        <span class="text-cyan-600 font-semibold font-iceberg text-nowrap">
-          <a href="http://github.com/gitongaisaac" class="inline text-nowrap">
-            <span class="px-0.5">Isaac G.</span>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </span>.
-        Deployed on
-        <span class="text-neutral-200 font-semibold font-iceberg">Vercel</span>.
-      </p>
-
-      <div class="space-y-4 flex gap-4 items-center justify-center">
-        <div class="flex gap-4 items-center justify-center">
-          <a href="https://gitongaisaac.netlify.app" class="hover:text-zinc-400 transition-colors">
-            <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
-          </a>
-          <p class="bg-neutral-900 border border-neutral-800 rounded-md px-4">
-            <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
-            <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy"></i></button>
-          </p>
-          <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-zinc-400 transition-colors">
-            <i class="fa-brands fa-github text-3xl"></i>
-          </a>
+            <div class="space-y-2">
+              <label
+                for="message"
+                class="block text-sm font-semibold font-iceberg text-neutral-300 uppercase tracking-wider"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-neutral-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500/50 transition-all"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-4 bg-teal-500 hover:bg-teal-600 text-neutral-950 font-bold font-iceberg text-xl rounded-lg transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Send Message
+            </button>
+            <div
+              id="form-status"
+              class="h-10 text-center font-semibold font-montserrat py-2 rounded-lg"
+            >
+              <p class="form-status-message hidden"></p>
+            </div>
+          </form>
         </div>
       </div>
+    </section>
 
-      <p class="font-montserrat font-semibold text-sm text-neutral-400">
-        &copy; <span class="year">2026</span> Isaac G. All rights reserved.
-      </p>
-    </div>
-  </footer>
+    <footer
+      class="bg-neutral-950 border-t border-neutral-800 text-neutral-200 py-8"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center"
+      >
+        <p class="text-neutral-400 font-montserrat max-w-lg text-center">
+          Built with,
+          <span class="text-neutral-200 font-semibold font-iceberg"
+            >TypeScript, HTML, GSAP, Tailwind CSS,</span
+          >
+          and
+          <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
+          Designed and developed by
+          <span class="text-cyan-600 font-semibold font-iceberg text-nowrap">
+            <a href="http://github.com/gitongaisaac" class="inline text-nowrap">
+              <span class="px-0.5">Isaac G.</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> </span
+          >. Deployed on
+          <span class="text-neutral-200 font-semibold font-iceberg">Vercel</span
+          >.
+        </p>
 
-  <script type="module" src="/src/main.ts"></script>
-  <script type="module" src="/src/pages/home.ts"></script>
-</body>
+        <div class="space-y-4 flex gap-4 items-center justify-center">
+          <div class="flex gap-4 items-center justify-center">
+            <a
+              href="https://gitongaisaac.netlify.app"
+              class="hover:text-zinc-400 transition-colors"
+            >
+              <img
+                src="/logos/logo-dark.png"
+                alt="Logo"
+                class="size-9 rounded-full"
+              />
+            </a>
+            <p class="bg-neutral-900 border border-neutral-800 rounded-md px-4">
+              <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
+              <button
+                class="copy-email active:scale-70 transition-all duration-200"
+              >
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </p>
+            <a
+              href="https://github.com/gitongaisaac"
+              target="_blank"
+              class="hover:text-zinc-400 transition-colors"
+            >
+              <i class="fa-brands fa-github text-3xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <p class="font-montserrat font-semibold text-sm text-neutral-400">
+          &copy; <span class="year">2026</span> Isaac G. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/home.ts"></script>
+  </body>
 </html>

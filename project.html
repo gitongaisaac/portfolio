@@ -1,249 +1,421 @@
 <!doctype html>
 <html lang="en" class="box-border">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="stylesheet" href="/src/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/3ca0c365cd.js" crossorigin="anonymous"></script>
-  <title>Project Details | G</title>
-</head>
-<body data-page="project" class="no-js bg-neutral-950 text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white">
-  <div id="transition-curtain" class="fixed inset-0 bg-neutral-950 z-9999"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceberg&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3ca0c365cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Project Details | G</title>
+  </head>
+  <body
+    data-page="project"
+    class="no-js bg-neutral-950 text-neutral-200 font-nunito antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white"
+  >
+    <div
+      id="transition-curtain"
+      class="fixed inset-0 bg-neutral-950 z-9999"
+    ></div>
 
-  <!-- Navigation -->
-  <button id="menu-toggle" class="fixed top-6 right-6 z-90 p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm">
-    <i class="fa-solid fa-bars-staggered text-2xl"></i>
-  </button>
+    <!-- Navigation -->
+    <button
+      id="menu-toggle"
+      class="fixed top-6 right-6 z-90 p-3 bg-neutral-900/80 border border-neutral-800 rounded-full text-teal-400 hover:text-teal-300 transition-colors cursor-pointer backdrop-blur-sm"
+    >
+      <i class="fa-solid fa-bars-staggered text-2xl"></i>
+    </button>
 
-  <nav id="side-nav" class="fixed inset-0 z-99">
-    <div id="nav-backdrop" class="fixed inset-0 bg-neutral-950/50 backdrop-blur-xs -z-1"></div>
+    <nav id="side-nav" class="fixed inset-0 z-99">
+      <div
+        id="nav-backdrop"
+        class="fixed inset-0 bg-neutral-950/50 backdrop-blur-xs -z-1"
+      ></div>
 
-    <div id="nav-content" class="fixed right-0 w-full md:w-112.5 space-y-6 flex flex-col justify-between h-full p-8 bg-neutral-950 border-l border-neutral-800 overflow-y-auto">
-      <div class="flex flex-col space-y-6">
-        <div class="flex items-center justify-between">
-          <div class="flex gap-6 text-2xl text-neutral-400">
-            <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-white transition-colors">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
+      <div
+        id="nav-content"
+        class="fixed right-0 w-full md:w-112.5 space-y-6 flex flex-col justify-between h-full p-8 bg-neutral-950 border-l border-neutral-800 overflow-y-auto"
+      >
+        <div class="flex flex-col space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex gap-6 text-2xl text-neutral-400">
+              <a
+                href="https://github.com/gitongaisaac"
+                target="_blank"
+                class="hover:text-white transition-colors"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="hover:text-white transition-colors"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+            <button
+              id="menu-close"
+              class="p-3 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+            >
+              <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
           </div>
-          <button id="menu-close" class="p-3 text-neutral-400 hover:text-white transition-colors cursor-pointer">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-          </button>
+
+          <ul
+            class="space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden"
+          >
+            <li>
+              <a
+                href="/#hero"
+                class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >01</span
+                >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#skills"
+                class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >02</span
+                >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#projects"
+                class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >03</span
+                >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#reviews"
+                class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >04</span
+                >
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#contact"
+                class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors"
+              >
+                <span
+                  class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors"
+                  >05</span
+                >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <ul class="space-y-6 text-3xl font-iceberg overflow-y-auto overflow-x-hidden">
-          <li>
-            <a href="/#hero" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">01</span>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/#skills" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">02</span>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="/#projects" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">03</span>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="/#reviews" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">04</span>
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a href="/#contact" class="nav-link transition-link group flex items-center gap-4 text-neutral-400 hover:text-teal-400 transition-colors">
-              <span class="text-xs text-neutral-600 group-hover:text-teal-600 transition-colors">05</span>
-              Contact
-            </a>
-          </li>
-        </ul>
+        <div class="flex gap-6 items-center">
+          <img
+            src="/logos/logo-dark.png"
+            alt="Profile Logo"
+            class="rounded-full w-8 h-8"
+          />
+          <p
+            class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase truncate text-nowrap"
+          >
+            <button
+              class="copy-email active:scale-70 transition-all duration-200"
+            >
+              <i class="fa-solid fa-copy text-xl"></i>
+            </button>
+            <span class="pl-1">isaacggitonga@gmail.com</span>
+          </p>
+        </div>
       </div>
+    </nav>
 
-      <div class="flex gap-4 items-center">
-        <img src="/logos/logo-dark.png" alt="Profile Logo" class="rounded-full w-8 h-8">
-        <p class="text-sm text-neutral-500 font-montserrat tracking-widest uppercase text-nowrap">
-          <span class="pr-2">isaacggitonga@gmail.com</span>
-          <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy text-xl"></i></button>
-        </p>
-      </div>
-    </div>
-  </nav>
-
-  <svg
+    <svg
       id="stars"
       class="fixed inset-0 w-full h-screen pointer-events-none -z-50"
       xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-  </svg>
+    >
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
 
-  <nav id="back-nav" class="max-w-5xl mx-auto p-4 sm:py-8 my-4 sm:my-8">
-    <a href="/#projects" class="transition-link group w-fit flex items-center gap-4 font-iceberg text-teal-400">
-      <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
-      <p class="font-semibold">Home</p>
-    </a>
-  </nav>
-
-  <main id="project" class="max-w-4xl mx-auto px-6 pb-20">
-    <!-- Header / Hero -->
-    <header class="mb-12">
-      <h1 id="project-title" class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 tracking-tight font-iceberg">
-        <!-- JS Injected -->
-      </h1>
-      <p id="project-role" class="text-xl text-teal-400 font-iceberg font-medium mb-6">
-        <!-- JS Injected: Role | Timeline -->
-      </p>
-
-      <div id="showcase" class="aspect-video w-full rounded-xl overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800/50">
-        <img id="project-banner" src="" alt="Project Banner" class="w-full h-full object-cover opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
-      </div>
-    </header>
-
-    <!-- Overview -->
-    <section id="overview" class="mb-16 grid md:grid-cols-3 gap-12">
-      <div class="md:col-span-2 space-y-10">
-        <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg">Description</h2>
-          <div id="project-desc" class="text-neutral-400 leading-relaxed space-y-4 font-montserrat">
-            <!-- JS Injected HTML -->
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg">Status</h2>
-          <div id="project-status" class="flex flex-wrap gap-4 text-neutral-400 leading-relaxed space-y-4 font-montserrat">
-            <!-- JS Injected HTML p tags -->
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg">Overview</h2>
-          <div id="project-about" class="text-neutral-400 leading-relaxed space-y-4 font-montserrat">
-            <!-- JS Injected HTML -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Tech Stack Sidebar -->
-      <div class="bg-neutral-900/50 p-6 rounded-lg border border-neutral-800 h-fit">
-        <h3 class="text-lg font-semibold text-neutral-100 mb-4 font-iceberg">Tech Stack</h3>
-        <div id="project-stack" class="space-y-6">
-          <!-- JS Injected: Groups of tags -->
-        </div>
-
-        <div id="project-links" class="mt-8 pt-6 border-t border-neutral-800 flex flex-col gap-3">
-          <!-- JS Injected buttons -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Architecture Highlights (The "Senior" Section) -->
-    <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-neutral-100 mb-6 flex items-center gap-3 font-iceberg">
-        <span class="text-teal-400">#</span> System Architecture
-      </h2>
-      <div class="bg-neutral-900/30 rounded-xl p-8 border border-neutral-800">
-        <ul id="architecture-list" class="grid gap-4 text-neutral-300">
-          <!-- JS Injected list items with icons -->
-        </ul>
-      </div>
-    </section>
-
-    <!-- Engineering Challenges (Case Studies) -->
-    <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-neutral-100 mb-8 font-iceberg">Challenges</h2>
-      <div id="challenges-container" class="grid gap-8">
-        <!-- JS Injected Cards -->
-      </div>
-    </section>
-
-    <!-- What I Learned (Retrospectives) -->
-    <section id="retro">
-      <h2 id="retro-title" class="text-2xl font-semibold text-neutral-100 mb-8 font-iceberg">Design Reflections</h2>
-      <ul id="retro-list" class="space-y-8 bg-neutral-900/40 p-6 rounded-lg border border-neutral-800">
-        <!-- JS Injected Cards -->
-      </ul>
-    </section>
-  </main>
-
-  <main id="not-found" class="max-w-4xl mx-auto px-6 pb-32 py-8 hidden">
-    <div class="bg-neutral-900/30 p-8 space-y-10 flex flex-col items-center text-center border border-neutral-800 rounded-xl">
-      <div class="space-y-2">
-        <h1 class="text-2xl font-semibold text-neutral-100 mb-4 font-iceberg">Oops!</h1>
-        <p class="text-neutral-400 font-montserrat font-semibold">It looks like this project was not found!</p>
-        <p class="text-neutral-400 font-montserrat font-semibold">Please go back to the projects list and try again.</p>
-        <p class="text-neutral-400 font-montserrat font-semibold">You can also check out other projects from the list.</p>
-      </div>
-
-      <a href="/#projects" class="transition-link group flex items-center gap-4 font-iceberg text-teal-400">
-        <i class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"></i>
+    <nav id="back-nav" class="max-w-5xl mx-auto p-4 sm:py-8 my-4 sm:my-8">
+      <a
+        href="/#projects"
+        class="transition-link group w-fit flex items-center gap-4 font-iceberg text-teal-400"
+      >
+        <i
+          class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"
+        ></i>
         <p class="font-semibold">Home</p>
       </a>
-    </div>
-  </main>
+    </nav>
 
-  <footer class="bg-neutral-950 border-t border-neutral-800 text-neutral-200 py-8">
-    <div class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center">
-      <p class="text-neutral-400 font-montserrat max-w-lg text-center">
-        Built with,
-        <span class="text-neutral-200 font-semibold font-iceberg">TypeScript, HTML, GSAP, Tailwind CSS,</span>
-        and
-        <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
-        Designed and developed by
-        <span class="text-cyan-600 font-semibold font-iceberg text-nowrap">
-            <a href="https://gitongaisaac.netlify.app" class="inline text-nowrap">
+    <main id="project" class="max-w-4xl mx-auto px-6 pb-20">
+      <!-- Header / Hero -->
+      <header class="mb-12">
+        <h1
+          id="project-title"
+          class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 tracking-tight font-iceberg"
+        >
+          <!-- JS Injected -->
+        </h1>
+        <p
+          id="project-role"
+          class="text-xl text-teal-400 font-iceberg font-medium mb-6"
+        >
+          <!-- JS Injected: Role | Timeline -->
+        </p>
+
+        <div
+          id="showcase"
+          class="aspect-video w-full rounded-xl overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800/50"
+        >
+          <img
+            id="project-banner"
+            src=""
+            alt="Project Banner"
+            class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+            onload="this.classList.remove('opacity-0')"
+          />
+        </div>
+      </header>
+
+      <!-- Overview -->
+      <section id="overview" class="mb-16 grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-2 space-y-10">
+          <div class="space-y-4">
+            <h2
+              class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg"
+            >
+              Description
+            </h2>
+            <div
+              id="project-desc"
+              class="text-neutral-400 leading-relaxed space-y-4 font-montserrat"
+            >
+              <!-- JS Injected HTML -->
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h2
+              class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg"
+            >
+              Status
+            </h2>
+            <div
+              id="project-status"
+              class="flex flex-wrap gap-4 text-neutral-400 leading-relaxed space-y-4 font-montserrat"
+            >
+              <!-- JS Injected HTML p tags -->
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h2
+              class="text-2xl font-semibold text-neutral-100 border-l-4 border-teal-500 pl-4 font-iceberg"
+            >
+              Overview
+            </h2>
+            <div
+              id="project-about"
+              class="text-neutral-400 leading-relaxed space-y-4 font-montserrat"
+            >
+              <!-- JS Injected HTML -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack Sidebar -->
+        <div
+          class="bg-neutral-900/50 p-6 rounded-lg border border-neutral-800 h-fit"
+        >
+          <h3 class="text-lg font-semibold text-neutral-100 mb-4 font-iceberg">
+            Tech Stack
+          </h3>
+          <div id="project-stack" class="space-y-6">
+            <!-- JS Injected: Groups of tags -->
+          </div>
+
+          <div
+            id="project-links"
+            class="mt-8 pt-6 border-t border-neutral-800 flex flex-col gap-3"
+          >
+            <!-- JS Injected buttons -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Highlights (The "Senior" Section) -->
+      <section class="mb-16">
+        <h2
+          class="text-2xl font-semibold text-neutral-100 mb-6 flex items-center gap-3 font-iceberg"
+        >
+          <span class="text-teal-400">#</span> System Architecture
+        </h2>
+        <div class="bg-neutral-900/30 rounded-xl p-8 border border-neutral-800">
+          <ul id="architecture-list" class="grid gap-4 text-neutral-300">
+            <!-- JS Injected list items with icons -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Engineering Challenges (Case Studies) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-neutral-100 mb-8 font-iceberg">
+          Challenges
+        </h2>
+        <div id="challenges-container" class="grid gap-8">
+          <!-- JS Injected Cards -->
+        </div>
+      </section>
+
+      <!-- What I Learned (Retrospectives) -->
+      <section id="retro">
+        <h2
+          id="retro-title"
+          class="text-2xl font-semibold text-neutral-100 mb-8 font-iceberg"
+        >
+          Design Reflections
+        </h2>
+        <ul
+          id="retro-list"
+          class="space-y-8 bg-neutral-900/40 p-6 rounded-lg border border-neutral-800"
+        >
+          <!-- JS Injected Cards -->
+        </ul>
+      </section>
+    </main>
+
+    <main id="not-found" class="max-w-4xl mx-auto px-6 pb-32 py-8 hidden">
+      <div
+        class="bg-neutral-900/30 p-8 space-y-10 flex flex-col items-center text-center border border-neutral-800 rounded-xl"
+      >
+        <div class="space-y-2">
+          <h1 class="text-2xl font-semibold text-neutral-100 mb-4 font-iceberg">
+            Oops!
+          </h1>
+          <p class="text-neutral-400 font-montserrat font-semibold">
+            It looks like this project was not found!
+          </p>
+          <p class="text-neutral-400 font-montserrat font-semibold">
+            Please go back to the projects list and try again.
+          </p>
+          <p class="text-neutral-400 font-montserrat font-semibold">
+            You can also check out other projects from the list.
+          </p>
+        </div>
+
+        <a
+          href="/#projects"
+          class="transition-link group flex items-center gap-4 font-iceberg text-teal-400"
+        >
+          <i
+            class="fa-solid fa-arrow-left text-lg group-hover:scale-110 group-hover:-translate-x-2 group-hover:text-teal-300 transition-all ease-in duration-300 delay-100"
+          ></i>
+          <p class="font-semibold">Home</p>
+        </a>
+      </div>
+    </main>
+
+    <footer
+      class="bg-neutral-950 border-t border-neutral-800 text-neutral-200 py-8"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 space-y-8 flex flex-col justify-between items-center"
+      >
+        <p class="text-neutral-400 font-montserrat max-w-lg text-center">
+          Built with,
+          <span class="text-neutral-200 font-semibold font-iceberg"
+            >TypeScript, HTML, GSAP, Tailwind CSS,</span
+          >
+          and
+          <span class="text-neutral-200 font-semibold font-iceberg">Vite</span>.
+          Designed and developed by
+          <span class="text-cyan-600 font-semibold font-iceberg text-nowrap">
+            <a
+              href="https://gitongaisaac.netlify.app"
+              class="inline text-nowrap"
+            >
               <span class="px-0.5">Isaac G.</span>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> </span
+          >. Deployed on
+          <span class="text-neutral-200 font-semibold font-iceberg">Vercel</span
+          >.
+        </p>
+
+        <div class="space-y-4 flex gap-4 items-center justify-center">
+          <div class="flex gap-4 items-center justify-center">
+            <a
+              href="https://gitongaisaac.netlify.app"
+              class="hover:text-zinc-400 transition-colors"
+            >
+              <img
+                src="/logos/logo-dark.png"
+                alt="Logo"
+                class="size-9 rounded-full"
+              />
             </a>
-          </span>.
-        Deployed on
-        <span class="text-neutral-200 font-semibold font-iceberg">Vercel</span>.
-      </p>
-
-
-      <div class="space-y-4 flex gap-4 items-center justify-center">
-        <div class="flex gap-4 items-center justify-center">
-          <a href="https://gitongaisaac.netlify.app" class="hover:text-zinc-400 transition-colors">
-            <img src="/logos/logo-dark.png" alt="Logo" class="size-9 rounded-full">
-          </a>
-          <p class="bg-neutral-900 border border-neutral-800 rounded-md px-4">
-            <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
-            <button class="copy-email active:scale-70 transition-all duration-200"><i class="fa-solid fa-copy"></i></button>
-          </p>
-          <a href="https://github.com/gitongaisaac" target="_blank" class="hover:text-zinc-400 transition-colors">
-            <i class="fa-brands fa-github text-3xl"></i>
-          </a>
+            <p class="bg-neutral-900 border border-neutral-800 rounded-md px-4">
+              <span class="pr-2 font-iceberg">isaacggitonga@gmail.com</span>
+              <button
+                class="copy-email active:scale-70 transition-all duration-200"
+              >
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </p>
+            <a
+              href="https://github.com/gitongaisaac"
+              target="_blank"
+              class="hover:text-zinc-400 transition-colors"
+            >
+              <i class="fa-brands fa-github text-3xl"></i>
+            </a>
+          </div>
         </div>
+
+        <p class="font-montserrat font-semibold text-sm text-neutral-400">
+          &copy; <span class="year">2026</span> Isaac G. All rights reserved.
+        </p>
       </div>
+    </footer>
 
-      <p class="font-montserrat font-semibold text-sm text-neutral-400">
-        &copy; <span class="year">2026</span> Isaac G. All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <script type="module" src="/src/main.ts"></script>
-  <script type="module" src="/src/pages/project.ts"></script>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/project.ts"></script>
+  </body>
 </html>
